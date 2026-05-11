@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moray Training Club | CrossFit, Hyrox & 50+ Fitness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    </head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><a href="#home">MORAY <span class="gold">TRAINING CLUB</span></a></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#zones">The Gym</a></li>
+                <li><a href="#timetable">Timetable</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Find Us</a></li>
+                <li><a href="#timetable" class="btn-gold">JOIN THE PACK</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 id="hero-title">THE STRENGTH OF THE WOLF <br><span class="gold">IS IN THE PACK</span></h1>
+                <p id="hero-subtext">UNIT 7, COULARDBANK INDUSTRIAL ESTATE | LOSSIEMOUTH</p>
+                <div class="hero-btns">
+                    <a href="#timetable" class="btn-main">BOOK A TRIAL</a>
+                    <a href="#zones" class="btn-outline">EXPLORE THE HANGAR</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="zones" class="split-section">
+        <div class="zone mtc">
+            <div class="zone-tag">MTC - FUNCTIONAL FITNESS</div>
+            <h2>FUNCTIONAL FITNESS & HYROX</h2>
+            <p id="mtc-desc">High-intensity metabolic conditioning, strength training, and endurance...</p>
+            <div class="sub-brand">
+                <h3>MUMS & TOTS</h3>
+                <p id="tots-desc">Structured postnatal fitness for you. Secure supervised play for them.</p>
+            </div>
+        </div>
+
+        <div class="zone cic">
+            <div class="zone-tag gold-tag">CIC - STRENGTH & CONDITIONING</div>
+            <h2>STRENGTH & CONDITIONING</h2>
+            <p id="cic-desc">Focus on plate loading, free weights, and powerlifting...</p>
+            <div class="sub-brand gold-border">
+                <h3>LEGENDS (50+)</h3>
+                <p id="legends-desc">Strength, longevity, community. Build a body that lasts a lifetime.</p>
+            </div>
+        </div>
+    </section>
+    <section class="download-section">
+    <div class="download-container">
+        <h2>NEW TO THE HANGAR?</h2>
+        <p>Download our 2026 Welcome Pack for everything you need to know about your first session, parking, and kit.</p>
+        <a href="assets/MTC-Welcome-Pack.pdf" class="btn-main" download>DOWNLOAD WELCOME PACK (PDF)</a>
+    </div>
+
+    <section id="pricing" class="pricing-section">
+    <div class="section-header">
+        <h2>JOIN THE <span class="gold">PACK</span></h2>
+        <p>No joining fees. No long-term contracts. Just results.</p>
+    </div>
+    <div class="pricing-grid">
+        <div class="price-card">
+            <h3>PACK LITE</h3>
+            <div class="price">£75<span>/mo</span></div>
+            <ul>
+                <li>2 Sessions Per Week</li>
+                <li>MTC & CIC Access</li>
+                <li>TeamUp App Access</li>
+            </ul>
+            <a href="#timetable" class="btn-outline">SELECT PLAN</a>
+        </div>
+        <div class="price-card featured">
+            <div class="popular-tag">MOST POPULAR</div>
+            <h3>FULL PACK</h3>
+            <div class="price">£110<span>/mo</span></div>
+            <ul>
+                <li>Unlimited Sessions</li>
+                <li>All Specialty Classes</li>
+                <li>Legends & Tots Included</li>
+                <li>Priority Event Booking</li>
+            </ul>
+            <a href="#timetable" class="btn-main">SELECT PLAN</a>
+        </div>
+        <div class="price-card">
+            <h3>PACK FOUNDATION</h3>
+            <div class="price">£45<span>/mo</span></div>
+            <ul>
+                <li>1 Session Per Week</li>
+                <li>Great for Beginners</li>
+                <li>Community Access</li>
+            </ul>
+            <a href="#timetable" class="btn-outline">SELECT PLAN</a>
+        </div>
+        <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+        <p>The Pack uses cookies to ensure you get the best experience on our website. 
+           <a href="cookies.html" style="color: var(--gold);">Read our Policy</a>
+        </p>
+        <button onclick="acceptCookies()" class="btn-gold">ACCEPT ALL</button>
+    </div>
+</div>
+
+<style>
+    .cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        border-top: 2px solid var(--gold);
+        padding: 20px;
+        z-index: 9999;
+        display: none; /* Hidden by default */
+    }
+    .cookie-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .cookie-content p { color: white; margin: 0; font-size: 0.9rem; }
+</style>
+
+<script>
+    // Check if user already accepted
+    window.onload = function() {
+        if (!localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+    }
+
+    function acceptCookies() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+</script>
+    </div>
+</section>
+
+<section id="faq" class="faq-section">
+    <div class="section-header">
+        <h2>FREQUENTLY ASKED <span class="gold">QUESTIONS</span></h2>
+    </div>
+    <div class="faq-container">
+        <details>
+            <summary>Do I need to be fit to start?</summary>
+            <p>Absolutely not. Every movement in the Hangar is scalable. Whether you're a pro athlete or haven't exercised in years, we adapt the workout to your current level.</p>
+        </details>
+        <details>
+            <summary>What should I bring to my first session?</summary>
+            <p>Comfortable gym gear, a water bottle, and a positive attitude. We have all the specialized equipment you need. Check your Welcome Pack for more details!</p>
+        </details>
+        <details>
+            <summary>How do I book classes?</summary>
+            <p>We use the TeamUp app for all bookings. Once you've selected a plan, you'll get a login to manage your schedule from your phone.</p>
+        </details>
+        <details>
+            <summary>Is there parking at the Hangar?</summary>
+            <p>Yes, we have dedicated parking right outside Unit 7 in the Coulardbank Industrial Estate.</p>
+        </details>
+    </div>
+</section>
+</section>
+
+    <footer>
+        <p>© 2026 MORAY TRAINING CLUB | LOSSISMOUTH</p>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a>
+        </div>
+    </footer>
+
+    <script>
+        fetch('/api/content')
+            .then(res => res.json())
+            .then(data => {
+                if(data.heroTitle) document.getElementById('hero-title').innerHTML = data.heroTitle;
+                if(data.mtcDesc) document.getElementById('mtc-desc').innerText = data.mtcDesc;
+                if(data.totsDesc) document.getElementById('tots-desc').innerText = data.totsDesc;
+                if(data.cicDesc) document.getElementById('cic-desc').innerText = data.cicDesc;
+                if(data.legendsDesc) document.getElementById('legends-desc').innerText = data.legendsDesc;
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+/* Branding Variables */
+:root {
+    --gold: #D4AF37;
+    --dark-bg: #121212;
+    --card-bg: #1e1e1e;
+    --text-main: #ffffff;
+    --text-dim: #b3b3b3;
+    --font-heading: 'Teko', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+* { box-sizing: border-box; scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark-bg);
+    color: var(--text-main);
+    font-family: var(--font-body);
+}
+
+/* Nav Styles */
+nav {
+    background: rgba(0,0,0,0.95);
+    padding: 15px 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; letter-spacing: 1px; }
+.gold { color: var(--gold); }
+.nav-links { list-style: none; display: flex; align-items: center; margin: 0; }
+.nav-links li { margin-left: 25px; }
+.nav-links a { text-decoration: none; color: white; font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
+.nav-links a:hover { color: var(--gold); }
+
+.btn-gold { 
+    background: var(--gold); 
+    color: black !important; 
+    padding: 8px 18px; 
+    border-radius: 4px;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('hero-bg.jpg') center/cover no-repeat; /* Replace with your hangar photo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content { text-align: center; max-width: 900px; padding: 20px; }
+.hero-content h1 { font-family: var(--font-heading); font-size: 6rem; line-height: 0.85; margin-bottom: 10px; }
+.hero-content p { font-size: 1.2rem; letter-spacing: 3px; margin-bottom: 30px; }
+
+.btn-main { background: var(--gold); color: black; padding: 15px 40px; text-decoration: none; font-weight: 700; border-radius: 4px; margin-right: 15px; display: inline-block; }
+.btn-outline { border: 2px solid white; color: white; padding: 13px 40px; text-decoration: none; font-weight: 700; border-radius: 4px; display: inline-block; }
+
+/* Split Section */
+.split-section { display: flex; flex-wrap: wrap; background: #000; }
+.zone { flex: 1; min-width: 350px; padding: 80px 5%; border: 1px solid #222; }
+.zone-tag { font-weight: 700; color: #888; font-size: 0.8rem; margin-bottom: 15px; display: block; }
+.gold-tag { color: var(--gold); }
+.zone h2 { font-family: var(--font-heading); font-size: 3rem; margin-bottom: 20px; }
+.feature-list { list-style: none; padding: 0; margin: 30px 0; }
+.feature-list li::before { content: "✓ "; color: var(--gold); font-weight: bold; }
+.feature-list li { margin-bottom: 10px; font-weight: 300; }
+
+.sub-brand { background: #222; padding: 25px; border-radius: 8px; margin-top: 40px; }
+.gold-border { border: 1px solid var(--gold); }
+
+/* Events Grid */
+.events-section { padding: 80px 5%; background: var(--dark-bg); }
+.events-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 40px; }
+.event-item { background: var(--card-bg); padding: 20px; border-radius: 4px; border-bottom: 3px solid var(--gold); display: flex; flex-direction: column; }
+.month { font-size: 0.8rem; color: var(--gold); font-weight: 700; }
+.event-name { font-family: var(--font-heading); font-size: 1.5rem; }
+
+/* Timetable Container */
+.timetable-section { padding: 80px 5%; background: #f4f4f4; color: #1a1a1a; text-align: center; }
+.section-header h2 { font-family: var(--font-heading); font-size: 3.5rem; margin-bottom: 10px; }
+.widget-container { max-width: 1000px; margin: 40px auto; background: white; padding: 10px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.placeholder-widget { padding: 100px; color: #ccc; }
+
+.contact-section { padding: 80px 5%; background: #0a0a0a; border-top: 1px solid #222; }
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; }
+.contact-info h2 { font-family: var(--font-heading); font-size: 3.5rem; margin-bottom: 20px; }
+.contact-info p { margin-bottom: 15px; color: #ccc; }
+.map-container { filter: grayscale(1) invert(0.9); border: 2px solid var(--gold); border-radius: 10px; overflow: hidden; }
+
+.download-section {
+    padding: 60px 5%;
+    background: var(--gold);
+    color: black;
+    text-align: center;
+}
+.download-container h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+.download-container p {
+    font-weight: 700;
+    margin-bottom: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.download-section .btn-main {
+    background: black;
+    color: var(--gold);
+    border: none;
+}
+
+footer {
+    padding: 40px;
+    text-align: center;
+    background: #111;
+    border-top: 1px solid #222;
+}
+
+.footer-links {
+    margin-top: 15px;
+    font-size: 0.75rem;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 3.5rem; }
+    .nav-links { display: none; } /* Consider adding a mobile burger menu here later */
+}
+/* Pricing Section */
+.pricing-section { padding: 80px 5%; background: #000; text-align: center; }
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+.price-card { background: #111; padding: 40px; border: 1px solid #222; border-radius: 8px; transition: 0.3s; position: relative; }
+.price-card.featured { border: 2px solid var(--gold); transform: scale(1.05); z-index: 2; }
+.price-card h3 { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 15px; }
+.price { font-size: 3rem; font-weight: 700; color: var(--gold); margin-bottom: 20px; }
+.price span { font-size: 1rem; color: #888; }
+.price-card ul { list-style: none; padding: 0; margin-bottom: 30px; color: #ccc; }
+.price-card li { margin-bottom: 10px; }
+.popular-tag { background: var(--gold); color: black; font-size: 0.7rem; font-weight: 800; padding: 5px 15px; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); border-radius: 20px; }
+
+/* FAQ Section */
+.faq-section { padding: 80px 5%; background: #0a0a0a; }
+.faq-container { max-width: 800px; margin: 40px auto; }
+details { background: #1a1a1a; margin-bottom: 10px; border-radius: 4px; overflow: hidden; }
+summary { padding: 20px; cursor: pointer; font-weight: 700; color: var(--gold); list-style: none; border-bottom: 1px solid #222; }
+summary::-webkit-details-marker { display: none; }
+details p { padding: 20px; color: #ccc; line-height: 1.6; background: #222; }
