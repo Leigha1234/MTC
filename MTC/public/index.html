@@ -1,170 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moray Training Club | CrossFit, Hyrox & 50+ Fitness</title>
     
-    <title>Moray Training Club | CrossFit, Hyrox & 50+ Fitness Lossiemouth</title>
-    <meta name="description" content="Join the pack at Moray Training Club in Lossiemouth. Elite CrossFit, Hyrox training, Mums & Tots classes, and 50+ Legends strength sessions.">
-    <meta name="keywords" content="Gym Lossiemouth, CrossFit Moray, Hyrox Scotland, 50+ Fitness, Postnatal Fitness Moray">
-
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { --gold: #d4af37; --dark: #0a0a0a; --grey: #1a1a1a; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; background: #000; color: #fff; margin: 0; line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Teko', sans-serif; text-transform: uppercase; margin: 0; letter-spacing: 1px; }
+        .gold { color: var(--gold); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ExerciseGym",
-      "name": "Moray Training Club",
-      "image": "https://www.moraytrainingclub.com/logo.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Unit 7, Coulardbank Industrial Estate",
-        "addressLocality": "Lossiemouth",
-        "addressRegion": "Moray",
-        "postalCode": "IV31 6NG",
-        "addressCountry": "GB"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 57.712, 
-        "longitude": -3.284
-      },
-      "url": "https://www.moraytrainingclub.com",
-      "telephone": "+441343000000",
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "06:00",
-          "closes": "21:30"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Saturday", "Sunday"],
-          "opens": "08:00",
-          "closes": "14:00"
+        /* Navigation */
+        nav { background: rgba(0,0,0,0.95); padding: 15px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #222; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo img { height: 80px; width: auto; display: block; }
+        .nav-links { list-style: none; display: flex; gap: 20px; margin: 0; align-items: center; }
+        .nav-links a { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; }
+        
+        /* Slow Animated Banner (Under Nav) */
+        .announcement-bar {
+            background: var(--gold);
+            color: #000;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 12px 0;
+            font-family: 'Teko', sans-serif;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            border-bottom: 2px solid #000;
         }
-      ]
-    }
-    </script>
+        .carousel-track {
+            display: inline-block;
+            animation: scroll 50s linear infinite;
+        }
+        .carousel-item { display: inline-block; padding: 0 80px; }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Buttons */
+        .btn-gold { background: var(--gold); color: #000 !important; padding: 14px 28px; border-radius: 4px; transition: 0.3s; display: inline-block; text-decoration: none; font-weight: 700; text-transform: uppercase; font-family: 'Montserrat'; border: none; cursor: pointer; }
+        .btn-gold:hover { background: #fff; transform: translateY(-2px); }
+        .cta-center { margin-top: 30px; text-align: center; width: 100%; }
+
+        /* Hero */
+        .hero { 
+            height: 65vh; 
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('assets/backwomen.jpg');
+            background-repeat: no-repeat; background-position: center center; background-size: cover;
+            display: flex; align-items: center; justify-content: center; text-align: center; 
+        }
+        .hero h1 { font-size: clamp(3rem, 8vw, 6rem); line-height: 0.9; }
+
+        /* Evolution (Side by Side) */
+        .evolution-section { padding: 100px 0; background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('assets/row.jpeg'); background-size: cover; background-attachment: fixed; }
+        .evo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .evo-box { background: rgba(0,0,0,0.75); padding: 50px; border: 1px solid #333; border-radius: 12px; text-align: center; }
+        .img-frame { width: 100%; max-width: 400px; margin: 25px auto; border: 3px solid var(--gold); border-radius: 8px; overflow: hidden; background: #000; }
+        .img-frame img { width: 100%; display: block; }
+
+        /* Events Section */
+        .events-section { padding: 100px 0; background: #111; }
+        .events-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 50px; }
+        
+        /* Event List / Calendar Styling */
+        .calendar-list { list-style: none; padding: 0; max-width: 800px; margin: 0 auto; }
+        .calendar-item { 
+            display: grid; 
+            grid-template-columns: 150px 1fr 120px; 
+            align-items: center; 
+            background: #000; 
+            margin-bottom: 10px; 
+            padding: 20px; 
+            border-left: 4px solid var(--gold);
+            text-decoration: none;
+            color: #fff;
+            transition: 0.3s;
+        }
+        .calendar-item:hover { background: #1a1a1a; transform: scale(1.01); }
+        .cal-month { font-family: 'Teko'; font-size: 1.8rem; color: var(--gold); line-height: 1; }
+        .cal-event { font-weight: 700; text-transform: uppercase; }
+        .cal-link { font-size: 0.7rem; letter-spacing: 1px; color: var(--gold); text-align: right; }
+
+        /* Split Sections */
+        .split-section { display: flex; flex-wrap: wrap; }
+        .zone { flex: 1; min-width: 350px; padding: 100px 50px; text-align: center; }
+        .zone.black { background: #050505; }
+        .zone.grey { background: #111; }
+
+        /* Timetable Image Styling */
+        .timetable-display {
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+            display: block;
+            margin: 0 auto 40px auto;
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .schedule-ctas {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* Contact Form & Map */
+        .contact-container { padding: 100px 0; background: #0a0a0a; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        input, select, textarea { width: 100%; padding: 15px; margin-bottom: 20px; background: #1a1a1a; border: 1px solid #333; color: #fff; font-family: 'Montserrat'; border-radius: 4px; }
+        .btn-submit { background: var(--gold); color: #000; border: none; padding: 20px; width: 100%; font-weight: 800; cursor: pointer; text-transform: uppercase; font-size: 1.2rem; font-family: 'Montserrat'; }
+
+        /* Footer */
+        footer { background: #000; border-top: 1px solid #222; padding: 80px 0 40px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .footer-links h4 { color: var(--gold); margin-bottom: 25px; font-size: 1.4rem; }
+        .footer-links ul { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-links a:hover { color: var(--gold); }
+
+        /* Cookie Banner */
+        #cookie-banner { position: fixed; bottom: 0; width: 100%; background: #111; border-top: 3px solid var(--gold); padding: 25px; z-index: 10000; display: flex; justify-content: center; align-items: center; gap: 30px; }
+        
+        @media (max-width: 900px) {
+            .evo-grid, .contact-grid, .split-section, .events-grid { grid-template-columns: 1fr; }
+            .calendar-item { grid-template-columns: 100px 1fr; }
+            .cal-link { display: none; }
+            .schedule-ctas { flex-direction: column; align-items: center; width: 100%; }
+            .schedule-ctas .btn-gold { width: 80%; text-align: center; }
+        }
+    </style>
 </head>
 <body>
 
     <nav>
-        <div class="nav-container">
-            <div class="logo"><a href="#home">MORAY <span class="gold">TRAINING CLUB</span></a></div>
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <img src="assets/Logo_with_HyroxCrossfit.png" alt="MTC Logo">
+            </div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#zones">The Gym</a></li>
-                <li><a href="#timetable">Timetable</a></li>
+                <li><a href="#evolution">The Hunt</a></li>
                 <li><a href="#events">Events</a></li>
-                <li><a href="#contact">Find Us</a></li>
-                <li><a href="#timetable" class="btn-gold">JOIN THE PACK</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#contact" class="btn-gold">JOIN THE PACK</a></li>
             </ul>
         </div>
     </nav>
 
-    <header id="home" class="hero">
-        <div class="hero-overlay">
-            <div class="hero-content">
-                <h1>THE STRENGTH OF THE WOLF <br><span class="gold">IS IN THE PACK</span></h1>
-                <p>UNIT 7, COULARDBANK INDUSTRIAL ESTATE | LOSSIEMOUTH</p>
-                <div class="hero-btns">
-                    <a href="#timetable" class="btn-main">BOOK A TRIAL</a>
-                    <a href="#zones" class="btn-outline">EXPLORE THE HANGAR</a>
-                </div>
-            </div>
+    <div class="announcement-bar">
+        <div class="carousel-track">
+            <span class="carousel-item">COMING SOON: Mums & Tots - Launching June 1st</span>
+            <span class="carousel-item">COMING SOON: 50+ Legends - Launching June 1st</span>
+            <span class="carousel-item">TRIAL WEEK: 7 Days Unlimited for £20</span>
+            <span class="carousel-item">COMING SOON: Mums & Tots - Launching June 1st</span>
+            <span class="carousel-item">COMING SOON: 50+ Legends - Launching June 1st</span>
+            <span class="carousel-item">TRIAL WEEK: 7 Days Unlimited for £20</span>
+        </div>
+    </div>
+
+    <header class="hero">
+        <div class="container">
+            <h1>THE STRENGTH OF THE WOLF <br><span class="gold">IS IN THE PACK</span></h1>
+            <p style="letter-spacing: 5px; font-weight: 400; margin-top: 20px;">LOSSIEMOUTH | MORAY</p>
+            <div class="cta-center"><a href="#contact" class="btn-gold">Sign Up Now</a></div>
         </div>
     </header>
 
-    <section id="zones" class="split-section">
-        <div class="zone mtc">
-            <div class="zone-tag">MTC - FUNCTIONAL FITNESS</div>
-            <h2>FUNCTIONAL FITNESS & HYROX</h2>
-            <p>High-intensity metabolic conditioning, strength training, and endurance. Includes CrossFit, Hyrox WODs, Gymnastics, and Open Gym.</p>
-            <ul class="feature-list">
-                <li>CrossFit & Hyrox Specific Rig</li>
-                <li>Expert Coaching Team</li>
-                <li>Performance Tracking</li>
-            </ul>
-            <div class="sub-brand">
-                <h3>MUMS & TOTS</h3>
-                <p>Structured postnatal fitness for you. Secure supervised play for them.</p>
-            </div>
-        </div>
-
-        <div class="zone cic">
-            <div class="zone-tag gold-tag">CIC - STRENGTH & CONDITIONING</div>
-            <h2>STRENGTH & CONDITIONING</h2>
-            <p>Focus on plate loading, free weights, and powerlifting. Designed for all levels, including our community-focused sessions.</p>
-            <ul class="feature-list">
-                <li>Specialist Lifting Platforms</li>
-                <li>Dumbbell & Plate Loaded Zone</li>
-                <li>Powerlifting Specific Gear</li>
-            </ul>
-            <div class="sub-brand gold-border">
-                <h3>LEGENDS (50+)</h3>
-                <p>Strength, longevity, community. Build a body that lasts a lifetime.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="timetable" class="timetable-section">
-        <div class="section-header">
-            <h2>VIEW THE <span class="gold">PACK SCHEDULE</span></h2>
-            <p>Real-time availability for MTC and CIC sessions.</p>
-        </div>
-        <div class="widget-container">
-            <div id="teamup-widget">
-                <p style="color:#666; padding: 50px;">TeamUp Widget Loading...</p>
+    <section id="evolution" class="evolution-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 50px;">EVOLVE YOUR <span class="gold">TRAINING</span></h2>
+            <div class="evo-grid">
+                <div class="evo-box">
+                    <h2>THE HUNT: <span class="gold">GOALS</span></h2>
+                    <p>Track your transformation with our 3-month benchmark system.</p>
+                    <div class="img-frame"><img src="assets/Goal_cards.png" alt="Goal Cards"></div>
+                    <div class="cta-center"><a href="#contact" class="btn-gold">Book Your Goal Session</a></div>
+                </div>
+                <div class="evo-box">
+                    <h2>FUEL: <span class="gold">NUTRITION</span></h2>
+                    <p>Optimize your performance with tailored nutrition plans.</p>
+                    <div class="img-frame"><img src="assets/diets.png" alt="Nutrition"></div>
+                    <div class="cta-center"><a href="#contact" class="btn-gold">Get Nutrition Support</a></div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="events" class="events-section">
-        <div class="section-header">
-            <h2>PACK EVENTS <span class="gold">2026</span></h2>
-        </div>
-        <div class="events-grid">
-            <div class="event-item"><span class="month">MAY</span><span class="event-name">MACTUFF</span></div>
-            <div class="event-item"><span class="month">JUNE</span><span class="event-name">TOUGH MUDDER</span></div>
-            <div class="event-item"><span class="month">JULY</span><span class="event-name">CROSSFIT THROWDOWNS</span></div>
-            <div class="event-item"><span class="month">AUG</span><span class="event-name">FIRST TIMERS OPEN</span></div>
-            <div class="event-item"><span class="month">SEP</span><span class="event-name">GAUNTLET GAMES</span></div>
-            <div class="event-item"><span class="month">OCT</span><span class="event-name">ROGUE INVITATIONAL</span></div>
-            <div class="event-item"><span class="month">NOV</span><span class="event-name">CROSSFIT THROWDOWNS</span></div>
-            <div class="event-item"><span class="month">DEC</span><span class="event-name">HYROX SIM</span></div>
+        <div class="container">
+            <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 50px;">CLUB <span class="gold">EVENTS</span></h2>
+            <div class="events-grid">
+                <div class="evo-box">
+                    <h2>RAD <span class="gold">EXPERIENCE</span></h2>
+                    <p>Push your limits with our signature RAD training events.</p>
+                    <div class="img-frame"><img src="assets/New_Event_RAD.png" alt="RAD Event"></div>
+                </div>
+                <div class="evo-box">
+                    <h2>SUNRISE <span class="gold">WORKOUT</span></h2>
+                    <p>Start the day with the pack. Early morning beach and hangar sessions.</p>
+                    <div class="img-frame"><img src="assets/Sunrise_Series.png" alt="Sunrise Workout"></div>
+                </div>
+            </div>
+
+            <div class="calendar-list">
+                <h2 style="text-align: center; margin-bottom: 30px;">MAY - MAY <span class="gold">ROADMAP</span></h2>
+                
+                <a href="#" class="calendar-item">
+                    <span class="cal-month">MAY</span>
+                    <span class="cal-event">RAD Highland Throwdown</span>
+                    <span class="cal-link">VIEW SITE →</span>
+                </a>
+                <a href="#contact" class="calendar-item">
+                    <span class="cal-month">JUNE</span>
+                    <span class="cal-event">Sunrise Series Beach Edition</span>
+                    <span class="cal-link">REGISTER →</span>
+                </a>
+                <a href="#" class="calendar-item">
+                    <span class="cal-month">JULY</span>
+                    <span class="cal-event">Hyrox PFT Simulation</span>
+                    <span class="cal-link">VIEW SITE →</span>
+                </a>
+                <a href="#contact" class="calendar-item">
+                    <span class="cal-month">AUGUST</span>
+                    <span class="cal-event">The Pack Summer BBQ & Games</span>
+                    <span class="cal-link">REGISTER →</span>
+                </a>
+            </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h2>FIND THE <span class="gold">HANGAR</span></h2>
-                <p>Unit 7, Coulardbank Industrial Estate<br>Lossiemouth, Moray, IV31 6NG</p>
-                <p><strong>Email:</strong> info@moraytrainingclub.com</p>
-                <p><strong>Phone:</strong> +44 1343 000000</p>
-            </div>
-            <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2146.4!2d-3.284!3d57.712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTfCsDQyJzQzLjIiTiAzwrAxNycwMi40Ilc!5e0!3m2!1sen!2suk!4v1651234567890!5m2!1sen!2suk" 
-                    width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy">
-                </iframe>
+    <section id="training" class="split-section">
+        <div class="zone grey">
+            <h2>BRING A FRIEND</h2>
+            <div class="img-frame" style="max-width: 500px;"><img src="assets/Bring_a_friend.png" alt="Bring a Friend"></div>
+            <div class="cta-center"><a href="#contact" class="btn-gold">Invite Your Pack</a></div>
+        </div>
+        <div class="zone black">
+            <h2>PERSONAL TRAINING</h2>
+            <div class="img-frame" style="max-width: 500px;"><img src="assets/PT_sessions.png" alt="PT Sessions"></div>
+            <div class="cta-center"><a href="#contact" class="btn-gold">Book 1-on-1 Sessions</a></div>
+        </div>
+    </section>
+
+    <!-- Updated Schedule Section -->
+    <section id="schedule" style="padding: 100px 0; background: #000;">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 50px;">CLASS <span class="gold">SCHEDULE</span></h2>
+            
+            <img src="assets/timetable.png" alt="MTC Weekly Timetable" class="timetable-display">
+            
+            <div class="schedule-ctas">
+                <a href="#contact" class="btn-gold">BOOK A CLASS</a>
+                <a href="#contact" class="btn-gold">JOIN THE PACK</a>
             </div>
         </div>
     </section>
 
-<div class="footer-links">
-    <a href="privacy.html">Privacy</a> | 
-    <a href="gdpr.html">GDPR Statement</a> | 
-    <a href="terms.html">Terms</a> | 
-    <a href="safeguarding.html">Safeguarding</a> | 
-    <a href="complaints.html">Grievance</a> | 
-    <a href="social-policy.html">Social Media</a>
-</div>
+    <section id="contact" class="contact-container">
+        <div class="container">
+            <div class="contact-grid">
+                <div>
+                    <h2>CLAIM YOUR <span class="gold">TRIAL WEEK</span></h2>
+                    <form>
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <select>
+                            <option>Trial Week (£20)</option>
+                            <option>CrossFit Membership</option>
+                            <option>Hyrox Training</option>
+                            <option>Personal Training</option>
+                        </select>
+                        <textarea rows="5" placeholder="Tell us about your fitness goals..."></textarea>
+                        <button type="submit" class="btn-submit">Claim Offer Now</button>
+                    </form>
+                </div>
+                <div>
+                    <h2>FIND <span class="gold">US</span></h2>
+                    <div style="border: 2px solid var(--gold); border-radius: 8px; overflow: hidden;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2091.2383281206143!2d-3.2842186837943533!3d57.71765878112351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4885698b688d5e89%3A0xe4438343f875f5!2sCrossFit%20Moray%20-%20Moray%20Training%20Club!5e0!3m2!1sen!2suk!4v1653556789456!5m2!1sen!2suk" width="100%" height="450" style="border:0; filter: grayscale(1) invert(1);" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-links">
+                    <h4>MTC Pack</h4>
+                    <ul>
+                        <li><a href="#evolution">The Hunt</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#schedule">Schedule</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Operations</h4>
+                    <ul>
+                        <li><a href="#">Complaints Policy</a></li>
+                        <li><a href="#">GDPR & Privacy</a></li>
+                        <li><a href="#">Health & Safety</a></li>
+                        <li><a href="#">Club Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Safeguarding</a></li>
+                        <li><a href="#">Social Media Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 60px; border-top: 1px solid #222; padding-top: 30px;">
+                <p style="color: #666; font-size: 0.8rem;">© 2026 MORAY TRAINING CLUB | EST. 2020</p>
+                <p class="gold" style="font-size: 0.7rem; letter-spacing: 3px; font-weight: 700;">POWERED BY THE ORGANISED TYPES</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-banner">
+        <p>This site uses cookies to enhance your experience. <a href="#" class="gold">Learn More</a></p>
+        <button class="btn-gold" style="padding: 10px 20px;" onclick="document.getElementById('cookie-banner').style.display='none'">Accept</button>
+    </div>
 
 </body>
 </html>

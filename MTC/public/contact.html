@@ -1,18 +1,201 @@
-<section id="contact" class="contact-section">
-    <div class="contact-grid">
-        <div class="contact-info">
-            <h2>FIND THE <span class="gold">HANGAR</span></h2>
-            <p>Unit 7, Coulardbank Industrial Estate<br>Lossiemouth, Moray, IV31 6NG</p>
-            <p><strong>Email:</strong> info@moraytrainingclub.com</p>
-            <p><strong>Phone:</strong> +44 (0) 1343 XXXXXX</p>
-            <div class="social-icons">
-                </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moray Training Club | CrossFit, Hyrox & 50+ Fitness Lossiemouth</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --gold: #d4af37; --dark: #0a0a0a; --grey: #1a1a1a; }
+        body { font-family: 'Montserrat', sans-serif; background: #000; color: #fff; margin: 0; line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Teko', sans-serif; text-transform: uppercase; margin: 0; letter-spacing: 1px; }
+        .gold { color: var(--gold); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Navigation */
+        nav { background: rgba(0,0,0,0.95); padding: 15px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #222; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo img { height: 80px; width: auto; display: block; }
+        .nav-links { list-style: none; display: flex; gap: 20px; margin: 0; align-items: center; }
+        .nav-links a { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; }
+        .btn-gold { background: var(--gold); color: #000 !important; padding: 8px 16px; border-radius: 4px; transition: 0.3s; }
+
+        /* Trial Banner */
+        .trial-banner { background: var(--gold); color: #000; text-align: center; padding: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; position: relative; z-index: 999; }
+        .trial-banner a { color: #000; text-decoration: underline; margin-left: 10px; }
+
+        /* Hero Section */
+        .hero { 
+            height: 60vh; 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('assets/backwomen.jpg') no-repeat center center/cover; 
+            display: flex; align-items: center; justify-content: center; text-align: center; 
+        }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+
+        /* Offers Section */
+        #offers { 
+            padding: 100px 0; 
+            background: linear-gradient(rgba(10,10,10,0.9), rgba(10,10,10,0.9)), url('assets/wallballs.jpeg') no-repeat center center/cover;
+            background-attachment: fixed;
+        }
+        .offer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 40px; }
+        .offer-card { background: rgba(26, 26, 26, 0.8); padding: 25px; border-top: 3px solid var(--gold); backdrop-filter: blur(8px); }
+
+        /* Evolution Section */
+        .evolution-section { 
+            padding: 100px 0; 
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('assets/row.jpeg') no-repeat center center/cover;
+            background-attachment: fixed;
+        }
+        .evolution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .coming-soon-box { background: rgba(26, 26, 26, 0.9); border: 1px solid var(--gold); padding: 30px; border-radius: 8px; }
+
+        /* General UI */
+        .img-frame { width: 100%; overflow: hidden; border: 2px solid var(--gold); border-radius: 8px; background: #111; }
+        .img-frame img { width: 100%; height: auto; display: block; transition: 0.5s; }
+        
+        .split-section { display: flex; flex-wrap: wrap; }
+        .zone { flex: 1; min-width: 300px; padding: 80px 40px; }
+        .zone.mtc { background: var(--grey); }
+        .zone.cic { background: #111; }
+
+        .schedule-container { padding: 80px 0; background: #000; }
+        .embed-wrapper { width: 100%; height: 900px; border: 2px solid #222; border-radius: 8px; overflow: hidden; }
+
+        /* Contact & Footer */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; padding: 80px 0; }
+        input, select, textarea { width: 100%; padding: 12px; margin-bottom: 10px; background: #222; border: 1px solid #333; color: #fff; }
+        .btn-submit { background: var(--gold); color: #000; border: none; padding: 15px; width: 100%; font-weight: 700; cursor: pointer; text-transform: uppercase; }
+
+        @media (max-width: 768px) {
+            .contact-grid, .split-section, .evolution-grid { grid-template-columns: 1fr; }
+            .embed-wrapper { height: 600px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <img src="assets/Logo_with_HyroxCrossfit.png" alt="MTC Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#offers">What We Offer</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact" class="btn-gold">JOIN THE PACK</a></li>
+            </ul>
         </div>
-        <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2119.55!2d-3.3044!3d57.7114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48850c25c5111f17%3A0xaf437b26ff5d5873!2sUnit%207%2C%20Coulardbank%20Industrial%20Estate%2C%20Lossiemouth%20IV31%206NG!5e0!3m2!1sen!2suk!4v1234567890" 
-                width="100%" height="350" style="border:0; border-radius:8px;" allowfullscreen="" loading="lazy">
-            </iframe>
-        </div>
+    </nav>
+
+    <div class="trial-banner">
+        🔥 Trial Week: Unlimited classes for 7 days - Only £20! 
+        <a href="#contact">Register for your Trial Week Here</a>
     </div>
-</section>
+
+    <header class="hero">
+        <div class="container">
+            <h1>THE STRENGTH OF THE WOLF <br><span class="gold">IS IN THE PACK</span></h1>
+            <p style="letter-spacing: 3px;">LOSSIEMOUTH | MORAY</p>
+        </div>
+    </header>
+
+    <section id="offers">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 3rem;">WHAT WE <span class="gold">OFFER</span></h2>
+            <div class="offer-grid">
+                <div class="offer-card"><h3>CrossFit</h3><p>High-intensity, coach-led sessions. Fully scalable for any level.</p></div>
+                <div class="offer-card"><h3>HYROX</h3><p>A mix of running, rowing, and functional movements built for the race.</p></div>
+                <div class="offer-card"><h3>Fit For Life</h3><p>Lower-intensity conditioning focused on mobility and strength.</p></div>
+                <div class="offer-card"><h3>CrossFit Kids</h3><p>Fun, structured fitness for the younger generation.</p></div>
+                <div class="offer-card"><h3>Strong</h3><p>Pure strength training with a focus on barbell work and progress.</p></div>
+                <div class="offer-card"><h3>HYROX Strength</h3><p>Built to support your engine for race day.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="split-section">
+        <div class="zone mtc">
+            <h2>BRING A FRIEND</h2>
+            <p>Training is better with a pack. Invite a friend to join your next session.</p>
+            <div class="img-frame"><img src="assets/Bring a friend.jpg" alt="Bring a Friend"></div>
+        </div>
+        <div class="zone cic">
+            <h2>PERSONAL TRAINING</h2>
+            <p>Bespoke coaching, nutrition guidance, and performance testing.</p>
+            <div class="img-frame"><img src="assets/image_456e8f.png" alt="PT Sessions"></div>
+        </div>
+    </section>
+
+    <section class="evolution-section">
+        <div class="container">
+            <div class="evolution-grid">
+                <div>
+                    <h2>THE HUNT: <span class="gold">GOAL SETTING</span></h2>
+                    <p>Track your transformation with our benchmark system.</p>
+                    <div class="img-frame" style="max-width: 400px; margin: 20px 0;">
+                        <img src="assets/Goal cards (1).png" alt="Goal Cards">
+                    </div>
+                </div>
+                
+                <div class="coming-soon-box">
+                    <h2 style="margin-bottom: 20px;">COMING <span class="gold">SOON</span></h2>
+                    <div style="margin-bottom: 20px; border-bottom: 1px solid #444; padding-bottom: 15px;">
+                        <h3>Mums & Tots</h3>
+                        <p class="gold">Launching June 1st</p>
+                    </div>
+                    <div>
+                        <h3>50+ Legends</h3>
+                        <p class="gold">Launching June 1st</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="schedule-container">
+        <div class="container" style="max-width: 1400px;">
+            <h2 style="text-align: center; margin-bottom: 30px;">CLASS <span class="gold">SCHEDULE</span></h2>
+            <div class="embed-wrapper">
+                <iframe src="https://goteamup.com/p/3936927-crossfit-moray/c/schedule/" width="100%" height="900" frameborder="0"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <div class="contact-grid">
+            <div class="contact-form">
+                <h2>READY TO <span class="gold">JOIN?</span></h2>
+                <form action="#">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <select>
+                        <option>Trial Week (£20)</option>
+                        <option>CrossFit / Hyrox</option>
+                    </select>
+                    <textarea rows="4" placeholder="Your Fitness Goals"></textarea>
+                    <button class="btn-submit">Claim Offer</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h2>FIND THE <span class="gold">GYM</span></h2>
+                <p>Lossiemouth, Moray</p>
+                <div style="margin-top:20px; border: 2px solid var(--gold); border-radius: 8px; overflow: hidden;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2117.842777174668!2d-3.2847056!3d57.7164478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4885a5356e300001%3A0x608e8b3b44b8b60a!2sLossiemouth!5e0!3m2!1sen!2suk!4v1620000000000!5m2!1sen!2suk" width="100%" height="300" style="border:0; filter: grayscale(1) invert(1);"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="text-align: center; padding: 40px 0;">
+            <p>© 2026 MORAY TRAINING CLUB</p>
+            <p class="gold" style="font-size: 0.8rem;">POWERED BY THE ORGANISED TYPES</p>
+        </div>
+    </footer>
+
+</body>
+</html>
