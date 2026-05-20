@@ -50,17 +50,16 @@
         .btn-gold:hover { background: #fff; transform: translateY(-2px); }
         .cta-center { margin-top: 30px; text-align: center; width: 100%; }
 
-        /* Hero */
+        /* Hero - Updated Path to Public Assets Folder */
         .hero { 
             height: 65vh; 
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('assets/backwomen.jpg');
-            background-repeat: no-repeat; background-position: center center; background-size: cover;
+            background: #050505 linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('public/assets/backwomen.jpg') no-repeat center center/cover;
             display: flex; align-items: center; justify-content: center; text-align: center; 
         }
         .hero h1 { font-size: clamp(3rem, 8vw, 6rem); line-height: 0.9; }
 
         /* Evolution (Side by Side) */
-        .evolution-section { padding: 100px 0; background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('assets/row.jpeg'); background-size: cover; background-attachment: fixed; }
+        .evolution-section { padding: 100px 0; background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('public/assets/row.jpeg'); background-size: cover; background-attachment: fixed; }
         .evo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
         .evo-box { background: rgba(0,0,0,0.75); padding: 50px; border: 1px solid #333; border-radius: 12px; text-align: center; }
         .img-frame { width: 100%; max-width: 400px; margin: 25px auto; border: 3px solid var(--gold); border-radius: 8px; overflow: hidden; background: #000; }
@@ -264,7 +263,6 @@
         </div>
     </section>
 
-    <!-- Updated Schedule Section -->
     <section id="schedule" style="padding: 100px 0; background: #000;">
         <div class="container">
             <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 50px;">CLASS <span class="gold">SCHEDULE</span></h2>
