@@ -48,7 +48,7 @@ nav {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: url('MTC/public/assets/row.jpeg') center/cover no-repeat;
+    background: url('public/assets/backwomen.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -151,8 +151,9 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
     .hero-content h1 { font-size: 3.5rem; }
-    .nav-links { display: none; } /* Consider adding a mobile burger menu here later */
+    .nav-links { display: none; }
 }
+
 /* Pricing Section */
 .pricing-section { padding: 80px 5%; background: #000; text-align: center; }
 .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
