@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moray Training Club | The Pack Functional Fitness Gym</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght=600;700;900&family=Permanent+Marker&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght=600;700;900&family=Permanent+Marker&family=Montserrat:wght=400;700;900&display=swap" rel="stylesheet">
     
     <style>
         :root { 
@@ -118,7 +118,7 @@
         }
         .cta-center { margin-top: 15px; text-align: center; width: 100%; }
 
-        /* Hero — Fixed background asset */
+        /* Hero Layout */
         .hero { 
             height: 70vh; 
             background: #000 linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)), url('Mike5.jpg') no-repeat center center/cover;
@@ -126,7 +126,7 @@
             border-bottom: 5px solid var(--gold);
         }
 
-        /* Tracks Section Wrapper — Fixed background asset */
+        /* Tracks Section Layout */
         .interactive-program-section { 
             padding: 100px 0; 
             background: #000 linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), url('Mike2.jpeg') no-repeat center center/cover;
@@ -176,13 +176,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            box-sizing: border-box;
         }
         .img-frame img { 
             width: 100%; 
             max-width: 100%;
             height: 450px; 
             display: block; 
-            object-fit: contain; 
+            object-fit: cover; 
             background: #000;
         }
 
@@ -190,7 +191,7 @@
         .events-section { padding: 100px 0; background: var(--grey); }
         .events-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 50px; }
         .evo-box { background: var(--dark); padding: 40px; border: 3px solid #222; text-align: center; }
-        .evo-box .img-frame img { height: 320px; object-fit: contain; }
+        .evo-box .img-frame img { height: 320px; object-fit: cover; }
         .evo-box:hover { border-color: var(--gold); }
 
         /* Interactive Booking Engine Workspace */
@@ -220,9 +221,23 @@
         .btn-submit { background: var(--gold); color: #000; border: none; padding: 22px; width: 100%; font-weight: 900; cursor: pointer; text-transform: uppercase; font-size: 1.3rem; font-family: 'Teko'; letter-spacing: 2px; transition: 0.2s; box-shadow: 4px 4px 0px #fff; }
         .btn-submit:hover { background: #fff; box-shadow: 4px 4px 0px var(--gold); }
 
-        /* Footer links */
+        /* Cookie Banner Styling Fix */
+        #cookie-banner {
+            position: fixed; 
+            bottom: 0; 
+            left: 0; 
+            width: 100%; 
+            background: rgba(0,0,0,0.95); 
+            border-top: 2px solid var(--gold); 
+            padding: 15px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            z-index: 10000; 
+            box-sizing: border-box;
+        }
+
         footer { background: #000; border-top: 2px solid #222; padding: 80px 0 40px; }
-        .footer-links h4 { color: var(--gold); margin-bottom: 25px; font-size: 1.5rem; }
 
         @media (max-width: 1000px) {
             .track-display-viewport { grid-template-columns: 1fr; padding: 30px 20px; }
@@ -236,7 +251,7 @@
 
     <nav>
         <div class="container nav-container">
-            <div class="nav-logo"><img src="public/assets/Logo_with_HyroxCrossfit.png" alt="MTC Pack Logo"></div>
+            <div class="nav-logo"><img src="Logo_with_HyroxCrossfit.png" alt="MTC Pack Logo"></div>
             <ul class="nav-links">
                 <li><a href="#training-tracks">The Pack Tracks</a></li>
                 <li><a href="#events">Pack Events</a></li>
@@ -281,7 +296,8 @@
             </div>
 
             <div class="track-display-viewport" id="track-viewport-display">
-                </div>
+                <!-- Loaded dynamically by JavaScript engine routine below -->
+            </div>
         </div>
     </section>
 
@@ -379,7 +395,7 @@
         </div>
     </footer>
 
-    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.9); border-top: 2px solid var(--gold); padding: 15px; display: flex; justify-content: space-between; align-items: center; z-index: 10000; box-sizing: border-box;">
+    <div id="cookie-banner">
         <p style="margin:0; font-size:0.9rem; font-weight:700;">This site uses analytical tracking parameters to optimize training matrices. <a href="#cookies" class="gold">Learn More</a></p>
         <button class="btn-gold" style="padding: 8px 18px; font-size:0.8rem; border-width:2px; box-shadow:none;" onclick="document.getElementById('cookie-banner').style.display='none'">Accept</button>
     </div>
@@ -520,7 +536,6 @@
             `;
         }
 
-        // Initialize view with 'lite' track
         window.onload = function() {
             switchTrackViewport('lite', document.querySelector('.tab-btn.active'));
         };
