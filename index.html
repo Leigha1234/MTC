@@ -83,9 +83,9 @@
             color: #000;
             overflow: hidden;
             white-space: nowrap;
-            padding: 4px 0; /* Thinner padding */
+            padding: 4px 0; 
             font-family: 'Teko', sans-serif;
-            font-size: 1.25rem; /* Marginally downsized text to look proportional */
+            font-size: 1.25rem; 
             text-transform: uppercase;
             font-weight: 700;
             border-bottom: 2px solid #000;
@@ -120,8 +120,8 @@
 
         /* Spacier Hero Layout */
         .hero { 
-            height: 85vh; /* Expanded height for more room */
-            /* UPDATED PATH: Points to your new background image with an overlay tint */
+            height: 85vh; 
+            /* FIXED: Pointed to assets folder */
             background: #000 linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)), url('assets/backwomen.jpg') no-repeat center center/cover;
             display: flex; align-items: center; justify-content: center; text-align: center; 
             border-bottom: 5px solid var(--gold);
@@ -130,7 +130,8 @@
         /* Tracks Section Layout */
         .interactive-program-section { 
             padding: 100px 0; 
-            background: #000 linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), url('Mike2.jpeg') no-repeat center center/cover;
+            /* FIXED: Pointed background to assets folder */
+            background: #000 linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), url('assets/Mike2.jpeg') no-repeat center center/cover;
             border-bottom: 3px solid #111; 
         }
         .tab-button-panel { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 50px; }
@@ -241,7 +242,7 @@
         footer { background: #000; border-top: 2px solid #222; padding: 80px 0 40px; }
 
         @media (max-width: 1000px) {
-            .hero { height: 65vh; } /* Scale down layout nicely on tablet screens */
+            .hero { height: 65vh; } 
             .track-display-viewport { grid-template-columns: 1fr; padding: 30px 20px; }
             .events-grid, .contact-grid { grid-template-columns: 1fr; }
             .img-frame img { height: 320px; }
@@ -253,7 +254,8 @@
 
     <nav>
         <div class="container nav-container">
-            <div class="nav-logo"><img src="Logo_with_HyroxCrossfit.png" alt="MTC Pack Logo"></div>
+            <!-- FIXED: Added assets/ folder route -->
+            <div class="nav-logo"><img src="assets/Logo_with_HyroxCrossfit.png" alt="MTC Pack Logo"></div>
             <ul class="nav-links">
                 <li><a href="#training-tracks">The Pack Tracks</a></li>
                 <li><a href="#events">Pack Events</a></li>
@@ -309,12 +311,14 @@
                 <div class="evo-box">
                     <h2>HYROX COMPETITION <span class="gold">TRACK</span></h2>
                     <p style="font-size:0.9rem; color:#aaa; margin-bottom:20px;">Building complete functional metabolic engines so the whole pack dominates the big simulator runs.</p>
-                    <div class="img-frame"><img src="Mike3.jpeg" alt="Hyrox Glasgow Stage Showcase"></div>
+                    <!-- FIXED: Added assets/ folder route -->
+                    <div class="img-frame"><img src="assets/Mike3.jpeg" alt="Hyrox Glasgow Stage Showcase"></div>
                 </div>
                 <div class="evo-box">
                     <h2>SENIOR LIFTING <span class="gold">SERIES</span></h2>
                     <p style="font-size:0.9rem; color:#aaa; margin-bottom:20px;">Powerlifting and structured weight training systems for the master 55+ lifters of our pack.</p>
-                    <div class="img-frame"><img src="Mike6.jpeg" alt="Lifting Seniors Legends Team Frame"></div>
+                    <!-- FIXED: Added assets/ folder route -->
+                    <div class="img-frame"><img src="assets/Mike6.jpeg" alt="Lifting Seniors Legends Team Frame"></div>
                 </div>
             </div>
         </div>
@@ -402,12 +406,13 @@
     </div>
 
     <script>
+        /* FIXED: Added 'assets/' prefix to all images in the dataset below */
         const trackData = {
             lite: {
                 title: "CROSSFIT LITE",
                 subtitle: "Stronger. Fitter. Made Simple.",
                 badgeTop: "REAL PEOPLE", badgeMid: "—", badgeBot: "REAL RESULTS",
-                image: "Mike7.jpeg",
+                image: "assets/Mike7.jpeg",
                 benefits: [
                     { icon: "❤️", title: "IMPROVE FITNESS", desc: "Build base athletic capabilities alongside a pack optimized for continuous structural energy." },
                     { icon: "🔥", title: "BURN CALORIES", desc: "Fast-paced metabolic training layouts engineered to burn fat efficiently inside the team framework." },
@@ -419,7 +424,7 @@
                 title: "HYROX RACE PREP",
                 subtitle: "Build Your Engine. Conquer The Race.",
                 badgeTop: "ENDURANCE", badgeMid: "—", badgeBot: "METABOLIC POWER",
-                image: "Mike3.jpeg",
+                image: "assets/Mike3.jpeg",
                 benefits: [
                     { icon: "🏃", title: "RACE SPECIFIC CONDITIONING", desc: "Master the optimal combination of functional movement stations and targeted running intervals." },
                     { icon: "⚡", title: "UNSTOPPABLE STAMINA", desc: "Develop high-capacity threshold endurance to systematically handle the full layout demands of competition." },
@@ -431,7 +436,7 @@
                 title: "MTC CIRCUITS",
                 subtitle: "Stronger. Faster. Together. Every Day.",
                 badgeTop: "COMMUNITY EFFORT", badgeMid: "—", badgeBot: "HIGH INTENSITY",
-                image: "Mike8.jpeg",
+                image: "assets/Mike8.jpeg",
                 benefits: [
                     { icon: "⚡", title: "EFFICIENT & EFFECTIVE", desc: "Get a high-intensity full-body workout finished side-by-side with your peers inside minimal time." },
                     { icon: "💪", title: "BOOST FITNESS", desc: "Drastically increase standard muscle stamina, heart recovery speeds, and foundational core power." },
@@ -443,7 +448,7 @@
                 title: "MTC STRONG TRACK",
                 subtitle: "Lift Heavy. Move Well. Build Strength.",
                 badgeTop: "TRAIN SMART", badgeMid: "—", badgeBot: "LIVE STRONG",
-                image: "Mike11.jpeg",
+                image: "assets/Mike11.jpeg",
                 benefits: [
                     { icon: "⚙️", title: "BUILD SYSTEMIC STRENGTH", desc: "Pure progressive overload mechanics targeting structural skeletal density with team support." },
                     { icon: "🛡️", title: "IMPROVE TECHNIQUE", desc: "Deep precision mechanics tracking under the bar to build confidence with heavy weight parameters." },
@@ -455,7 +460,7 @@
                 title: "CROSSFIT KIDS",
                 subtitle: "Ages 5-8 | Fun. Strong. Confident.",
                 badgeTop: "MOVE & PLAY", badgeMid: "—", badgeBot: "GROW HEALTHY",
-                image: "Mike9.jpeg",
+                image: "assets/Mike9.jpeg",
                 benefits: [
                     { icon: "🧸", title: "STRONG BODIES", desc: "Develop healthy motor patterns, coordination mechanics, and base physical resilience early." },
                     { icon: "⭐", title: "BUILD CONFIDENCE", desc: "Encourage strong self-belief, emotional toughness, and spatial body confidence in our little pack." },
@@ -467,7 +472,7 @@
                 title: "CROSSFIT PRE TEENS",
                 subtitle: "Ages 9-12 | Stronger. Faster. Together.",
                 badgeTop: "COACH LED", badgeMid: "—", badgeBot: "SAFE & DRIVEN",
-                image: "Mike10.jpeg",
+                image: "assets/Mike10.jpeg",
                 benefits: [
                     { icon: "🦾", title: "BUILD STRENGTH & FORM", desc: "Instill flawless execution, foundational barbell patterns, and basic athletic power control." },
                     { icon: "🎯", title: "BUILD CONFIDENCE", desc: "Empower growing teens to push self-limits, hit milestones, and trust personal capabilities." },
@@ -479,7 +484,7 @@
                 title: "55+ LEGENDS TRACK",
                 subtitle: "Stronger Every Day. Better at any age.",
                 badgeTop: "STRONG TODAY", badgeMid: "—", badgeBot: "LEGEND FOR LIFE",
-                image: "Mike6.jpeg",
+                image: "assets/Mike6.jpeg",
                 benefits: [
                     { icon: "❤️", title: "STRENGTH FOR LONGEVITY", desc: "Maintain muscular system viability for long-term daily independent functionality alongside fellow pack lifters." },
                     { icon: "🛡️", title: "MOBILITY PRESERVATION", desc: "Target persistent structural joint stiffness and ease physical locomotion." }
@@ -489,7 +494,7 @@
                 title: "FAMILY FITNESS",
                 subtitle: "Bring the kids. Bring the chaos. Look after you.",
                 badgeTop: "KIDS ALWAYS WELCOME", badgeMid: "—", badgeBot: "PARENTS TRACK",
-                image: "Mike2.jpeg",
+                image: "assets/Mike2.jpeg",
                 benefits: [
                     { icon: "👶", title: "KIDS WELCOME STRUCTURE", desc: "No child care barriers. Complete safe physical tracking loops inside family operational hours." },
                     { icon: "🏋️", title: "FULLY COACHED EFFORT", desc: "Safe foundational structural recovery routines managed entirely by our pro coaching pack." }
@@ -537,7 +542,7 @@
             `;
         }
         
-        // Initial viewport frame load setup
+        // Setup initial viewport load
         window.addEventListener('DOMContentLoaded', () => {
             switchTrackViewport('lite');
         });
