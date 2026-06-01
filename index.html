@@ -9,7 +9,7 @@
     
     <style>
         :root { 
-            --gold: #ffcc00; /* Reverted back to the original classic athletic gold */
+            --gold: #ffcc00; 
             --dark: #000000; 
             --grey: #0f0f0f; 
             --light-grey: #1a1a1a; 
@@ -136,13 +136,26 @@
         
         .track-display-viewport { background: var(--grey); border: 2px solid #222; padding: 50px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: center; }
         
+        /* Subheading Backgrounds Completely Removed */
         .poster-badge {
             border: 3px dashed var(--gold);
-            border-radius: 50%;
-            width: 140px; height: 140px;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            font-family: 'Teko', sans-serif; font-size: 1.4rem; line-height: 0.95; text-align: center; color: #fff;
-            margin: 20px 0; transform: rotate(-3deg); background: rgba(0,0,0,0.6);
+            border-radius: 0;
+            width: auto; 
+            height: auto;
+            display: inline-flex; 
+            flex-direction: row; 
+            gap: 10px;
+            justify-content: flex-start; 
+            align-items: center;
+            font-family: 'Teko', sans-serif; 
+            font-size: 1.5rem; 
+            line-height: 1; 
+            text-align: left; 
+            color: #fff;
+            margin: 15px 0 25px 0; 
+            transform: none; 
+            background: none;
+            padding: 5px 10px 5px 0;
         }
 
         .benefit-row { display: flex; align-items: flex-start; text-align: left; margin-bottom: 20px; }
@@ -150,16 +163,31 @@
         .benefit-text h4 { font-size: 1.5rem; color: #fff; }
         .benefit-text p { margin: 2px 0 0 0; color: #bbb; font-size: 0.9rem; }
 
+        /* Modified to show full uncropped imagery cleanly */
         .img-frame { 
-            width: 100%; border: 3px solid var(--gold); overflow: hidden; background: #000; box-shadow: 6px 6px 0px rgba(255,204,0,0.15);
+            width: 100%; 
+            border: 3px solid var(--gold); 
+            overflow: hidden; 
+            background: #000; 
+            box-shadow: 6px 6px 0px rgba(255,204,0,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .img-frame img { width: 100%; display: block; object-fit: cover; height: 450px; }
+        .img-frame img { 
+            width: 100%; 
+            max-width: 100%;
+            height: 450px; 
+            display: block; 
+            object-fit: contain; /* Changed from cover to contain to guarantee full uncropped visibility */
+            background: #000;
+        }
 
         /* Legacy Events Area */
         .events-section { padding: 100px 0; background: var(--grey); }
         .events-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 50px; }
         .evo-box { background: var(--dark); padding: 40px; border: 3px solid #222; text-align: center; }
-        .evo-box .img-frame img { height: 320px; }
+        .evo-box .img-frame img { height: 320px; object-fit: contain; }
         .evo-box:hover { border-color: var(--gold); }
 
         /* Interactive Booking Engine Workspace */
@@ -208,9 +236,9 @@
         <div class="container nav-container">
             <div class="nav-logo"><img src="public/assets/Logo_with_HyroxCrossfit.png" alt="MTC Pack Logo"></div>
             <ul class="nav-links">
-                <li><a href="#training-tracks">Training Tracks</a></li>
-                <li><a href="#events">Club Events</a></li>
-                <li><a href="#schedule">Timetable</a></li>
+                <li><a href="#training-tracks">The Pack Tracks</a></li>
+                <li><a href="#events">Pack Events</a></li>
+                <li><a href="#schedule">Pack Timetable</a></li>
                 <li><a href="#contact" class="btn-gold">JOIN THE PACK</a></li>
             </ul>
         </div>
@@ -218,30 +246,31 @@
 
     <div class="announcement-bar">
         <div class="carousel-track">
-            <span class="carousel-item">★ CIRCUITS & CROSSFIT LITE — HIGH-OCTANE STRENGTH MADE SIMPLE</span>
-            <span class="carousel-item">★ CROSSFIT KIDS & PRE TEENS — BUILDING ROBUST HEALTHY HABITS EARLY</span>
-            <span class="carousel-item">★ TRIAL INTRO RUNS — 7 DAYS UNLIMITED PATHWAY ACCESS FOR £20</span>
-            <span class="carousel-item">★ CIRCUITS & CROSSFIT LITE — HIGH-OCTANE STRENGTH MADE SIMPLE</span>
+            <span class="carousel-item">★ THE STRENGTH OF THE WOLF IS IN THE PACK — RUN WITH US TODAY</span>
+            <span class="carousel-item">★ HYROX RACE PREP — COMPLETE METABOLIC SYSTEMS FOR THE PACK</span>
+            <span class="carousel-item">★ PACK PATHWAY TRIAL RUNS — 7 DAYS UNLIMITED PATHWAY ACCESS FOR £20</span>
+            <span class="carousel-item">★ CIRCUITS & LITE TRACKS — NO WOLF LEFT BEHIND IN OUR BOX</span>
         </div>
     </div>
 
     <header class="hero">
         <div class="container">
             <div class="poster-title">MORAY TRAINING CLUB</div>
-            <div class="marker-accent">Real People. Real Results. Real Community.</div>
+            <div class="marker-accent">One Pack. No Ego. Real Fitness Results.</div>
             <div class="wolf-tagline">The strength of the wolf is in the pack</div>
-            <p style="letter-spacing: 7px; font-weight: 700; margin-top: 5px; font-size: 1.1rem; color: var(--gold);">LOSSIEMOUTH | EST. 2020</p>
-            <div class="cta-center"><a href="#contact" class="btn-gold">Claim Your Training Pass</a></div>
+            <p style="letter-spacing: 7px; font-weight: 700; margin-top: 5px; font-size: 1.1rem; color: var(--gold);">LOSSIEMOUTH PACK | EST. 2020</p>
+            <div class="cta-center"><a href="#contact" class="btn-gold">Run With The Pack</a></div>
         </div>
     </header>
 
     <section id="training-tracks" class="interactive-program-section">
         <div class="container">
-            <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 15px;">EXPLORE OUR <span class="gold">TRAINING TRACKS</span></h2>
-            <p style="text-align: center; color: #aaa; max-width: 700px; margin: 0 auto 40px auto; font-size: 0.95rem;">Select an active program pathway tab block below to dynamically parse custom schedules, targeted development benefits, and active layout structures.</p>
+            <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 15px;">EXPLORE OUR <span class="gold">PACK TRAINING TRACKS</span></h2>
+            <p style="text-align: center; color: #aaa; max-width: 700px; margin: 0 auto 40px auto; font-size: 0.95rem;">Select an active program pathway below to discover how the pack moves, builds structural capabilities, and trains together.</p>
             
             <div class="tab-button-panel">
                 <button class="tab-btn active" onclick="switchTrackViewport('lite', this)">CrossFit Lite</button>
+                <button class="tab-btn" onclick="switchTrackViewport('hyrox', this)">HYROX Race Prep</button>
                 <button class="tab-btn" onclick="switchTrackViewport('circuits', this)">Circuits</button>
                 <button class="tab-btn" onclick="switchTrackViewport('strong', this)">STRONG Heavy Track</button>
                 <button class="tab-btn" onclick="switchTrackViewport('kids', this)">CrossFit Kids</button>
@@ -258,16 +287,16 @@
 
     <section id="events" class="events-section">
         <div class="container">
-            <div class="poster-title" style="text-align: center; margin-bottom: 50px; font-size: 4rem;">CLUB <span class="gold">PORTFOLIO</span></div>
+            <div class="poster-title" style="text-align: center; margin-bottom: 50px; font-size: 4rem;">PACK <span class="gold">PORTFOLIO</span></div>
             <div class="events-grid">
                 <div class="evo-box">
                     <h2>HYROX COMPETITION <span class="gold">TRACK</span></h2>
-                    <p style="font-size:0.9rem; color:#aaa; margin-bottom:20px;">Building complete metabolic engines for the big stage simulator runs.</p>
+                    <p style="font-size:0.9rem; color:#aaa; margin-bottom:20px;">Building complete functional metabolic engines so the whole pack dominates the big simulator runs.</p>
                     <div class="img-frame"><img src="public/assets/hyrox_glasgow_stage.jpg" alt="Hyrox Glasgow Stage Showcase"></div>
                 </div>
                 <div class="evo-box">
                     <h2>SENIOR LIFTING <span class="gold">SERIES</span></h2>
-                    <p style="font-size:0.9rem; color:#aaa; margin-bottom:20px;">Powerlifting and structured weight training systems for our master 55+ lifters.</p>
+                    <p style="font-size:0.9rem; color:#aaa; margin-bottom:20px;">Powerlifting and structured weight training systems for the master 55+ lifters of our pack.</p>
                     <div class="img-frame"><img src="public/assets/lifting_seniors_legends.jpg" alt="Lifting Seniors Legends Team Frame"></div>
                 </div>
             </div>
@@ -276,7 +305,7 @@
 
     <section id="schedule" style="padding: 100px 0; background: var(--dark);">
         <div class="container">
-            <div class="poster-title" style="text-align: center; margin-bottom: 50px;">CLASS <span class="gold">TIMETABLE</span></div>
+            <div class="poster-title" style="text-align: center; margin-bottom: 50px;">PACK CLASS <span class="gold">TIMETABLE</span></div>
             <img src="public/assets/timetable.png" alt="MTC Box Class Schedule Timetable" class="timetable-display">
         </div>
     </section>
@@ -286,14 +315,15 @@
             <div class="contact-grid">
                 
                 <div class="booking-workspace">
-                    <h2 style="font-size:2.8rem; line-height:0.9; margin-bottom:5px;">SECURE YOUR <span class="gold">SESSION SLOT</span></h2>
-                    <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 25px;">Toggle your programmatic membership track, pick an upcoming date from our rolling matrix, and reserve an open training slot block.</p>
+                    <h2 style="font-size:2.8rem; line-height:0.9; margin-bottom:5px;">SECURE YOUR <span class="gold">PACK SLOT</span></h2>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 25px;">Toggle your programmatic membership track, pick an upcoming date from our rolling matrix, and reserve an open training slot block inside our pack.</p>
                     
                     <form action="https://formspree.io/f/your_form_id_here" method="POST" id="master-booking-form">
                         
                         <div class="booking-step-title">1. Select Membership Path Track</div>
                         <select id="program-selector" name="program" onchange="updateProgramSelection()">
-                            <option value="trial" data-price="20.00">7-Day Unlimited Trial Access Pass — £20.00</option>
+                            <option value="trial" data-price="20.00">7-Day Unlimited Pack Trial Access Pass — £20.00</option>
+                            <option value="hyrox" data-price="12.00">HYROX Race Prep Session Drop-In — £12.00</option>
                             <option value="lite" data-price="12.00">CrossFit Lite Drop-In — £12.00</option>
                             <option value="circuits" data-price="10.00">Circuits Fast Class Drop-In — £10.00</option>
                             <option value="strong" data-price="15.00">STRONG Heavy Specific Run — £15.00</option>
@@ -328,7 +358,7 @@
 
                         <div class="booking-summary-panel">
                             <h4 style="font-size: 1.3rem; margin-bottom: 12px; color:var(--gold); letter-spacing:1px;">Booking Invoice Summary</h4>
-                            <div class="summary-row"><span>Focused Program:</span><strong id="summary-program">7-Day Unlimited Trial Access Pass</strong></div>
+                            <div class="summary-row"><span>Focused Program:</span><strong id="summary-program">7-Day Unlimited Pack Trial Access Pass</strong></div>
                             <div class="summary-row"><span>Assigned Date:</span><strong id="summary-date">Not Selected</strong></div>
                             <div class="summary-row"><span>Class Time Block:</span><strong id="summary-time">Not Selected</strong></div>
                             <div class="summary-row total"><span>Total Amount Owed:</span><strong id="summary-price">£20.00</strong></div>
@@ -366,34 +396,46 @@
             lite: {
                 title: "CROSSFIT LITE",
                 subtitle: "Stronger. Fitter. Made Simple.",
-                badgeTop: "REAL", badgeMid: "PEOPLE", badgeBot: "RESULTS",
+                badgeTop: "REAL PEOPLE", badgeMid: "—", badgeBot: "REAL RESULTS",
                 image: "public/assets/Mike7.jpeg",
                 benefits: [
-                    { icon: "❤️", title: "IMPROVE FITNESS", desc: "Build base athletic capabilities with movements optimized for continuous energy." },
-                    { icon: "🔥", title: "BURN CALORIES", desc: "Fast-paced metabolic training layouts engineered to burn fat efficiently." },
-                    { icon: "👥", title: "SUPPORTIVE COMMUNITY", desc: "Train alongside regular people pushing together in a non-intimidating room." },
-                    { icon: "🏋️", title: "ALL ABILITIES WELCOME", desc: "Zero weightlifting barriers. Fully functional, accessible coaching movements." }
+                    { icon: "❤️", title: "IMPROVE FITNESS", desc: "Build base athletic capabilities alongside a pack optimized for continuous structural energy." },
+                    { icon: "🔥", title: "BURN CALORIES", desc: "Fast-paced metabolic training layouts engineered to burn fat efficiently inside the team framework." },
+                    { icon: "👥", title: "SUPPORTIVE COMMUNITY", desc: "Train alongside regular people pushing together in a non-intimidating environment. No wolf is left behind." },
+                    { icon: "🏋️", title: "ALL ABILITIES WELCOME", desc: "Zero weightlifting barriers. Fully functional, completely accessible professional coaching tracks." }
+                ]
+            },
+            hyrox: {
+                title: "HYROX RACE PREP",
+                subtitle: "Build Your Engine. Conquer The Race.",
+                badgeTop: "ENDURANCE", badgeMid: "—", badgeBot: "METABOLIC POWER",
+                image: "public/assets/hyrox_glasgow_stage.jpg",
+                benefits: [
+                    { icon: "🏃", title: "RACE SPECIFIC CONDITIONING", desc: "Master the optimal combination of functional movement stations and targeted running intervals." },
+                    { icon: "⚡", title: "UNSTOPPABLE STAMINA", desc: "Develop high-capacity threshold endurance to systematically handle the full layout demands of competition." },
+                    { icon: "🐺", title: "PACK SPEED WORK", desc: "Push past individual performance ceilings by pacing directly alongside other motivated pack members." },
+                    { icon: "📊", title: "STRATEGY & TECHNIQUE", desc: "Perfect execution mechanics on the sleds, rowers, ski-ergs, and wall balls to shave minutes off your times." }
                 ]
             },
             circuits: {
                 title: "MTC CIRCUITS",
                 subtitle: "Stronger. Faster. Together. Every Day.",
-                badgeTop: "AFTER", badgeMid: "SCHOOL", badgeBot: "DROP-OFF",
+                badgeTop: "COMMUNITY EFFORT", badgeMid: "—", badgeBot: "HIGH INTENSITY",
                 image: "public/assets/Mike8.jpeg",
                 benefits: [
-                    { icon: "⚡", title: "EFFICIENT & EFFECTIVE", desc: "Get a high-intensity full-body workout finished inside less time." },
-                    { icon: "💪", title: "BOOST FITNESS", desc: "Drastically increase standard muscle stamina, heart recovery, and core power." },
-                    { icon: "🔥", title: "BURN CALORIES", desc: "High-octane interval stations that trigger long-lasting post-workout metabolic burn." },
-                    { icon: "🔓", title: "ALL LEVELS WELCOME", desc: "Completely scalable circuit block designs catering to fresh beginners or elite athletes." }
+                    { icon: "⚡", title: "EFFICIENT & EFFECTIVE", desc: "Get a high-intensity full-body workout finished side-by-side with your peers inside minimal time." },
+                    { icon: "💪", title: "BOOST FITNESS", desc: "Drastically increase standard muscle stamina, heart recovery speeds, and foundational core power." },
+                    { icon: "🔥", title: "BURN CALORIES", desc: "High-octane interval stations that trigger long-lasting post-workout metabolic burn across the whole team." },
+                    { icon: "🔓", title: "ALL LEVELS WELCOME", desc: "Completely scalable circuit designs welcoming absolute beginners or elite pack athletes smoothly." }
                 ]
             },
             strong: {
                 title: "MTC STRONG TRACK",
                 subtitle: "Lift Heavy. Move Well. Build Strength.",
-                badgeTop: "TRAIN", badgeMid: "SMART.", badgeBot: "LIVE STRONG",
+                badgeTop: "TRAIN SMART", badgeMid: "—", badgeBot: "LIVE STRONG",
                 image: "public/assets/Mike11.jpeg",
                 benefits: [
-                    { icon: "⚙️", title: "BUILD SYSTEMIC STRENGTH", desc: "Pure progressive overload mechanics targeting structural skeletal density." },
+                    { icon: "⚙️", title: "BUILD SYSTEMIC STRENGTH", desc: "Pure progressive overload mechanics targeting structural skeletal density with team support." },
                     { icon: "🛡️", title: "IMPROVE TECHNIQUE", desc: "Deep precision mechanics tracking under the bar to build confidence with heavy weight parameters." },
                     { icon: "🏆", title: "PERFORM BETTER", desc: "Translate brute functional capacity cleanly into multi-sport compound output metrics." },
                     { icon: "🔋", title: "CONFIDENCE UNDER THE BAR", desc: "Master the fundamental heavy compound movements like squats, deadlifts, and presses safely." }
@@ -402,45 +444,45 @@
             kids: {
                 title: "CROSSFIT KIDS",
                 subtitle: "Ages 5-8 | Fun. Strong. Confident.",
-                badgeTop: "MOVE.", badgeMid: "PLAY.", badgeBot: "GROW.",
+                badgeTop: "MOVE & PLAY", badgeMid: "—", badgeBot: "GROW HEALTHY",
                 image: "public/assets/Mike9.jpeg",
                 benefits: [
                     { icon: "🧸", title: "STRONG BODIES", desc: "Develop healthy motor patterns, coordination mechanics, and base physical resilience early." },
-                    { icon: "⭐", title: "BUILD CONFIDENCE", desc: "Encourage strong self-belief, emotional toughness, and spatial body confidence." },
-                    { icon: "😃", title: "HAVE FUN", desc: "Ego-free team training systems loaded with high-fives, collaborative fitness games, and smiling packs." },
-                    { icon: "🌱", title: "HEALTHY HABITS", desc: "Establish an organic, natural connection to training and functional output for life." }
+                    { icon: "⭐", title: "BUILD CONFIDENCE", desc: "Encourage strong self-belief, emotional toughness, and spatial body confidence in our little pack." },
+                    { icon: "😃", title: "HAVE FUN", desc: "Ego-free group designs loaded with high-fives, collaborative fitness games, and smiling faces." },
+                    { icon: "🌱", title: "HEALTHY HABITS", desc: "Establish an organic, natural connection to physical training and functional output for life." }
                 ]
             },
             teens: {
                 title: "CROSSFIT PRE TEENS",
                 subtitle: "Ages 9-12 | Stronger. Faster. Together.",
-                badgeTop: "COACH", badgeMid: "LED", badgeBot: "SAFE",
+                badgeTop: "COACH LED", badgeMid: "—", badgeBot: "SAFE & DRIVEN",
                 image: "public/assets/Mike10.jpeg",
                 benefits: [
-                    { icon: "🦾", title: "BUILD STRENGTH & FORM", desc: "Instill flawless execution, barbell patterns, and basic athletic power control." },
+                    { icon: "🦾", title: "BUILD STRENGTH & FORM", desc: "Instill flawless execution, foundational barbell patterns, and basic athletic power control." },
                     { icon: "🎯", title: "BUILD CONFIDENCE", desc: "Empower growing teens to push self-limits, hit milestones, and trust personal capabilities." },
-                    { icon: "🤝", title: "TEAMWORK SKILLS", desc: "Foster strong cross-collaboration, peer support, communication, and deep friendships." },
-                    { icon: "🧠", title: "FOCUS & DISCIPLINE", desc: "Direct high energy into clean mental control that translates straight into better school focus." }
+                    { icon: "🤝", title: "TEAMWORK SKILLS", desc: "Foster strong cross-collaboration, peer support, communication, and deep friendships inside the team." },
+                    { icon: "🧠", title: "FOCUS & DISCIPLINE", desc: "Direct high kinetic energy into clean mental control that translates straight into better focus outside the box." }
                 ]
             },
             legends: {
                 title: "55+ LEGENDS TRACK",
                 subtitle: "Stronger Every Day. Better at any age.",
-                badgeTop: "STRONG", badgeMid: "TODAY.", badgeBot: "LEGEND.",
+                badgeTop: "STRONG TODAY", badgeMid: "—", badgeBot: "LEGEND FOR LIFE",
                 image: "public/assets/lifting_seniors_legends.jpg",
                 benefits: [
-                    { icon: "❤️", title: "STRENGTH FOR LONGEVITY", desc: "Maintain muscular system viability for long-term daily independent functionality." },
+                    { icon: "❤️", title: "STRENGTH FOR LONGEVITY", desc: "Maintain muscular system viability for long-term daily independent functionality alongside fellow pack lifters." },
                     { icon: "🛡️", title: "MOBILITY PRESERVATION", desc: "Target persistent structural joint stiffness and ease physical locomotion." }
                 ]
             },
             family: {
                 title: "FAMILY FITNESS",
                 subtitle: "Bring the kids. Bring the chaos. Look after you.",
-                badgeTop: "KIDS", badgeMid: "ALWAYS", badgeBot: "WELCOME",
+                badgeTop: "KIDS ALWAYS WELCOME", badgeMid: "—", badgeBot: "PARENTS TRACK",
                 image: "public/assets/family_kids_welcome_classes.jpg",
                 benefits: [
                     { icon: "👶", title: "KIDS WELCOME STRUCTURE", desc: "No child care barriers. Complete safe physical tracking loops inside family operational hours." },
-                    { icon: "🏋️", title: "FULLY COACHED EFFORT", desc: "Safe foundational structural recovery routines managed entirely by our pro team." }
+                    { icon: "🏋️", title: "FULLY COACHED EFFORT", desc: "Safe foundational structural recovery routines managed entirely by our pro coaching pack." }
                 ]
             }
         };
@@ -471,9 +513,9 @@
                     <div class="marker-accent" style="font-size: 1.6rem; color:#fff;">${track.subtitle}</div>
                     
                     <div class="poster-badge">
-                        <span style="font-weight:900; color:var(--gold);">${track.badgeTop}</span>
-                        <span style="font-size:1rem; letter-spacing:0;">${track.badgeMid}</span>
-                        <span style="font-weight:900;">${track.badgeBot}</span>
+                        <span style="font-weight:900; color:var(--gold); text-transform:uppercase;">${track.badgeTop}</span>
+                        <span>${track.badgeMid}</span>
+                        <span style="font-weight:900; text-transform:uppercase;">${track.badgeBot}</span>
                     </div>
 
                     ${benefitsHTML}
@@ -487,6 +529,7 @@
 
         const programSchedules = {
             trial: ["06:00 AM", "07:15 AM", "09:15 AM", "12:00 PM", "05:30 PM", "06:45 PM"],
+            hyrox: ["06:00 AM (Mon/Wed)", "06:45 PM (Tue/Thu)", "09:00 AM (Sat)"],
             lite: ["09:15 AM (Tue/Thu)", "05:30 PM"],
             circuits: ["09:15 AM (Mon-Fri)"],
             strong: ["06:30 PM (Tue/Thu/Fri)"],
