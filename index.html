@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
-        :root { --gold: #d4af37; --dark: #0a0a0a; --grey: #1a1a1a; }
+        :root { --gold: #d4af37; --dark: #0a0a0a; --grey: #1a1a1a; --light-grey: #2a2a2a; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Montserrat', sans-serif; background: #000; color: #fff; margin: 0; line-height: 1.6; overflow-x: hidden; }
         h1, h2, h3, h4 { font-family: 'Teko', sans-serif; text-transform: uppercase; margin: 0; letter-spacing: 1px; }
@@ -117,11 +117,112 @@
             flex-wrap: wrap;
         }
 
-        /* Contact Form & Map */
+        /* DYNAMIC INTERACTIVE BOOKING ENGINE WORKSPACE */
+        .booking-workspace {
+            background: var(--grey);
+            border: 2px solid var(--gold);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+        }
+        .booking-step-title {
+            font-family: 'Teko';
+            font-size: 1.6rem;
+            color: var(--gold);
+            margin-bottom: 12px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+        .booking-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .calendar-day-header {
+            font-family: 'Teko';
+            font-size: 1.1rem;
+            color: #666;
+            text-transform: uppercase;
+        }
+        .calendar-cell {
+            background: #000;
+            padding: 12px 5px;
+            border: 1px solid #222;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+            font-size: 0.9rem;
+        }
+        .calendar-cell:hover:not(.disabled) {
+            border-color: var(--gold);
+            transform: translateY(-1px);
+        }
+        .calendar-cell.selected {
+            background: var(--gold);
+            color: #000;
+            border-color: var(--gold);
+        }
+        .calendar-cell.disabled {
+            color: #333;
+            cursor: not-allowed;
+            background: #050505;
+        }
+        .time-slots-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        .time-slot {
+            background: #000;
+            border: 1px solid #333;
+            padding: 12px;
+            text-align: center;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: 0.2s;
+            font-size: 0.85rem;
+        }
+        .time-slot:hover {
+            border-color: var(--gold);
+        }
+        .time-slot.selected {
+            background: var(--gold);
+            color: #000;
+            border-color: var(--gold);
+        }
+        .booking-summary-panel {
+            background: #000;
+            border: 1px dashed var(--gold);
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        .summary-row.total {
+            border-top: 1px solid #333;
+            padding-top: 10px;
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 1.1rem;
+        }
+
+        /* Contact Form & Map Container Styles */
         .contact-container { padding: 100px 0; background: #0a0a0a; }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-        input, select, textarea { width: 100%; padding: 15px; margin-bottom: 20px; background: #1a1a1a; border: 1px solid #333; color: #fff; font-family: 'Montserrat'; border-radius: 4px; box-sizing: border-box; }
-        .btn-submit { background: var(--gold); color: #000; border: none; padding: 20px; width: 100%; font-weight: 800; cursor: pointer; text-transform: uppercase; font-size: 1.2rem; font-family: 'Montserrat'; }
+        .contact-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; }
+        input, select, textarea { width: 100%; padding: 15px; margin-bottom: 20px; background: #101010; border: 1px solid #333; color: #fff; font-family: 'Montserrat'; border-radius: 4px; box-sizing: border-box; }
+        input:focus, select:focus, textarea:focus { border-color: var(--gold); outline: none; }
+        .btn-submit { background: var(--gold); color: #000; border: none; padding: 20px; width: 100%; font-weight: 800; cursor: pointer; text-transform: uppercase; font-size: 1.2rem; font-family: 'Montserrat'; transition: 0.3s; }
+        .btn-submit:hover { background: #fff; }
 
         /* Footer */
         footer { background: #000; border-top: 1px solid #222; padding: 80px 0 40px; }
@@ -230,7 +331,7 @@
             <div class="calendar-list">
                 <h2 style="text-align: center; margin-bottom: 30px;">UPCOMING <span class="gold">ROADMAP</span></h2>
                 
-                <a href="#" class="calendar-item">
+                <a href="#contact" class="calendar-item">
                     <span class="cal-month">MAY</span>
                     <span class="cal-event">RAD Highland Throwdown</span>
                     <span class="cal-link">VIEW SITE →</span>
@@ -240,7 +341,7 @@
                     <span class="cal-event">Sunrise Series Beach Edition</span>
                     <span class="cal-link">REGISTER →</span>
                 </a>
-                <a href="#" class="calendar-item">
+                <a href="#contact" class="calendar-item">
                     <span class="cal-month">JULY</span>
                     <span class="cal-event">Hyrox PFT Simulation</span>
                     <span class="cal-link">VIEW SITE →</span>
@@ -283,24 +384,62 @@
     <section id="contact" class="contact-container">
         <div class="container">
             <div class="contact-grid">
-                <div>
-                    <h2>CLAIM YOUR <span class="gold">TRIAL WEEK</span></h2>
-                    <form action="https://formspree.io/f/your_form_id_here" method="POST">
-                        <input type="text" name="name" placeholder="Full Name" required>
-                        <input type="email" name="email" placeholder="Email Address" required>
-                        <select name="tier">
-                            <option>Trial Week (£20)</option>
-                            <option>CrossFit Membership</option>
-                            <option>Hyrox Training</option>
-                            <option>Personal Training</option>
+                <!-- STEP-BY-STEP INTERACTIVE BOOKING ENGINE CONTAINER -->
+                <div class="booking-workspace">
+                    <h2>SECURE YOUR <span class="gold">SESSION SLOT</span></h2>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 25px;">Select your training tier, pick an available session date from the rolling interactive schedule, and pick your time block.</p>
+                    
+                    <form action="https://formspree.io/f/your_form_id_here" method="POST" id="master-booking-form">
+                        
+                        <div class="booking-step-title">1. Choose Training Focus</div>
+                        <select id="program-selector" name="program" onchange="updateProgramSelection()">
+                            <option value="trial" data-price="20.00">Trial Week Access — £20.00</option>
+                            <option value="crossfit" data-price="12.00">CrossFit Class Drop-In — £12.00</option>
+                            <option value="hyrox" data-price="12.00">Hyrox Conditioning Drop-In — £12.00</option>
+                            <option value="pt" data-price="45.00">1-on-1 Personal Training — £45.00</option>
                         </select>
-                        <textarea name="goals" rows="5" placeholder="Tell us about your fitness goals..."></textarea>
-                        <button type="submit" class="btn-submit">Claim Offer Now</button>
+
+                        <div class="booking-step-title">2. Select Date</div>
+                        <div class="booking-grid" id="calendar-day-wrapper">
+                            <!-- Headers loaded via Javascript -->
+                            <div class="calendar-day-header">Mon</div>
+                            <div class="calendar-day-header">Tue</div>
+                            <div class="calendar-day-header">Wed</div>
+                            <div class="calendar-day-header">Thu</div>
+                            <div class="calendar-day-header">Fri</div>
+                            <div class="calendar-day-header">Sat</div>
+                            <div class="calendar-day-header">Sun</div>
+                            <!-- Live days dynamically generated below -->
+                        </div>
+                        <input type="hidden" name="selected_date" id="hidden-date-input" required>
+
+                        <div class="booking-step-title">3. Pick Class Time Slot</div>
+                        <div class="time-slots-container" id="time-slots-wrapper">
+                            <!-- Populated on click via js -->
+                            <div style="color:#666; font-size:0.85rem; grid-column: 1/-1;">Select a date above to check available session times...</div>
+                        </div>
+                        <input type="hidden" name="selected_time" id="hidden-time-input" required>
+
+                        <div class="booking-step-title">4. Athlete Information</div>
+                        <input type="text" name="athlete_name" placeholder="Full Name" required>
+                        <input type="email" name="athlete_email" placeholder="Email Address" required>
+                        <textarea name="fitness_goals" rows="3" placeholder="List any injuries or core fitness goals here..."></textarea>
+
+                        <div class="booking-summary-panel">
+                            <h4 style="font-size: 1.2rem; margin-bottom: 10px; color:var(--gold);">Booking Receipt Summary</h4>
+                            <div class="summary-row"><span>Selected Program:</span><span id="summary-program">Trial Week Access</span></div>
+                            <div class="summary-row"><span>Date:</span><span id="summary-date">Not Selected</span></div>
+                            <div class="summary-row"><span>Session Time:</span><span id="summary-time">Not Selected</span></div>
+                            <div class="summary-row total"><span>Total Amount Due Now:</span><span id="summary-price">£20.00</span></div>
+                        </div>
+
+                        <button type="submit" class="btn-submit" style="margin-top:20px;">Complete My Booking Request</button>
                     </form>
                 </div>
+
                 <div>
                     <h2>FIND <span class="gold">US</span></h2>
-                    <div style="border: 2px solid var(--gold); border-radius: 8px; overflow: hidden;">
+                    <div style="border: 2px solid var(--gold); border-radius: 8px; overflow: hidden; margin-bottom: 30px;">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17124.81977717462!2d-3.2982846500000003!3d57.71424915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4885a0ca4eef495d%3A0x6497793ecfffa547!2sLossiemouth!5e0!3m2!1sen!2suk!4v1710000000000!5m2!1sen!2suk" width="100%" height="450" style="border:0; filter: grayscale(1) invert(1);" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
@@ -349,6 +488,94 @@
         <p>This site uses cookies to enhance your experience. <a href="#cookies" class="gold">Learn More</a></p>
         <button class="btn-gold" style="padding: 10px 20px;" onclick="document.getElementById('cookie-banner').style.display='none'">Accept</button>
     </div>
+
+    <!-- BOOKING CONTROLLER ARCHITECTURE ENGINE Script -->
+    <script>
+        // Mock data schedule blocks mapping training tracks to live times
+        const programSchedules = {
+            trial: ["06:00 AM", "07:15 AM", "09:30 AM", "12:00 PM", "05:30 PM", "06:45 PM"],
+            crossfit: ["06:00 AM", "07:15 AM", "09:30 AM", "04:30 PM", "05:30 PM", "06:45 PM"],
+            hyrox: ["06:00 AM", "12:00 PM", "05:30 PM", "07:00 PM"],
+            pt: ["08:00 AM", "10:30 AM", "11:30 AM", "01:30 PM", "03:00 PM"]
+        };
+
+        const calendarContainer = document.getElementById('calendar-day-wrapper');
+        const slotsContainer = document.getElementById('time-slots-wrapper');
+        
+        // Build an automated rolling 2-week active calendar skip days in past
+        function initCalendarEngine() {
+            const today = new Date();
+            const currentDayOfWeek = today.getDay(); // 0 is Sun, 1 is Mon...
+            
+            // Re-align day offset so Monday displays first in line grid
+            const startOffset = currentDayOfWeek === 0 ? -6 : 1 - currentDayOfWeek;
+            
+            for(let i = 0; i < 14; i++) {
+                const targetDate = new Date();
+                targetDate.setDate(today.getDate() + startOffset + i);
+                
+                const dayCell = document.createElement('div');
+                dayCell.classList.add('calendar-cell');
+                dayCell.innerText = targetDate.getDate();
+                
+                // Block matching dates that fall before today's actual date
+                if(targetDate.setHours(0,0,0,0) < today.setHours(0,0,0,0)) {
+                    dayCell.classList.add('disabled');
+                } else {
+                    const formattedDate = targetDate.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+                    dayCell.setAttribute('data-date-str', formattedDate);
+                    dayCell.addEventListener('click', () => selectDateHandler(dayCell, formattedDate));
+                }
+                calendarContainer.appendChild(dayCell);
+            }
+        }
+
+        function selectDateHandler(element, dateString) {
+            document.querySelectorAll('.calendar-cell').forEach(c => c.classList.remove('selected'));
+            element.classList.add('selected');
+            
+            document.getElementById('hidden-date-input').value = dateString;
+            document.getElementById('summary-date').innerText = dateString;
+            
+            renderActiveTimeSlots();
+        }
+
+        function updateProgramSelection() {
+            const selector = document.getElementById('program-selector');
+            const selectedOption = selector.options[selector.selectedIndex];
+            
+            document.getElementById('summary-program').innerText = selectedOption.text.split('—')[0].trim();
+            document.getElementById('summary-price').innerText = "£" + selectedOption.getAttribute('data-price');
+            
+            // Re-render schedule blocks if date is already picked
+            if(document.getElementById('hidden-date-input').value) {
+                renderActiveTimeSlots();
+            }
+        }
+
+        function renderActiveTimeSlots() {
+            slotsContainer.innerHTML = '';
+            const activeProgram = document.getElementById('program-selector').value;
+            const availableTimes = programSchedules[activeProgram] || [];
+            
+            availableTimes.forEach(time => {
+                const slotElement = document.createElement('div');
+                slotElement.classList.add('time-slot');
+                slotElement.innerText = time;
+                slotElement.addEventListener('click', () => {
+                    document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+                    slotElement.classList.add('selected');
+                    
+                    document.getElementById('hidden-time-input').value = time;
+                    document.getElementById('summary-time').innerText = time;
+                });
+                slotsContainer.appendChild(slotElement);
+            });
+        }
+
+        // Initialize script engine targets
+        initCalendarEngine();
+    </script>
 
 </body>
 </html>
