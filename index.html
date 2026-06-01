@@ -121,7 +121,8 @@
         /* Spacier Hero Layout */
         .hero { 
             height: 85vh; /* Expanded height for more room */
-            background: #000 linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)), url('Mike5.jpg') no-repeat center center/cover;
+            /* UPDATED PATH: Points to your new background image with an overlay tint */
+            background: #000 linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)), url('assets/backwomen.jpg') no-repeat center center/cover;
             display: flex; align-items: center; justify-content: center; text-align: center; 
             border-bottom: 5px solid var(--gold);
         }
@@ -535,10 +536,11 @@
                 </div>
             `;
         }
-
-        window.onload = function() {
-            switchTrackViewport('lite', document.querySelector('.tab-btn.active'));
-        };
+        
+        // Initial viewport frame load setup
+        window.addEventListener('DOMContentLoaded', () => {
+            switchTrackViewport('lite');
+        });
     </script>
 </body>
 </html>
