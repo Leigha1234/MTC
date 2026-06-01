@@ -118,18 +118,18 @@
         }
         .cta-center { margin-top: 15px; text-align: center; width: 100%; }
 
-        /* Hero — FIXED with full local path URL syntax */
+        /* Hero — Using project relative asset path */
         .hero { 
             height: 70vh; 
-            background: #000 linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)), url('file:///C:/Users/hills/MTC/public/assets/backwomen.jpg') no-repeat center center/cover;
+            background: #000 linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)), url('public/assets/backwomen.jpg') no-repeat center center/cover;
             display: flex; align-items: center; justify-content: center; text-align: center; 
             border-bottom: 5px solid var(--gold);
         }
 
-        /* Tracks Section Wrapper — FIXED with full local path URL syntax */
+        /* Tracks Section Wrapper — Using project relative asset path */
         .interactive-program-section { 
             padding: 100px 0; 
-            background: #000 linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), url('file:///C:/Users/hills/MTC/public/assets/Mike2.jpeg') no-repeat center center/cover;
+            background: #000 linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), url('public/assets/Mike2.jpeg') no-repeat center center/cover;
             border-bottom: 3px solid #111; 
         }
         .tab-button-panel { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 50px; }
@@ -293,12 +293,12 @@
                 <div class="evo-box">
                     <h2>HYROX COMPETITION <span class="gold">TRACK</span></h2>
                     <p style="font-size:0.9rem; color:#aaa; margin-bottom:20px;">Building complete functional metabolic engines so the whole pack dominates the big simulator runs.</p>
-                    <div class="img-frame"><img src="file:///C:/Users/hills/MTC/public/assets/wallballs.jpeg" alt="Hyrox Glasgow Stage Showcase"></div>
+                    <div class="img-frame"><img src="public/assets/wallballs.jpeg" alt="Hyrox Glasgow Stage Showcase"></div>
                 </div>
                 <div class="evo-box">
                     <h2>SENIOR LIFTING <span class="gold">SERIES</span></h2>
                     <p style="font-size:0.9rem; color:#aaa; margin-bottom:20px;">Powerlifting and structured weight training systems for the master 55+ lifters of our pack.</p>
-                    <div class="img-frame"><img src="file:///C:/Users/hills/MTC/public/assets/Mike6.jpeg" alt="Lifting Seniors Legends Team Frame"></div>
+                    <div class="img-frame"><img src="public/assets/Mike6.jpeg" alt="Lifting Seniors Legends Team Frame"></div>
                 </div>
             </div>
         </div>
@@ -403,7 +403,7 @@
                 title: "HYROX RACE PREP",
                 subtitle: "Build Your Engine. Conquer The Race.",
                 badgeTop: "ENDURANCE", badgeMid: "—", badgeBot: "METABOLIC POWER",
-                image: "file:///C:/Users/hills/MTC/public/assets/Mike3.jpeg",
+                image: "public/assets/Mike3.jpeg",
                 benefits: [
                     { icon: "🏃", title: "RACE SPECIFIC CONDITIONING", desc: "Master the optimal combination of functional movement stations and targeted running intervals." },
                     { icon: "⚡", title: "UNSTOPPABLE STAMINA", desc: "Develop high-capacity threshold endurance to systematically handle the full layout demands of competition." },
@@ -463,7 +463,7 @@
                 title: "55+ LEGENDS TRACK",
                 subtitle: "Stronger Every Day. Better at any age.",
                 badgeTop: "STRONG TODAY", badgeMid: "—", badgeBot: "LEGEND FOR LIFE",
-                image: "public/assets/lifting_seniors_legends.jpg",
+                image: "public/assets/Mike6.jpeg",
                 benefits: [
                     { icon: "❤️", title: "STRENGTH FOR LONGEVITY", desc: "Maintain muscular system viability for long-term daily independent functionality alongside fellow pack lifters." },
                     { icon: "🛡️", title: "MOBILITY PRESERVATION", desc: "Target persistent structural joint stiffness and ease physical locomotion." }
