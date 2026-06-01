@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moray Training Club | The Pack Functional Fitness Gym</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Permanent+Marker&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700;900&family=Permanent+Marker&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
         :root { 
-            --gold: #f2be22; 
+            --gold: #ffe600; /* Boosted to an ultra-saturated, vibrant pure yellow */
             --dark: #000000; 
             --grey: #0f0f0f; 
             --light-grey: #1a1a1a; 
@@ -55,13 +55,25 @@
             margin: 10px 0;
         }
 
+        .wolf-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #fff;
+            margin: 15px 0 25px 0;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
         .gold { color: var(--gold); }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
         /* Navigation */
-        nav { background: rgba(0,0,0,0.95); padding: 15px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--gold); }
+        nav { background: rgba(0,0,0,0.95); padding: 10px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--gold); }
         .nav-container { display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo img { height: 75px; width: auto; display: block; filter: drop-shadow(0 0 8px var(--gold)); }
+        .nav-logo img { height: 110px; width: auto; display: block; filter: drop-shadow(0 0 12px rgba(255, 230, 0, 0.45)); }
         .nav-links { list-style: none; display: flex; gap: 20px; margin: 0; align-items: center; }
         .nav-links a { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
         
@@ -104,12 +116,12 @@
             box-shadow: 4px 4px 0px var(--gold);
             transform: translate(2px, 2px);
         }
-        .cta-center { margin-top: 35px; text-align: center; width: 100%; }
+        .cta-center { margin-top: 15px; text-align: center; width: 100%; }
 
         /* Hero */
         .hero { 
-            height: 65vh; 
-            background: #000 linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.85)), url('public/assets/crossfit_moray_box_floor.jpg') no-repeat center center/cover;
+            height: 70vh; 
+            background: #000 linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)), url('public/assets/crossfit_moray_box_floor.jpg') no-repeat center center/cover;
             display: flex; align-items: center; justify-content: center; text-align: center; 
             border-bottom: 5px solid var(--gold);
         }
@@ -139,7 +151,7 @@
         .benefit-text p { margin: 2px 0 0 0; color: #bbb; font-size: 0.9rem; }
 
         .img-frame { 
-            width: 100%; border: 3px solid var(--gold); overflow: hidden; background: #000; box-shadow: 6px 6px 0px rgba(242,190,34,0.15);
+            width: 100%; border: 3px solid var(--gold); overflow: hidden; background: #000; box-shadow: 6px 6px 0px rgba(255,230,0,0.15);
         }
         .img-frame img { width: 100%; display: block; object-fit: cover; height: 450px; }
 
@@ -179,20 +191,14 @@
 
         /* Footer links */
         footer { background: #000; border-top: 2px solid #222; padding: 80px 0 40px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
         .footer-links h4 { color: var(--gold); margin-bottom: 25px; font-size: 1.5rem; }
-        .footer-links ul { list-style: none; padding: 0; }
-        .footer-links li { margin-bottom: 12px; }
-        .footer-links a { color: #777; text-decoration: none; font-size: 0.9rem; }
-        .footer-links a:hover { color: #fff; }
-        #cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--grey); border-top: 3px solid var(--gold); padding: 25px; z-index: 10000; display: flex; justify-content: center; align-items: center; gap: 30px; box-sizing: border-box; }
-        
         .timetable-display { width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto; border: 2px solid var(--gold); }
 
         @media (max-width: 1000px) {
             .track-display-viewport { grid-template-columns: 1fr; padding: 30px 20px; }
             .events-grid, .contact-grid { grid-template-columns: 1fr; }
             .img-frame img { height: 320px; }
+            .nav-logo img { height: 85px; }
         }
     </style>
 </head>
@@ -221,20 +227,19 @@
 
     <header class="hero">
         <div class="container">
-            <div class="poster-title">MORAY TRAINING</div>
+            <div class="poster-title">MORAY TRAINING CLUB</div>
             <div class="marker-accent">Real People. Real Results. Real Community.</div>
-            <p style="letter-spacing: 7px; font-weight: 700; margin-top: 15px; font-size: 1.1rem;">LOSSIEMOUTH | EST. 2020</p>
+            <div class="wolf-tagline">The strength of the wolf is in the pack</div>
+            <p style="letter-spacing: 7px; font-weight: 700; margin-top: 5px; font-size: 1.1rem; color: var(--gold);">LOSSIEMOUTH | EST. 2020</p>
             <div class="cta-center"><a href="#contact" class="btn-gold">Claim Your Training Pass</a></div>
         </div>
     </header>
 
-    <!-- DYNAMIC CORE TRAINING PROGRAM INTERACTIVE VIEWPORT ENGINE (Posters 1, 2, 7, 8, 9, 10, 11) -->
     <section id="training-tracks" class="interactive-program-section">
         <div class="container">
             <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 15px;">EXPLORE OUR <span class="gold">TRAINING TRACKS</span></h2>
             <p style="text-align: center; color: #aaa; max-width: 700px; margin: 0 auto 40px auto; font-size: 0.95rem;">Select an active program pathway tab block below to dynamically parse custom schedules, targeted development benefits, and active layout structures.</p>
             
-            <!-- Navigation tab controls generated from all poster portfolios -->
             <div class="tab-button-panel">
                 <button class="tab-btn active" onclick="switchTrackViewport('lite', this)">CrossFit Lite</button>
                 <button class="tab-btn" onclick="switchTrackViewport('circuits', this)">Circuits</button>
@@ -245,7 +250,6 @@
                 <button class="tab-btn" onclick="switchTrackViewport('family', this)">Mums & Family</button>
             </div>
 
-            <!-- VIEWPORT MATRIX TARGET BOX -->
             <div class="track-display-viewport" id="track-viewport-display">
                 <!-- Loaded dynamically by JavaScript engine routine below -->
             </div>
@@ -281,7 +285,6 @@
         <div class="container">
             <div class="contact-grid">
                 
-                <!-- STEP-BY-STEP CALENDAR INTERACTIVE ENGINE COMPONENT -->
                 <div class="booking-workspace">
                     <h2 style="font-size:2.8rem; line-height:0.9; margin-bottom:5px;">SECURE YOUR <span class="gold">SESSION SLOT</span></h2>
                     <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 25px;">Toggle your programmatic membership track, pick an upcoming date from our rolling matrix, and reserve an open training slot block.</p>
@@ -337,7 +340,7 @@
 
                 <div>
                     <div class="poster-title" style="font-size:3rem; margin-bottom:20px;">FIND THE <span class="gold">BOX</span></div>
-                    <div style="border: 3px solid var(--gold); overflow: hidden; box-shadow:6px 6px 0px rgba(242,190,34,0.15);">
+                    <div style="border: 3px solid var(--gold); overflow: hidden; box-shadow:6px 6px 0px rgba(255,230,0,0.15);">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2091.2383281206143!2d-3.2842186837943533!3d57.71765878112351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4885698b688d5e89%3A0xe4438343f875f5!2sCrossFit%20Moray%20-%20Moray%20Training%20Club!5e0!3m2!1sen!2suk!4v1653556789456!5m2!1sen!2suk" width="100%" height="480" style="border:0; filter: grayscale(1) invert(1) contrast(1.2);" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
@@ -358,7 +361,6 @@
         <button class="btn-gold" style="padding: 8px 18px; font-size:0.8rem; border-width:2px; box-shadow:none;" onclick="document.getElementById('cookie-banner').style.display='none'">Accept</button>
     </div>
 
-    <!-- VIEWPORT CONTEXT INTERACTIVE DICTIONARY & ROLLING MATRIX SCRIPT -->
     <script>
         const trackData = {
             lite: {
@@ -483,7 +485,6 @@
             `;
         }
 
-        // Rolling Booking Logic Arrays
         const programSchedules = {
             trial: ["06:00 AM", "07:15 AM", "09:15 AM", "12:00 PM", "05:30 PM", "06:45 PM"],
             lite: ["09:15 AM (Tue/Thu)", "05:30 PM"],
@@ -555,7 +556,6 @@
             });
         }
 
-        // Run Initializers
         switchTrackViewport('lite', null);
         initCalendarEngine();
     </script>
