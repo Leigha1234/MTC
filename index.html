@@ -118,25 +118,29 @@
         }
         .cta-center { margin-top: 15px; text-align: center; width: 100%; }
 
-        /* Hero */
+        /* Hero — Swapped to public/assets/backwomen.jpg */
         .hero { 
             height: 70vh; 
-            background: #000 linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)), url('public/assets/crossfit_moray_box_floor.jpg') no-repeat center center/cover;
+            background: #000 linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)), url('public/assets/backwomen.jpg') no-repeat center center/cover;
             display: flex; align-items: center; justify-content: center; text-align: center; 
             border-bottom: 5px solid var(--gold);
         }
 
-        /* Dynamic Program Display Grid Layout Elements */
-        .interactive-program-section { padding: 100px 0; background: var(--dark); border-bottom: 3px solid #111; }
+        /* Tracks Section Wrapper — Updated to include public/assets/Mike2.jpeg background overlay */
+        .interactive-program-section { 
+            padding: 100px 0; 
+            background: #000 linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), url('public/assets/Mike2.jpeg') no-repeat center center/cover;
+            border-bottom: 3px solid #111; 
+        }
         .tab-button-panel { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 50px; }
         .tab-btn { 
-            background: #111; color: #fff; border: 2px solid #222; font-family: 'Teko', sans-serif; font-size: 1.4rem; padding: 10px 24px; cursor: pointer; transition: 0.2s; letter-spacing: 1px;
+            background: rgba(17, 17, 17, 0.85); color: #fff; border: 2px solid #222; font-family: 'Teko', sans-serif; font-size: 1.4rem; padding: 10px 24px; cursor: pointer; transition: 0.2s; letter-spacing: 1px;
+            backdrop-filter: blur(4px);
         }
         .tab-btn:hover, .tab-btn.active { background: var(--gold); color: #000; border-color: var(--gold); font-weight: 700; }
         
-        .track-display-viewport { background: var(--grey); border: 2px solid #222; padding: 50px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: center; }
+        .track-display-viewport { background: rgba(15, 15, 15, 0.9); border: 2px solid #222; padding: 50px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: center; backdrop-filter: blur(8px); }
         
-        /* Subheading Backgrounds Completely Removed */
         .poster-badge {
             border: 3px dashed var(--gold);
             border-radius: 0;
@@ -163,7 +167,6 @@
         .benefit-text h4 { font-size: 1.5rem; color: #fff; }
         .benefit-text p { margin: 2px 0 0 0; color: #bbb; font-size: 0.9rem; }
 
-        /* Modified to show full uncropped imagery cleanly */
         .img-frame { 
             width: 100%; 
             border: 3px solid var(--gold); 
@@ -179,7 +182,7 @@
             max-width: 100%;
             height: 450px; 
             display: block; 
-            object-fit: contain; /* Changed from cover to contain to guarantee full uncropped visibility */
+            object-fit: contain; 
             background: #000;
         }
 
@@ -220,7 +223,6 @@
         /* Footer links */
         footer { background: #000; border-top: 2px solid #222; padding: 80px 0 40px; }
         .footer-links h4 { color: var(--gold); margin-bottom: 25px; font-size: 1.5rem; }
-        .timetable-display { width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto; border: 2px solid var(--gold); }
 
         @media (max-width: 1000px) {
             .track-display-viewport { grid-template-columns: 1fr; padding: 30px 20px; }
@@ -238,7 +240,6 @@
             <ul class="nav-links">
                 <li><a href="#training-tracks">The Pack Tracks</a></li>
                 <li><a href="#events">Pack Events</a></li>
-                <li><a href="#schedule">Pack Timetable</a></li>
                 <li><a href="#contact" class="btn-gold">JOIN THE PACK</a></li>
             </ul>
         </div>
@@ -265,8 +266,8 @@
 
     <section id="training-tracks" class="interactive-program-section">
         <div class="container">
-            <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 15px;">EXPLORE OUR <span class="gold">PACK TRAINING TRACKS</span></h2>
-            <p style="text-align: center; color: #aaa; max-width: 700px; margin: 0 auto 40px auto; font-size: 0.95rem;">Select an active program pathway below to discover how the pack moves, builds structural capabilities, and trains together.</p>
+            <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 15px; text-shadow: 3px 3px 0px #000;">EXPLORE OUR <span class="gold">PACK TRAINING TRACKS</span></h2>
+            <p style="text-align: center; color: #fff; max-width: 700px; margin: 0 auto 40px auto; font-size: 0.95rem; font-weight: 700; text-shadow: 1px 1px 4px #000;">Select an active program pathway below to discover how the pack moves, builds structural capabilities, and trains together.</p>
             
             <div class="tab-button-panel">
                 <button class="tab-btn active" onclick="switchTrackViewport('lite', this)">CrossFit Lite</button>
@@ -292,21 +293,14 @@
                 <div class="evo-box">
                     <h2>HYROX COMPETITION <span class="gold">TRACK</span></h2>
                     <p style="font-size:0.9rem; color:#aaa; margin-bottom:20px;">Building complete functional metabolic engines so the whole pack dominates the big simulator runs.</p>
-                    <div class="img-frame"><img src="public/assets/hyrox_glasgow_stage.jpg" alt="Hyrox Glasgow Stage Showcase"></div>
+                    <div class="img-frame"><img src="public/assets/wallballs.jpeg" alt="Hyrox Glasgow Stage Showcase"></div>
                 </div>
                 <div class="evo-box">
                     <h2>SENIOR LIFTING <span class="gold">SERIES</span></h2>
                     <p style="font-size:0.9rem; color:#aaa; margin-bottom:20px;">Powerlifting and structured weight training systems for the master 55+ lifters of our pack.</p>
-                    <div class="img-frame"><img src="public/assets/lifting_seniors_legends.jpg" alt="Lifting Seniors Legends Team Frame"></div>
+                    <div class="img-frame"><img src="public/assets/Mike6.jpeg" alt="Lifting Seniors Legends Team Frame"></div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="schedule" style="padding: 100px 0; background: var(--dark);">
-        <div class="container">
-            <div class="poster-title" style="text-align: center; margin-bottom: 50px;">PACK CLASS <span class="gold">TIMETABLE</span></div>
-            <img src="public/assets/timetable.png" alt="MTC Box Class Schedule Timetable" class="timetable-display">
         </div>
     </section>
 
@@ -409,7 +403,7 @@
                 title: "HYROX RACE PREP",
                 subtitle: "Build Your Engine. Conquer The Race.",
                 badgeTop: "ENDURANCE", badgeMid: "—", badgeBot: "METABOLIC POWER",
-                image: "public/assets/hyrox_glasgow_stage.jpg",
+                image: "public/assets/Mike3.jpeg",
                 benefits: [
                     { icon: "🏃", title: "RACE SPECIFIC CONDITIONING", desc: "Master the optimal combination of functional movement stations and targeted running intervals." },
                     { icon: "⚡", title: "UNSTOPPABLE STAMINA", desc: "Develop high-capacity threshold endurance to systematically handle the full layout demands of competition." },
