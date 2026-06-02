@@ -9,30 +9,34 @@
         body { font-family: 'Arial', sans-serif; background: var(--dark); color: #fff; margin: 0; }
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
         
-        /* Layout */
-        .grid-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        /* Navigation & Hero */
+        nav, .hero { text-align: center; padding: 40px 0; }
+        .hero h1 { font-size: 3rem; color: var(--gold); }
         
-        /* Updated Tab Styles - No Black Background */
-        .tab-button-panel { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
-        .tab-btn { background: transparent; color: #fff; border: 1px solid #444; padding: 10px 20px; cursor: pointer; }
+        /* Training Tabs */
+        .tab-button-panel { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px; }
+        .tab-btn { background: transparent; color: #fff; border: 1px solid #444; padding: 12px 20px; cursor: pointer; }
         .tab-btn.active { background: var(--gold); color: #000; }
         
-        /* Image Display - Full View */
-        .img-frame img { width: 100%; height: auto; display: block; }
+        /* Layout Grid */
+        .main-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .img-frame img { width: 100%; height: auto; object-fit: contain; display: block; }
         
-        /* Booking Section */
-        .booking-box { border: 1px solid var(--gold); padding: 20px; }
-        .booking-btn { display: block; width: 100%; background: var(--gold); color: #000; padding: 15px; text-align: center; text-decoration: none; font-weight: bold; margin-top: 20px; }
-        
+        /* Booking & Footer */
+        .booking-box { border: 2px solid var(--gold); padding: 20px; }
         footer { margin-top: 50px; padding: 20px; text-align: center; border-top: 1px solid #333; }
         footer a { color: #aaa; margin: 0 10px; text-decoration: none; }
     </style>
 </head>
 <body>
 
+<nav>Moray Training Club Logo</nav>
+
+<header class="hero">
+    <h1>ONE PACK, NO EGO. REAL FITNESS RESULTS.</h1>
+</header>
+
 <div class="container">
-    <h1>MORAY TRAINING CLUB</h1>
-    
     <div class="tab-button-panel">
         <button class="tab-btn" onclick="updateView('lite')">CrossFit Lite</button>
         <button class="tab-btn" onclick="updateView('circuits')">Circuits</button>
@@ -41,49 +45,45 @@
         <button class="tab-btn" onclick="updateView('mums')">Mums and Family</button>
     </div>
 
-    <div class="grid-layout">
-        <div id="track-display">
-            <!-- Viewport content -->
+    <div class="main-layout">
+        <div id="track-viewport">
+            <div class="img-frame"><img id="track-img" src="assets/Mike11.jpg" alt="Track"></div>
         </div>
-
-        <div class="booking-box">
-            <h2>SECURE YOUR PACK SLOT</h2>
-            <p>Ready to join? Book your class directly through our system.</p>
-            <a href="https://goteamup.com/p/3936927-crossfit-moray/" class="booking-btn" target="_blank">BOOK YOUR CLASS AT TEAMUP</a>
+        
+        <div>
+            <div class="booking-box">
+                <h2>SECURE YOUR PACK SLOT</h2>
+                <p>Click below to book your session via TeamUp.</p>
+                <a href="https://goteamup.com/p/3936927-crossfit-moray/" style="background:var(--gold); padding:15px; display:block; text-align:center; color:#000; text-decoration:none; font-weight:bold;">BOOK CLASS AT TEAMUP</a>
+            </div>
+            <div style="margin-top:20px;">
+                <h3>FIND THE BOX</h3>
+                <img src="image_5660c0.jpg" alt="Map" style="width:100%;">
+            </div>
         </div>
     </div>
 </div>
 
 <footer>
-    <a href="terms.html">Terms</a>
-    <a href="socialmedia.html">Social Media</a>
-    <a href="safeguarding.html">Safeguarding</a>
-    <a href="policy.html">Policy</a>
-    <a href="health-safety.html">Health & Safety</a>
-    <a href="gdpr.html">GDPR</a>
+    <a href="terms.html">Terms</a> | <a href="socialmedia.html">Social Media</a> | 
+    <a href="safeguarding.html">Safeguarding</a> | <a href="policy.html">Policy</a> | 
+    <a href="health-safety.html">Health & Safety</a> | <a href="gdpr.html">GDPR</a> | 
     <a href="complaints.html">Complaints</a>
-    <div style="margin-top: 15px;">
-        This site uses analytical tracking parameters. <a href="cookies.html">Learn More</a>
-    </div>
+    <div style="margin-top:15px;">This site uses cookies. <a href="cookies.html">Learn More</a></div>
 </footer>
 
 <script>
     const trackData = {
-        lite: { title: "CrossFit Lite", image: "Mike11.jpg" },
-        circuits: { title: "Circuits", image: "Mike10.jpg" },
-        strong: { title: "STRONG Track", image: "Mike7.jpg" },
-        preteens: { title: "Preteens", image: "Mike8.jpg" },
-        mums: { title: "Mums and Family", image: "Mike5.jpg" }
+        lite: "Mike11.jpg",
+        circuits: "Mike10.jpg",
+        strong: "Mike7.jpg",
+        preteens: "Mike8.jpg",
+        mums: "Mike5.jpg"
     };
 
     function updateView(key) {
-        const track = trackData[key];
-        document.getElementById('track-display').innerHTML = `
-            <h2>${track.title}</h2>
-            <div class="img-frame"><img src="assets/${track.image}" alt="${track.title}"></div>
-        `;
+        document.getElementById('track-img').src = "assets/" + trackData[key];
     }
-    updateView('lite');
 </script>
 
 </body>
