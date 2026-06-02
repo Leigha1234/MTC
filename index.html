@@ -3,604 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moray Training Club | The Pack Functional Fitness Gym</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700;900&family=Permanent+Marker&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Moray Training Club | The Pack</title>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { 
-            --gold: #ffcc00; 
-            --dark: #000000; 
-            --grey: #0f0f0f; 
-            --light-grey: #1a1a1a; 
-        }
+        :root { --gold: #ffcc00; --dark: #000000; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--dark); color: #fff; margin: 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
         
-        html { scroll-behavior: smooth; }
-        body { 
-            font-family: 'Montserrat', sans-serif; 
-            background: var(--dark); 
-            color: #fff; 
-            margin: 0; 
-            line-height: 1.6; 
-            overflow-x: hidden;
-            background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 0);
-            background-size: 8px 8px;
-        }
-
-        h1, h2, h3, h4 { 
-            font-family: 'Teko', sans-serif; 
-            text-transform: uppercase; 
-            margin: 0; 
-            letter-spacing: 1px;
-            font-weight: 700;
-        }
+        .tab-button-panel { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 40px; }
+        .tab-btn { background: #111; color: #fff; border: 2px solid #333; padding: 12px 24px; cursor: pointer; font-family: 'Teko'; font-size: 1.2rem; }
+        .tab-btn.active { background: var(--gold); color: #000; border-color: var(--gold); }
         
-        .poster-title {
-            font-family: 'Teko', sans-serif;
-            font-size: clamp(3.5rem, 8vw, 6.5rem);
-            line-height: 0.85;
-            color: #fff;
-            text-shadow: 2px 2px 0px #000, 4px 4px 0px var(--gold);
-            font-weight: 900;
-        }
-
-        .marker-accent {
-            font-family: 'Permanent Marker', cursive;
-            color: var(--gold);
-            text-transform: uppercase;
-            font-size: clamp(1.6rem, 3.5vw, 2.8rem);
-            line-height: 1.1;
-            display: inline-block;
-            transform: rotate(-1.5deg);
-            margin: 10px 0;
-        }
-
-        .wolf-tagline {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(1rem, 2vw, 1.3rem);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: #fff;
-            margin: 15px 0 25px 0;
-            font-style: italic;
-            opacity: 0.9;
-        }
-
-        .gold { color: var(--gold); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-        /* Navigation */
-        nav { background: rgba(0,0,0,0.95); padding: 10px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--gold); }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo img { height: 110px; width: auto; display: block; filter: drop-shadow(0 0 12px rgba(255, 204, 0, 0.45)); }
-        .nav-links { list-style: none; display: flex; gap: 20px; margin: 0; align-items: center; }
-        .nav-links a { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+        .track-display-viewport { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; border: 2px solid #222; padding: 40px; background: #0a0a0a; }
+        .img-frame { border: 3px solid var(--gold); overflow: hidden; display: flex; align-items: center; justify-content: center; background: #000; }
+        .img-frame img { width: 100%; height: 450px; object-fit: cover; }
         
-        /* Thinner Announcement Ticker */
-        .announcement-bar {
-            background: var(--gold);
-            color: #000;
-            overflow: hidden;
-            white-space: nowrap;
-            padding: 4px 0; 
-            font-family: 'Teko', sans-serif;
-            font-size: 1.25rem; 
-            text-transform: uppercase;
-            font-weight: 700;
-            border-bottom: 2px solid #000;
-        }
-        .carousel-track { display: inline-block; animation: scroll 40s linear infinite; }
-        .carousel-item { display: inline-block; padding: 0 60px; letter-spacing: 1px; }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-        /* Buttons & CTA Action Anchors */
-        .btn-gold { 
-            background: var(--gold); 
-            color: #000 !important; 
-            padding: 14px 32px; 
-            border-radius: 0px; 
-            transition: 0.2s ease-in-out; 
-            display: inline-block; 
-            text-decoration: none; 
-            font-weight: 900; 
-            text-transform: uppercase; 
-            font-family: 'Montserrat'; 
-            border: 3px solid var(--gold); 
-            cursor: pointer;
-            box-shadow: 4px 4px 0px #fff;
-        }
-        .btn-gold:hover { 
-            background: #000; 
-            color: var(--gold) !important; 
-            box-shadow: 4px 4px 0px var(--gold);
-            transform: translate(2px, 2px);
-        }
-        .cta-center { margin-top: 15px; text-align: center; width: 100%; }
-
-        /* Complete Full-Screen Hero Layout Styles Separated */
-        .hero { 
-            min-height: 100vh; 
-            box-sizing: border-box;
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            text-align: center; 
-            border-bottom: 5px solid var(--gold);
-            padding: 60px 0;
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-
-        /* Tracks Section Layout Styles Separated */
-        .interactive-program-section { 
-            padding: 100px 0; 
-            border-bottom: 3px solid #111; 
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-        
-        .tab-button-panel { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 50px; }
-        .tab-btn { 
-            background: rgba(17, 17, 17, 0.85); color: #fff; border: 2px solid #222; font-family: 'Teko', sans-serif; font-size: 1.4rem; padding: 10px 24px; cursor: pointer; transition: 0.2s; letter-spacing: 1px;
-            backdrop-filter: blur(4px);
-        }
-        .tab-btn:hover, .tab-btn.active { background: var(--gold); color: #000; border-color: var(--gold); font-weight: 700; }
-        
-        .track-display-viewport { background: rgba(15, 15, 15, 0.9); border: 2px solid #222; padding: 50px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: center; backdrop-filter: blur(8px); }
-        
-        .poster-badge {
-            border: 3px dashed var(--gold);
-            border-radius: 0;
-            width: auto; 
-            height: auto;
-            display: inline-flex; 
-            flex-direction: row; 
-            gap: 10px;
-            justify-content: flex-start; 
-            align-items: center;
-            font-family: 'Teko', sans-serif; 
-            font-size: 1.5rem; 
-            line-height: 1; 
-            text-align: left; 
-            color: #fff;
-            margin: 15px 0 25px 0; 
-            transform: none; 
-            background: none;
-            padding: 5px 10px 5px 0;
-        }
-
-        .benefit-row { display: flex; align-items: flex-start; text-align: left; margin-bottom: 20px; }
-        .benefit-icon { font-size: 2rem; color: var(--gold); margin-right: 15px; line-height: 1; padding-top: 3px; }
-        .benefit-text h4 { font-size: 1.5rem; color: #fff; }
-        .benefit-text p { margin: 2px 0 0 0; color: #bbb; font-size: 0.9rem; }
-
-        .img-frame { 
-            width: 100%; 
-            border: 3px solid var(--gold); 
-            overflow: hidden; 
-            background: #000; 
-            box-shadow: 6px 6px 0px rgba(255,204,0,0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-sizing: border-box;
-        }
-        .img-frame img { 
-            width: 100%; 
-            max-width: 100%;
-            height: 450px; 
-            display: block; 
-            object-fit: cover; 
-            background: #000;
-        }
-
-        /* Interactive Booking Engine Workspace */
-        .booking-workspace { background: var(--grey); border: 3px solid var(--gold); padding: 40px 30px; box-shadow: 8px 8px 0px rgba(0,0,0,0.8); }
-        .booking-step-title { font-family: 'Teko'; font-size: 1.8rem; color: var(--gold); margin: 25px 0 12px 0; border-bottom: 2px solid #222; padding-bottom: 5px; letter-spacing: 1px; }
-        .booking-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 20px; }
-        .calendar-day-header { font-family: 'Teko'; font-size: 1.2rem; color: #555; text-transform: uppercase; text-align: center; }
-        .calendar-cell { background: var(--dark); padding: 14px 5px; border: 1px solid #222; text-align: center; cursor: pointer; font-weight: 700; transition: 0.15s; font-size: 0.95rem; }
-        .calendar-cell:hover:not(.disabled) { border-color: #fff; background: #050505; }
-        .calendar-cell.selected { background: var(--gold); color: #000; border-color: var(--gold); }
-        .calendar-cell.disabled { color: #222; cursor: not-allowed; background: transparent; border-color: #111; }
-        .time-slots-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 10px; }
-        .time-slot { background: var(--dark); border: 1px solid #222; padding: 14px 10px; text-align: center; cursor: pointer; font-weight: 700; font-size: 0.85rem; transition: 0.2s; }
-        .time-slot:hover { border-color: var(--gold); }
-        .time-slot.selected { background: var(--gold); color: #000; border-color: var(--gold); }
-        
-        .booking-summary-panel { background: var(--dark); border: 2px dashed #333; padding: 25px; margin-top: 30px; }
-        .summary-row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.95rem; color: #ccc; }
-        .summary-row strong { color: #fff; }
-        .summary-row.total { border-top: 2px solid #222; padding-top: 15px; font-weight: 700; color: var(--gold); font-size: 1.2rem; }
-
-        /* Contact & Maps splits */
-        .contact-container { padding: 100px 0; background: var(--dark); border-top: 3px solid #1a1a1a; }
-        .contact-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; }
-        input, select, textarea { width: 100%; padding: 16px; margin-bottom: 20px; background: #050505; border: 2px solid #222; color: #fff; font-family: 'Montserrat'; font-size: 0.95rem; box-sizing: border-box; border-radius: 0; }
-        input:focus, select:focus, textarea:focus { border-color: var(--gold); outline: none; }
-        .btn-submit { background: var(--gold); color: #000; border: none; padding: 22px; width: 100%; font-weight: 900; cursor: pointer; text-transform: uppercase; font-size: 1.3rem; font-family: 'Teko'; letter-spacing: 2px; transition: 0.2s; box-shadow: 4px 4px 0px #fff; }
-        .btn-submit:hover { background: #fff; box-shadow: 4px 4px 0px var(--gold); }
-
-        /* Cookie Banner Styling Fix */
-        #cookie-banner {
-            position: fixed; 
-            bottom: 0; 
-            left: 0; 
-            width: 100%; 
-            background: rgba(0,0,0,0.95); 
-            border-top: 2px solid var(--gold); 
-            padding: 15px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            z-index: 10000; 
-            box-sizing: border-box;
-        }
-
-        footer { background: #000; border-top: 2px solid #222; padding: 80px 0 40px; }
-
-        @media (max-width: 1000px) {
-            .hero { background-attachment: scroll !important; } 
-            .interactive-program-section { background-attachment: scroll !important; }
-            .track-display-viewport { grid-template-columns: 1fr; padding: 30px 20px; }
-            .contact-grid { grid-template-columns: 1fr; }
-            .img-frame img { height: 320px; }
-            .nav-logo img { height: 85px; }
-        }
+        @media (max-width: 850px) { .track-display-viewport { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="container nav-container">
-            <div class="nav-logo"><img src="public/assets/Logo_with_HyroxCrossfit.png" alt="MTC Pack Logo"></div>
-            <ul class="nav-links">
-                <li><a href="#training-tracks">The Pack Tracks</a></li>
-                <li><a href="#contact" class="btn-gold">JOIN THE PACK</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="announcement-bar">
-        <div class="carousel-track">
-            <span class="carousel-item">★ THE STRENGTH OF THE WOLF IS IN THE PACK — RUN WITH US TODAY</span>
-            <span class="carousel-item">★ HYROX RACE PREP — COMPLETE METABOLIC SYSTEMS FOR THE PACK</span>
-            <span class="carousel-item">★ PACK PATHWAY TRIAL RUNS — 7 DAYS UNLIMITED PATHWAY ACCESS FOR £20</span>
-            <span class="carousel-item">★ CIRCUITS & LITE TRACKS — NO WOLF LEFT BEHIND IN OUR BOX</span>
-        </div>
-    </div>
-
-    <!-- Fixed Inline Styles to work with global layout scaling rules -->
-    <header class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.9)), url('public/assets/backwomen.jpg');">
+    <section id="training-tracks">
         <div class="container">
-            <div class="poster-title">MORAY TRAINING CLUB</div>
-            <div class="marker-accent">One Pack. No Ego. Real Fitness Results.</div>
-            <div class="wolf-tagline">The strength of the wolf is in the pack</div>
-            <p style="letter-spacing: 7px; font-weight: 700; margin-top: 5px; font-size: 1.1rem; color: var(--gold);">LOSSIEMOUTH PACK | EST. 2020</p>
-            <div class="cta-center"><a href="#contact" class="btn-gold">Run With The Pack</a></div>
-        </div>
-    </header>
-
-    <!-- Fixed Inline Styles to prevent image from breaking or tiling -->
-    <section id="training-tracks" class="interactive-program-section" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.9)), url('public/assets/Mike2.jpg');">
-        <div class="container">
-            <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 15px; text-shadow: 3px 3px 0px #000;">EXPLORE OUR <span class="gold">PACK TRAINING TRACKS</span></h2>
-            <p style="text-align: center; color: #fff; max-width: 700px; margin: 0 auto 40px auto; font-size: 0.95rem; font-weight: 700; text-shadow: 1px 1px 4px #000;">Select an active program pathway below to discover how the pack moves, builds structural capabilities, and trains together.</p>
-            
-            <div class="tab-button-panel">
+            <h2 style="text-align: center; font-size: 3rem;">OUR TRACKS</h2>
+            <div class="tab-button-panel" id="tab-panel">
                 <button class="tab-btn active" onclick="switchTrackViewport('lite', this)">CrossFit Lite</button>
-                <button class="tab-btn" onclick="switchTrackViewport('hyrox', this)">HYROX Race Prep</button>
-                <button class="tab-btn" onclick="switchTrackViewport('circuits', this)">Circuits</button>
-                <button class="tab-btn" onclick="switchTrackViewport('strong', this)">STRONG Heavy Track</button>
-                <button class="tab-btn" onclick="switchTrackViewport('kids', this)">CrossFit Kids</button>
-                <button class="tab-btn" onclick="switchTrackViewport('teens', this)">CrossFit Pre Teens</button>
-                <button class="tab-btn" onclick="switchTrackViewport('legends', this)">55+ Legends</button>
-                <button class="tab-btn" onclick="switchTrackViewport('family', this)">Mums & Family</button>
+                <button class="tab-btn" onclick="switchTrackViewport('strong', this)">STRONG Track</button>
             </div>
-
             <div class="track-display-viewport" id="track-viewport-display"></div>
         </div>
     </section>
 
-    <section id="contact" class="contact-container">
-        <div class="container" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.9)), url('public/assets/row.jpg');">
-            <div class="contact-grid">
-                
-                <div class="booking-workspace">
-                    <h2 style="font-size:2.8rem; line-height:0.9; margin-bottom:5px;">SECURE YOUR <span class="gold">PACK SLOT</span></h2>
-                    <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 25px;">Toggle your programmatic membership track, pick an upcoming date from our rolling matrix, and reserve an open training slot block inside our pack.</p>
-                    
-                    <form action="https://formspree.io/f/your_form_id_here" method="POST" id="master-booking-form">
-                        
-                        <div class="booking-step-title">1. Select Membership Path Track</div>
-                        <select id="program-selector" name="program" onchange="updateProgramSelection()">
-                            <option value="trial" data-price="20.00">7-Day Unlimited Pack Trial Access Pass — £20.00</option>
-                            <option value="hyrox" data-price="12.00">HYROX Race Prep Session Drop-In — £12.00</option>
-                            <option value="lite" data-price="12.00">CrossFit Lite Drop-In — £12.00</option>
-                            <option value="circuits" data-price="10.00">Circuits Fast Class Drop-In — £10.00</option>
-                            <option value="strong" data-price="15.00">STRONG Heavy Specific Run — £15.00</option>
-                            <option value="kids" data-price="8.00">CrossFit Kids Training — £8.00</option>
-                            <option value="teens" data-price="8.00">CrossFit Pre Teens Block — £8.00</option>
-                            <option value="legends" data-price="12.00">CrossFit 55+ Legends Session — £12.00</option>
-                            <option value="family" data-price="12.00">Family Fitness / Mums Drop-In — £12.00</option>
-                        </select>
-
-                        <div class="booking-step-title">2. Choose Session Date</div>
-                        <div class="booking-grid" id="calendar-day-wrapper">
-                            <div class="calendar-day-header">Mon</div>
-                            <div class="calendar-day-header">Tue</div>
-                            <div class="calendar-day-header">Wed</div>
-                            <div class="calendar-day-header">Thu</div>
-                            <div class="calendar-day-header">Fri</div>
-                            <div class="calendar-day-header">Sat</div>
-                            <div class="calendar-day-header">Sun</div>
-                        </div>
-                        <input type="hidden" name="selected_date" id="hidden-date-input" required>
-
-                        <div class="booking-step-title">3. Assigned Available Time Blocks</div>
-                        <div class="time-slots-container" id="time-slots-wrapper">
-                            <div style="color:#555; font-size:0.85rem; grid-column: 1/-1; font-weight:700;">Please select an active date slot row above to see class availability...</div>
-                        </div>
-                        <input type="hidden" name="selected_time" id="hidden-time-input" required>
-
-                        <div class="booking-step-title">4. Athlete Registration File</div>
-                        <input type="text" name="athlete_name" placeholder="Full Name" required>
-                        <input type="email" name="athlete_email" placeholder="Email Address" required>
-                        <textarea name="fitness_goals" rows="3" placeholder="List any relevant injuries, requirements, or core training goals..."></textarea>
-
-                        <div class="booking-summary-panel">
-                            <h4 style="font-size: 1.3rem; margin-bottom: 12px; color:var(--gold); letter-spacing:1px;">Booking Invoice Summary</h4>
-                            <div class="summary-row"><span>Focused Program:</span><strong id="summary-program">7-Day Unlimited Pack Trial Access Pass</strong></div>
-                            <div class="summary-row"><span>Assigned Date:</span><strong id="summary-date">Not Selected</strong></div>
-                            <div class="summary-row"><span>Class Time Block:</span><strong id="summary-time">Not Selected</strong></div>
-                            <div class="summary-row total"><span>Total Amount Owed:</span><strong id="summary-price">£20.00</strong></div>
-                        </div>
-
-                        <button type="submit" class="btn-submit" style="margin-top:25px;">Complete My Booking Request</button>
-                    </form>
-                </div>
-
-                <div>
-                    <div class="poster-title" style="font-size:3rem; margin-bottom:20px;">FIND THE <span class="gold">BOX</span></div>
-                    <div style="border: 3px solid var(--gold); overflow: hidden; box-shadow:6px 6px 0px rgba(255,204,0,0.15);">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2091.2383281206143!2d-3.2842186837943533!3d57.71765878112351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4885698b688d5e89%3A0xe4438343f875f5!2sCrossFit%20Moray%20-%20Moray%20Training%20Club!5e0!3m2!1sen!2suk!4v1653556789456!5m2!1sen!2suk" width="100%" height="480" style="border:0; filter: grayscale(1) invert(1) contrast(1.2);" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container" style="text-align: center; color: #444; font-size: 0.8rem; font-weight:700;">
-            <p>© 2026 MORAY TRAINING CLUB | EST. 2020 | ALL RIGHTS RESERVED</p>
-            <p class="gold" style="font-size: 0.75rem; letter-spacing: 3px; font-weight: 900; margin-top:5px;">POWERED BY THE ORGANISED TYPES</p>
-        </div>
-    </footer>
-
-    <div id="cookie-banner">
-        <p style="margin:0; font-size:0.9rem; font-weight:700;">This site uses analytical tracking parameters to optimize training matrices. <a href="#cookies" class="gold">Learn More</a></p>
-        <button class="btn-gold" style="padding: 8px 18px; font-size:0.8rem; border-width:2px; box-shadow:none;" onclick="document.getElementById('cookie-banner').style.display='none'">Accept</button>
-    </div>
-
     <script>
         const trackData = {
-            lite: {
-                title: "CROSSFIT LITE",
-                subtitle: "Stronger. Fitter. Made Simple.",
-                badgeTop: "REAL PEOPLE", badgeMid: "—", badgeBot: "REAL RESULTS",
-                image: "Mike7.jpeg",
-                benefits: [
-                    { icon: "❤️", title: "IMPROVE FITNESS", desc: "Build base athletic capabilities alongside a pack optimized for continuous structural energy." },
-                    { icon: "🔥", title: "BURN CALORIES", desc: "Fast-paced metabolic training layouts engineered to burn fat efficiently inside the team framework." },
-                    { icon: "👥", title: "SUPPORTIVE COMMUNITY", desc: "Train alongside regular people pushing together in a non-intimidating environment. No wolf is left behind." },
-                    { icon: "🏋️", title: "ALL ABILITIES WELCOME", desc: "Zero weightlifting barriers. Fully functional, completely accessible professional coaching tracks." }
-                ]
-            },
-            hyrox: {
-                title: "HYROX RACE PREP",
-                subtitle: "Build Your Engine. Conquer The Race.",
-                badgeTop: "ENDURANCE", badgeMid: "—", badgeBot: "METABOLIC POWER",
-                image: "Mike3.jpeg",
-                benefits: [
-                    { icon: "🏃", title: "RACE SPECIFIC CONDITIONING", desc: "Master the optimal combination of functional movement stations and targeted running intervals." },
-                    { icon: "⚡", title: "UNSTOPPABLE STAMINA", desc: "Develop high-capacity threshold endurance to systematically handle the full layout demands of competition." },
-                    { icon: "🐺", title: "PACK SPEED WORK", desc: "Push past individual performance ceilings by pacing directly alongside other motivated pack members." },
-                    { icon: "📊", title: "STRATEGY & TECHNIQUE", desc: "Perfect execution mechanics on the sleds, rowers, ski-ergs, and wall balls to shave minutes off your times." }
-                ]
-            },
-            circuits: {
-                title: "MTC CIRCUITS",
-                subtitle: "Stronger. Faster. Together. Every Day.",
-                badgeTop: "COMMUNITY EFFORT", badgeMid: "—", badgeBot: "HIGH INTENSITY",
-                image: "Mike8.jpeg",
-                benefits: [
-                    { icon: "⚡", title: "EFFICIENT & EFFECTIVE", desc: "Get a high-intensity full-body workout finished side-by-side with your peers inside minimal time." },
-                    { icon: "💪", title: "BOOST FITNESS", desc: "Drastically increase standard muscle stamina, heart recovery speeds, and foundational core power." },
-                    { icon: "🔥", title: "BURN CALORIES", desc: "High-octane interval stations that trigger long-lasting post-workout metabolic burn across the whole team." },
-                    { icon: "🔓", title: "ALL LEVELS WELCOME", desc: "Completely scalable circuit designs welcoming absolute beginners or elite pack athletes smoothly." }
-                ]
-            },
-            strong: {
-                title: "MTC STRONG TRACK",
-                subtitle: "Lift Heavy. Move Well. Build Strength.",
-                badgeTop: "TRAIN SMART", badgeMid: "—", badgeBot: "LIVE STRONG",
-                image: "Mike11.jpeg",
-                benefits: [
-                    { icon: "⚙️", title: "BUILD SYSTEMIC STRENGTH", desc: "Pure progressive overload mechanics targeting structural skeletal density with team support." },
-                    { icon: "🛡️", title: "IMPROVE TECHNIQUE", desc: "Deep precision mechanics tracking under the bar to build confidence with heavy weight parameters." },
-                    { icon: "🏆", title: "PERFORM BETTER", desc: "Translate brute functional capacity cleanly into multi-sport compound output metrics." },
-                    { icon: "🔋", title: "CONFIDENCE UNDER THE BAR", desc: "Master the fundamental heavy compound movements like squats, deadlifts, and presses safely." }
-                ]
-            },
-            kids: {
-                title: "CROSSFIT KIDS",
-                subtitle: "Ages 5-8 | Fun. Strong. Confident.",
-                badgeTop: "MOVE & PLAY", badgeMid: "—", badgeBot: "GROW HEALTHY",
-                image: "Mike9.jpeg",
-                benefits: [
-                    { icon: "🧸", title: "STRONG BODIES", desc: "Develop healthy motor patterns, coordination mechanics, and base physical resilience early." },
-                    { icon: "⭐", title: "BUILD CONFIDENCE", desc: "Encourage strong self-belief, emotional toughness, and spatial body confidence in our little pack." },
-                    { icon: "😃", title: "HAVE FUN", desc: "Ego-free group designs loaded with high-fives, collaborative fitness games, and smiling faces." },
-                    { icon: "🌱", title: "HEALTHY HABITS", desc: "Establish an organic, natural connection to physical training and functional output for life." }
-                ]
-            },
-            teens: {
-                title: "CROSSFIT PRE TEENS",
-                subtitle: "Ages 9-12 | Stronger. Faster. Together.",
-                badgeTop: "COACH LED", badgeMid: "—", badgeBot: "SAFE & DRIVEN",
-                image: "Mike10.jpeg",
-                benefits: [
-                    { icon: "🦾", title: "BUILD STRENGTH & FORM", desc: "Instill flawless execution, foundational barbell patterns, and basic athletic power control." },
-                    { icon: "🎯", title: "BUILD CONFIDENCE", desc: "Empower growing teens to push self-limits, hit milestones, and trust personal capabilities." },
-                    { icon: "🤝", title: "TEAMWORK SKILLS", desc: "Foster strong cross-collaboration, peer support, communication, and deep friendships inside the team." },
-                    { icon: "🧠", title: "FOCUS & DISCIPLINE", desc: "Direct high kinetic energy into clean mental control that translates straight into better focus outside the box." }
-                ]
-            },
-            legends: {
-                title: "55+ LEGENDS TRACK",
-                subtitle: "Stronger Every Day. Better at any age.",
-                badgeTop: "STRONG TODAY", badgeMid: "—", badgeBot: "LEGEND FOR LIFE",
-                image: "Mike6.jpeg",
-                benefits: [
-                    { icon: "❤️", title: "STRENGTH FOR LONGEVITY", desc: "Maintain muscular system viability for long-term daily independent functionality alongside fellow pack lifters." },
-                    { icon: "🛡️", title: "MOBILITY PRESERVATION", desc: "Target persistent structural joint stiffness and ease physical locomotion." }
-                ]
-            },
-            family: {
-                title: "FAMILY FITNESS",
-                subtitle: "Bring the kids. Bring the chaos. Look after you.",
-                badgeTop: "KIDS ALWAYS WELCOME", badgeMid: "—", badgeBot: "PARENTS TRACK",
-                image: "Mike2.jpeg",
-                benefits: [
-                    { icon: "👶", title: "KIDS WELCOME STRUCTURE", desc: "No child care barriers. Complete safe physical tracking loops inside family operational hours." },
-                    { icon: "🏋️", title: "FULLY COACHED EFFORT", desc: "Safe foundational structural recovery routines managed entirely by our pro coaching pack." }
-                ]
-            }
+            lite: { title: "CROSSFIT LITE", subtitle: "Stronger. Fitter. Made Simple.", image: "Mike7.jpeg" },
+            strong: { title: "STRONG TRACK", subtitle: "Lift Heavy. Move Well.", image: "Mike11.jpeg" }
         };
 
-  function switchTrackViewport(trackKey, buttonElement) {
-    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    if(buttonElement) buttonElement.classList.add('active');
+        function switchTrackViewport(trackKey, btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
 
-    const track = trackData[trackKey];
-    if (!track) return;
-    const displayZone = document.getElementById('track-viewport-display');
+            const track = trackData[trackKey];
+            const displayZone = document.getElementById('track-viewport-display');
 
-    let benefitsHTML = '';
-    track.benefits.forEach(b => {
-        benefitsHTML += `
-            <div class="benefit-row">
-                <div class="benefit-icon">${b.icon}</div>
-                <div class="benefit-text">
-                    <h4>${b.title}</h4>
-                    <p>${b.desc}</p>
+            // I changed the src to 'assets/' (relative to your index file)
+            // If this still fails, your browser console will show you the exact broken path.
+            displayZone.innerHTML = `
+                <div>
+                    <h1 style="font-family:'Teko'; font-size:3.5rem;">${track.title}</h1>
+                    <p style="color:var(--gold); font-size:1.5rem;">${track.subtitle}</p>
                 </div>
-            </div>
-        `;
-    });
-
-    // This structure removes the extra container that was creating the "box" 
-    // and places the image directly into the grid-template columns defined in your CSS
-    displayZone.innerHTML = `
-        <div>
-            <div class="poster-title" style="font-size: 3.8rem;">${track.title}</div>
-            <div class="marker-accent" style="font-size: 1.6rem; color:#fff;">${track.subtitle}</div>
-            <div class="poster-badge">
-                <span style="font-weight:900; color:var(--gold); text-transform:uppercase;">${track.badgeTop}</span>
-                <span>${track.badgeMid}</span>
-                <span style="font-weight:900; text-transform:uppercase;">${track.badgeBot}</span>
-            </div>
-            ${benefitsHTML}
-            <div style="margin-top: 30px;"><a href="#contact" class="btn-gold" style="padding: 10px 24px; font-size:0.9rem;">Book ${track.title} Track</a></div>
-        </div>
-        <div class="img-frame">
-            <img src="public/assets/${track.image}" alt="${track.title}">
-        </div>
-    `;
-}
-
-        const timeBlocks = ["06:00 - 07:00", "07:15 - 08:15", "09:30 - 10:30", "12:00 - 13:00", "16:30 - 17:30", "17:45 - 18:45", "19:00 - 20:00"];
-        
-        function generateCalendarMatrix() {
-            const wrapper = document.getElementById('calendar-day-wrapper');
-if (!wrapper) return;
-
-wrapper.innerHTML = '';
-            
-            const today = new Date();
-            const currentDayOfWeek = today.getDay();
-            
-            const distanceToMonday = currentDayOfWeek === 0 ? 6 : currentDayOfWeek - 1;
-            const mondayDate = new Date(today);
-            mondayDate.setDate(today.getDate() - distanceToMonday);
-
-            for (let i = 0; i < 14; i++) {
-                const targetDate = new Date(mondayDate);
-                targetDate.setDate(mondayDate.getDate() + i);
-                
-                const cell = document.createElement('div');
-                cell.className = 'calendar-cell';
-                cell.innerText = targetDate.getDate();
-                
-                const datestring = targetDate.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
-                cell.setAttribute('data-date-value', datestring);
-
-                const comparisonDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-                if (targetDate < comparisonDate) {
-                    cell.classList.add('disabled');
-                } else {
-                    cell.addEventListener('click', function() {
-                        document.querySelectorAll('.calendar-cell').forEach(c => c.classList.remove('selected'));
-                        this.classList.add('selected');
-                        document.getElementById('hidden-date-input').value = this.getAttribute('data-date-value');
-                        document.getElementById('summary-date').innerText = this.getAttribute('data-date-value');
-                        generateTimeSlots();
-                    });
-                }
-                wrapper.appendChild(cell);
-            }
+                <div class="img-frame">
+                    <img src="assets/${track.image}" alt="${track.title}" 
+                    onerror="this.parentElement.innerHTML='<p style=\'padding:20px; text-align:center;\'>Image not found: assets/${track.image}</p>'">
+                </div>
+            `;
         }
 
-        function generateTimeSlots() {
-            const wrapper = document.getElementById('time-slots-wrapper');
-            if(!wrapper) return;
-            wrapper.innerHTML = '';
-            
-            timeBlocks.forEach(slot => {
-                const div = document.createElement('div');
-                div.className = 'time-slot';
-                div.innerText = slot;
-                div.addEventListener('click', function() {
-                    document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
-                    this.classList.add('selected');
-                    const timeInput = document.getElementById('hidden-time-input');
-const summaryTime = document.getElementById('summary-time');
-
-if (timeInput) timeInput.value = this.innerText;
-if (summaryTime) summaryTime.innerText = this.innerText;
-                });
-                wrapper.appendChild(div);
-            });
-        }
-
-        function updateProgramSelection() {
-    const selector = document.getElementById('program-selector');
-    const program = document.getElementById('summary-program');
-    const price = document.getElementById('summary-price');
-
-    if (!selector || !program || !price) return;
-
-    const selectedOption = selector.options[selector.selectedIndex];
-    if (!selectedOption) return;
-
-    program.innerText = selectedOption.text.split(' — ')[0];
-    price.innerText = '£' + selectedOption.getAttribute('data-price');
-}
+        switchTrackViewport('lite', document.querySelector('.tab-btn'));
     </script>
 </body>
 </html>
