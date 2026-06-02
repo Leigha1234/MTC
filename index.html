@@ -483,7 +483,7 @@
             }
         };
 
-       function switchTrackViewport(trackKey, buttonElement) {
+  function switchTrackViewport(trackKey, buttonElement) {
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
     if(buttonElement) buttonElement.classList.add('active');
 
@@ -504,29 +504,25 @@
         `;
     });
 
-    // We structure this as two columns: one for text, one for the image
+    // This structure removes the extra container that was creating the "box" 
+    // and places the image directly into the grid-template columns defined in your CSS
     displayZone.innerHTML = `
-        <div class="track-info-col">
+        <div>
             <div class="poster-title" style="font-size: 3.8rem;">${track.title}</div>
             <div class="marker-accent" style="font-size: 1.6rem; color:#fff;">${track.subtitle}</div>
-            
             <div class="poster-badge">
                 <span style="font-weight:900; color:var(--gold); text-transform:uppercase;">${track.badgeTop}</span>
                 <span>${track.badgeMid}</span>
                 <span style="font-weight:900; text-transform:uppercase;">${track.badgeBot}</span>
             </div>
-
             ${benefitsHTML}
             <div style="margin-top: 30px;"><a href="#contact" class="btn-gold" style="padding: 10px 24px; font-size:0.9rem;">Book ${track.title} Track</a></div>
         </div>
-        <div class="track-image-col">
-            <div class="img-frame">
-                <img src="assets/${track.image}" alt="${track.title}">
-            </div>
+        <div class="img-frame">
+            <img src="assets/${track.image}" alt="${track.title}" onerror="this.style.display='none'">
         </div>
     `;
 }
-
         window.addEventListener('DOMContentLoaded', () => {
             const activeBtn = document.querySelector('.tab-btn.active');
 switchTrackViewport('lite', activeBtn || null);
