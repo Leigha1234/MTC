@@ -118,7 +118,7 @@
         }
         .cta-center { margin-top: 15px; text-align: center; width: 100%; }
 
-        /* Complete Full-Screen Hero Layout */
+        /* Complete Full-Screen Hero Layout Styles Separated */
         .hero { 
             min-height: 100vh; 
             box-sizing: border-box;
@@ -127,22 +127,23 @@
             justify-content: center; 
             text-align: center; 
             border-bottom: 5px solid var(--gold);
-            background-size: cover !important;
-            background-position: center center !important;
-            background-repeat: no-repeat !important;
-            background-attachment: fixed !important; /* Premium Parallax Effect */
             padding: 60px 0;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
-        /* Tracks Section Layout */
+        /* Tracks Section Layout Styles Separated */
         .interactive-program-section { 
             padding: 100px 0; 
-            background-size: cover !important;
-            background-position: center center !important;
-            background-repeat: no-repeat !important;
-            background-attachment: fixed !important;
             border-bottom: 3px solid #111; 
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
+        
         .tab-button-panel { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 50px; }
         .tab-btn { 
             background: rgba(17, 17, 17, 0.85); color: #fff; border: 2px solid #222; font-family: 'Teko', sans-serif; font-size: 1.4rem; padding: 10px 24px; cursor: pointer; transition: 0.2s; letter-spacing: 1px;
@@ -244,7 +245,7 @@
         footer { background: #000; border-top: 2px solid #222; padding: 80px 0 40px; }
 
         @media (max-width: 1000px) {
-            .hero { background-attachment: scroll !important; } /* Better scrolling performance on mobile mobile devices */
+            .hero { background-attachment: scroll !important; } 
             .interactive-program-section { background-attachment: scroll !important; }
             .track-display-viewport { grid-template-columns: 1fr; padding: 30px 20px; }
             .contact-grid { grid-template-columns: 1fr; }
@@ -274,7 +275,8 @@
         </div>
     </div>
 
-    <header class="hero" style="background: #000 linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.9)), url('assets/backwomen.jpg');">
+    <!-- Fixed Inline Styles to work with global layout scaling rules -->
+    <header class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.9)), url('assets/backwomen.jpg');">
         <div class="container">
             <div class="poster-title">MORAY TRAINING CLUB</div>
             <div class="marker-accent">One Pack. No Ego. Real Fitness Results.</div>
@@ -284,7 +286,8 @@
         </div>
     </header>
 
-    <section id="training-tracks" class="interactive-program-section" style="background: #000 linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('assets/Mike2.jpeg');">
+    <!-- Fixed Inline Styles to prevent image from breaking or tiling -->
+    <section id="training-tracks" class="interactive-program-section" style="background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('assets/Mike2.jpeg');">
         <div class="container">
             <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 15px; text-shadow: 3px 3px 0px #000;">EXPLORE OUR <span class="gold">PACK TRAINING TRACKS</span></h2>
             <p style="text-align: center; color: #fff; max-width: 700px; margin: 0 auto 40px auto; font-size: 0.95rem; font-weight: 700; text-shadow: 1px 1px 4px #000;">Select an active program pathway below to discover how the pack moves, builds structural capabilities, and trains together.</p>
@@ -521,13 +524,11 @@
             `;
         }
 
-        // Initialize viewport view on load
         window.addEventListener('DOMContentLoaded', () => {
             switchTrackViewport('lite', document.querySelector('.tab-btn.active'));
             generateCalendarMatrix();
         });
 
-        // --- BOOKING ENGINE FUNCTIONALITY SCRIPTS ---
         const timeBlocks = ["06:00 - 07:00", "07:15 - 08:15", "09:30 - 10:30", "12:00 - 13:00", "16:30 - 17:30", "17:45 - 18:45", "19:00 - 20:00"];
         
         function generateCalendarMatrix() {
