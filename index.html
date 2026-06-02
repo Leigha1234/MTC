@@ -483,46 +483,49 @@
             }
         };
 
-        function switchTrackViewport(trackKey, buttonElement) {
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            if(buttonElement) buttonElement.classList.add('active');
+       function switchTrackViewport(trackKey, buttonElement) {
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    if(buttonElement) buttonElement.classList.add('active');
 
-            const track = trackData[trackKey];
-            if (!track) return;
-            const displayZone = document.getElementById('track-viewport-display');
+    const track = trackData[trackKey];
+    if (!track) return;
+    const displayZone = document.getElementById('track-viewport-display');
 
-            let benefitsHTML = '';
-            track.benefits.forEach(b => {
-                benefitsHTML += `
-                    <div class="benefit-row">
-                        <div class="benefit-icon">${b.icon}</div>
-                        <div class="benefit-text">
-                            <h4>${b.title}</h4>
-                            <p>${b.desc}</p>
-                        </div>
-                    </div>
-                `;
-            });
-
-            displayZone.innerHTML = `
-                <div>
-                    <div class="poster-title" style="font-size: 3.8rem;">${track.title}</div>
-                    <div class="marker-accent" style="font-size: 1.6rem; color:#fff;">${track.subtitle}</div>
-                    
-                    <div class="poster-badge">
-                        <span style="font-weight:900; color:var(--gold); text-transform:uppercase;">${track.badgeTop}</span>
-                        <span>${track.badgeMid}</span>
-                        <span style="font-weight:900; text-transform:uppercase;">${track.badgeBot}</span>
-                    </div>
-
-                    ${benefitsHTML}
-                    <div style="margin-top: 30px;"><a href="#contact" class="btn-gold" style="padding: 10px 24px; font-size:0.9rem;">Book ${track.title} Track</a></div>
+    let benefitsHTML = '';
+    track.benefits.forEach(b => {
+        benefitsHTML += `
+            <div class="benefit-row">
+                <div class="benefit-icon">${b.icon}</div>
+                <div class="benefit-text">
+                    <h4>${b.title}</h4>
+                    <p>${b.desc}</p>
                 </div>
-                <div class="img-frame">
-                    <img src="${track.image}" alt="${track.title} Mike11">
-                </div>
-            `;
-        }
+            </div>
+        `;
+    });
+
+    // We structure this as two columns: one for text, one for the image
+    displayZone.innerHTML = `
+        <div class="track-info-col">
+            <div class="poster-title" style="font-size: 3.8rem;">${track.title}</div>
+            <div class="marker-accent" style="font-size: 1.6rem; color:#fff;">${track.subtitle}</div>
+            
+            <div class="poster-badge">
+                <span style="font-weight:900; color:var(--gold); text-transform:uppercase;">${track.badgeTop}</span>
+                <span>${track.badgeMid}</span>
+                <span style="font-weight:900; text-transform:uppercase;">${track.badgeBot}</span>
+            </div>
+
+            ${benefitsHTML}
+            <div style="margin-top: 30px;"><a href="#contact" class="btn-gold" style="padding: 10px 24px; font-size:0.9rem;">Book ${track.title} Track</a></div>
+        </div>
+        <div class="track-image-col">
+            <div class="img-frame">
+                <img src="assets/${track.image}" alt="${track.title}">
+            </div>
+        </div>
+    `;
+}
 
         window.addEventListener('DOMContentLoaded', () => {
             const activeBtn = document.querySelector('.tab-btn.active');
