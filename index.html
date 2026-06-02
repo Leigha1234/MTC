@@ -118,17 +118,29 @@
         }
         .cta-center { margin-top: 15px; text-align: center; width: 100%; }
 
-        /* Spacier Hero Layout */
+        /* Complete Full-Screen Hero Layout */
         .hero { 
-            height: 85vh; 
-            display: flex; align-items: center; justify-content: center; text-align: center; 
+            min-height: 100vh; 
+            box-sizing: border-box;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
             border-bottom: 5px solid var(--gold);
+            background-size: cover !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
+            background-attachment: fixed !important; /* Premium Parallax Effect */
+            padding: 60px 0;
         }
 
         /* Tracks Section Layout */
         .interactive-program-section { 
             padding: 100px 0; 
-            background: #000 linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), url('assets/Mike2.jpeg') no-repeat center center/cover;
+            background-size: cover !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
+            background-attachment: fixed !important;
             border-bottom: 3px solid #111; 
         }
         .tab-button-panel { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 50px; }
@@ -232,7 +244,8 @@
         footer { background: #000; border-top: 2px solid #222; padding: 80px 0 40px; }
 
         @media (max-width: 1000px) {
-            .hero { height: 65vh; } 
+            .hero { background-attachment: scroll !important; } /* Better scrolling performance on mobile mobile devices */
+            .interactive-program-section { background-attachment: scroll !important; }
             .track-display-viewport { grid-template-columns: 1fr; padding: 30px 20px; }
             .contact-grid { grid-template-columns: 1fr; }
             .img-frame img { height: 320px; }
@@ -261,7 +274,7 @@
         </div>
     </div>
 
-    <header class="hero" style="background: #000 linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)), url('assets/backwomen.jpg') no-repeat center center/cover;">
+    <header class="hero" style="background: #000 linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.9)), url('assets/backwomen.jpg');">
         <div class="container">
             <div class="poster-title">MORAY TRAINING CLUB</div>
             <div class="marker-accent">One Pack. No Ego. Real Fitness Results.</div>
@@ -271,7 +284,7 @@
         </div>
     </header>
 
-    <section id="training-tracks" class="interactive-program-section">
+    <section id="training-tracks" class="interactive-program-section" style="background: #000 linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('assets/Mike2.jpeg');">
         <div class="container">
             <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 15px; text-shadow: 3px 3px 0px #000;">EXPLORE OUR <span class="gold">PACK TRAINING TRACKS</span></h2>
             <p style="text-align: center; color: #fff; max-width: 700px; margin: 0 auto 40px auto; font-size: 0.95rem; font-weight: 700; text-shadow: 1px 1px 4px #000;">Select an active program pathway below to discover how the pack moves, builds structural capabilities, and trains together.</p>
@@ -508,7 +521,7 @@
             `;
         }
 
-        // Initialize the default viewport view on load
+        // Initialize viewport view on load
         window.addEventListener('DOMContentLoaded', () => {
             switchTrackViewport('lite', document.querySelector('.tab-btn.active'));
             generateCalendarMatrix();
@@ -522,14 +535,12 @@
             if(!wrapper) return;
             
             const today = new Date();
-            const currentDayOfWeek = today.getDay(); // 0 is Sun, 1 is Mon...
+            const currentDayOfWeek = today.getDay();
             
-            // Calculate distance back to Monday
             const distanceToMonday = currentDayOfWeek === 0 ? 6 : currentDayOfWeek - 1;
             const mondayDate = new Date(today);
             mondayDate.setDate(today.getDate() - distanceToMonday);
 
-            // Generate 14 days starting from current week's Monday
             for (let i = 0; i < 14; i++) {
                 const targetDate = new Date(mondayDate);
                 targetDate.setDate(mondayDate.getDate() + i);
@@ -538,11 +549,9 @@
                 cell.className = 'calendar-cell';
                 cell.innerText = targetDate.getDate();
                 
-                // Formatted string values
                 const datestring = targetDate.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
                 cell.setAttribute('data-date-value', datestring);
 
-                // Disable days before today
                 const comparisonDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
                 if (targetDate < comparisonDate) {
                     cell.classList.add('disabled');
