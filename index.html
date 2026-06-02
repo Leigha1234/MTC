@@ -6,65 +6,90 @@
     <title>Moray Training Club | The Pack</title>
     <style>
         :root { --gold: #ffcc00; --dark: #000000; }
-        body { font-family: sans-serif; background: var(--dark); color: #fff; margin: 0; }
+        body { font-family: 'Arial', sans-serif; background: var(--dark); color: #fff; margin: 0; }
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
         
-        /* Remove black backgrounds from tabs */
-        .tab-btn { background: transparent; color: #fff; border: 1px solid #444; padding: 10px; cursor: pointer; }
-        .tab-btn.active { background: var(--gold); color: #000; }
+        /* Navigation & Tabs */
+        .tab-button-panel { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0; }
+        .tab-btn { background: transparent; color: #fff; border: 1px solid #444; padding: 12px 20px; cursor: pointer; transition: 0.3s; }
+        .tab-btn.active { background: var(--gold); color: #000; border-color: var(--gold); }
         
-        /* Ensure images show fully */
-        .img-frame img { width: 100%; height: auto; object-fit: contain; display: block; }
+        /* Viewport */
+        .track-display-viewport { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 30px; }
+        .img-frame img { width: 100%; height: auto; object-fit: contain; }
         
-        footer { padding: 40px 0; border-top: 1px solid #333; text-align: center; font-size: 0.8rem; }
-        footer a { color: #fff; margin: 0 10px; text-decoration: none; }
+        /* Footer & Cookie Policy */
+        footer { padding: 40px 0; border-top: 1px solid #333; text-align: center; }
+        footer a { color: #aaa; margin: 0 10px; text-decoration: none; font-size: 0.9rem; }
+        .cookie-banner { text-align: center; padding: 15px; background: #1a1a1a; }
+        
+        .booking-btn { display: inline-block; background: var(--gold); color: #000; padding: 15px 30px; text-decoration: none; font-weight: bold; margin-top: 20px; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Tracks Section -->
-        <div id="track-viewport-display"></div>
-        
-        <!-- Booking Redirect -->
-        <section id="contact">
-            <h3>Ready to join?</h3>
-            <a href="https://goteamup.com/p/3936927-crossfit-moray/" target="_blank" style="background:var(--gold); padding:15px; color:#000; text-decoration:none; font-weight:bold;">BOOK YOUR CLASS HERE</a>
-        </section>
+<div class="container">
+    <h1>MORAY TRAINING CLUB</h1>
+    
+    <!-- Program Selector -->
+    <div class="tab-button-panel">
+        <button class="tab-btn" onclick="updateView('lite')">CrossFit Lite</button>
+        <button class="tab-btn" onclick="updateView('circuits')">Circuits</button>
+        <button class="tab-btn" onclick="updateView('strong')">STRONG Track</button>
+        <button class="tab-btn" onclick="updateView('preteens')">Preteens</button>
+        <button class="tab-btn" onclick="updateView('mums')">Mums and Family</button>
     </div>
 
-    <!-- Footer with your specific links -->
-    <footer>
-        <a href="terms.html">Terms</a>
-        <a href="socialmedia.html">Social Media</a>
-        <a href="safeguarding.html">Safeguarding</a>
-        <a href="policy.html">Policy</a>
-        <a href="health-safety.html">Health & Safety</a>
-        <a href="gdpr.html">GDPR</a>
-        <a href="complaints.html">Complaints</a>
-    </footer>
-
-    <!-- Cookie Policy -->
-    <div style="text-align: center; padding: 10px; background: #222;">
-        This site uses cookies. <a href="cookies.html">Learn More</a>
+    <div id="track-viewport-display" class="track-display-viewport">
+        <!-- Content injected here -->
     </div>
 
-    <script>
-        const trackData = {
-            lite: { title: "CrossFit Lite", image: "Mike11.jpg" },
-            circuits: { title: "Circuits", image: "Mike10.jpg" },
-            strong: { title: "STRONG Track", image: "Mike7.jpg" },
-            preteens: { title: "Preteens", image: "Mike8.jpg" },
-            mums: { title: "Mums and Family", image: "Mike5.jpg" }
-        };
+    <!-- Booking Redirect -->
+    <section id="booking-section" style="margin: 50px 0; text-align: center;">
+        <h2>Ready to Train?</h2>
+        <a href="https://goteamup.com/p/3936927-crossfit-moray/" class="booking-btn" target="_blank">BOOK YOUR CLASS AT TEAMUP</a>
+    </section>
+</div>
 
-        function switchTrackViewport(key) {
-            const track = trackData[key];
-            document.getElementById('track-viewport-display').innerHTML = `
-                <h1>${track.title}</h1>
-                <div class="img-frame"><img src="assets/${track.image}" alt="${track.title}"></div>
-            `;
-        }
-    </script>
+<footer>
+    <a href="terms.html">Terms</a>
+    <a href="socialmedia.html">Social Media</a>
+    <a href="safeguarding.html">Safeguarding</a>
+    <a href="policy.html">Policy</a>
+    <a href="health-safety.html">Health & Safety</a>
+    <a href="gdpr.html">GDPR</a>
+    <a href="complaints.html">Complaints</a>
+</footer>
+
+<div class="cookie-banner">
+    This site uses analytical tracking parameters. <a href="cookies.html">Learn More</a>
+</div>
+
+<script>
+    const trackData = {
+        lite: { title: "CrossFit Lite", image: "Mike11.jpg" },
+        circuits: { title: "Circuits", image: "Mike10.jpg" },
+        strong: { title: "STRONG Track", image: "Mike7.jpg" },
+        preteens: { title: "Preteens", image: "Mike8.jpg" },
+        mums: { title: "Mums and Family", image: "Mike5.jpg" }
+    };
+
+    function updateView(key) {
+        const track = trackData[key];
+        document.getElementById('track-viewport-display').innerHTML = `
+            <div>
+                <h2 style="font-size: 3rem; color: var(--gold);">${track.title}</h2>
+                <p>Explore our ${track.title} program. Real fitness results for everyone.</p>
+            </div>
+            <div class="img-frame">
+                <img src="assets/${track.image}" alt="${track.title}">
+            </div>
+        `;
+    }
+    
+    // Default view
+    updateView('lite');
+</script>
+
 </body>
 </html>
