@@ -9,21 +9,23 @@
         body { font-family: 'Arial', sans-serif; background: var(--dark); color: #fff; margin: 0; }
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
         
-        /* Navigation & Tabs */
-        .tab-button-panel { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0; }
-        .tab-btn { background: transparent; color: #fff; border: 1px solid #444; padding: 12px 20px; cursor: pointer; transition: 0.3s; }
-        .tab-btn.active { background: var(--gold); color: #000; border-color: var(--gold); }
+        /* Layout */
+        .grid-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
         
-        /* Viewport */
-        .track-display-viewport { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 30px; }
-        .img-frame img { width: 100%; height: auto; object-fit: contain; }
+        /* Updated Tab Styles - No Black Background */
+        .tab-button-panel { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+        .tab-btn { background: transparent; color: #fff; border: 1px solid #444; padding: 10px 20px; cursor: pointer; }
+        .tab-btn.active { background: var(--gold); color: #000; }
         
-        /* Footer & Cookie Policy */
-        footer { padding: 40px 0; border-top: 1px solid #333; text-align: center; }
-        footer a { color: #aaa; margin: 0 10px; text-decoration: none; font-size: 0.9rem; }
-        .cookie-banner { text-align: center; padding: 15px; background: #1a1a1a; }
+        /* Image Display - Full View */
+        .img-frame img { width: 100%; height: auto; display: block; }
         
-        .booking-btn { display: inline-block; background: var(--gold); color: #000; padding: 15px 30px; text-decoration: none; font-weight: bold; margin-top: 20px; }
+        /* Booking Section */
+        .booking-box { border: 1px solid var(--gold); padding: 20px; }
+        .booking-btn { display: block; width: 100%; background: var(--gold); color: #000; padding: 15px; text-align: center; text-decoration: none; font-weight: bold; margin-top: 20px; }
+        
+        footer { margin-top: 50px; padding: 20px; text-align: center; border-top: 1px solid #333; }
+        footer a { color: #aaa; margin: 0 10px; text-decoration: none; }
     </style>
 </head>
 <body>
@@ -31,7 +33,6 @@
 <div class="container">
     <h1>MORAY TRAINING CLUB</h1>
     
-    <!-- Program Selector -->
     <div class="tab-button-panel">
         <button class="tab-btn" onclick="updateView('lite')">CrossFit Lite</button>
         <button class="tab-btn" onclick="updateView('circuits')">Circuits</button>
@@ -40,15 +41,17 @@
         <button class="tab-btn" onclick="updateView('mums')">Mums and Family</button>
     </div>
 
-    <div id="track-viewport-display" class="track-display-viewport">
-        <!-- Content injected here -->
-    </div>
+    <div class="grid-layout">
+        <div id="track-display">
+            <!-- Viewport content -->
+        </div>
 
-    <!-- Booking Redirect -->
-    <section id="booking-section" style="margin: 50px 0; text-align: center;">
-        <h2>Ready to Train?</h2>
-        <a href="https://goteamup.com/p/3936927-crossfit-moray/" class="booking-btn" target="_blank">BOOK YOUR CLASS AT TEAMUP</a>
-    </section>
+        <div class="booking-box">
+            <h2>SECURE YOUR PACK SLOT</h2>
+            <p>Ready to join? Book your class directly through our system.</p>
+            <a href="https://goteamup.com/p/3936927-crossfit-moray/" class="booking-btn" target="_blank">BOOK YOUR CLASS AT TEAMUP</a>
+        </div>
+    </div>
 </div>
 
 <footer>
@@ -59,11 +62,10 @@
     <a href="health-safety.html">Health & Safety</a>
     <a href="gdpr.html">GDPR</a>
     <a href="complaints.html">Complaints</a>
+    <div style="margin-top: 15px;">
+        This site uses analytical tracking parameters. <a href="cookies.html">Learn More</a>
+    </div>
 </footer>
-
-<div class="cookie-banner">
-    This site uses analytical tracking parameters. <a href="cookies.html">Learn More</a>
-</div>
 
 <script>
     const trackData = {
@@ -76,18 +78,11 @@
 
     function updateView(key) {
         const track = trackData[key];
-        document.getElementById('track-viewport-display').innerHTML = `
-            <div>
-                <h2 style="font-size: 3rem; color: var(--gold);">${track.title}</h2>
-                <p>Explore our ${track.title} program. Real fitness results for everyone.</p>
-            </div>
-            <div class="img-frame">
-                <img src="assets/${track.image}" alt="${track.title}">
-            </div>
+        document.getElementById('track-display').innerHTML = `
+            <h2>${track.title}</h2>
+            <div class="img-frame"><img src="assets/${track.image}" alt="${track.title}"></div>
         `;
     }
-    
-    // Default view
     updateView('lite');
 </script>
 
