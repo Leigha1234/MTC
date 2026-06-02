@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moray Training Club | The Pack Functional Fitness Gym</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght=600;700;900&family=Permanent+Marker&family=Montserrat:wght=400;700;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700;900&family=Permanent+Marker&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { 
             --gold: #ffcc00; 
@@ -258,7 +257,7 @@
 
     <nav>
         <div class="container nav-container">
-            <div class="nav-logo"><img src="Logo_with_HyroxCrossfit.png" alt="MTC Pack Logo"></div>
+            <div class="nav-logo"><img src="public/assets/Logo_with_HyroxCrossfit.png" alt="MTC Pack Logo"></div>
             <ul class="nav-links">
                 <li><a href="#training-tracks">The Pack Tracks</a></li>
                 <li><a href="#contact" class="btn-gold">JOIN THE PACK</a></li>
@@ -276,7 +275,7 @@
     </div>
 
     <!-- Fixed Inline Styles to work with global layout scaling rules -->
-    <header class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.9)), url('backwomen.jpg');">
+    <header class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.9)), url('public/assets/backwomen.jpg');">
         <div class="container">
             <div class="poster-title">MORAY TRAINING CLUB</div>
             <div class="marker-accent">One Pack. No Ego. Real Fitness Results.</div>
@@ -287,7 +286,7 @@
     </header>
 
     <!-- Fixed Inline Styles to prevent image from breaking or tiling -->
-    <section id="training-tracks" class="interactive-program-section" style="background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('Mike2.jpeg');">
+    <section id="training-tracks" class="interactive-program-section" style="background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('public/assets/Mike2.jpeg');">
         <div class="container">
             <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 15px; text-shadow: 3px 3px 0px #000;">EXPLORE OUR <span class="gold">PACK TRAINING TRACKS</span></h2>
             <p style="text-align: center; color: #fff; max-width: 700px; margin: 0 auto 40px auto; font-size: 0.95rem; font-weight: 700; text-shadow: 1px 1px 4px #000;">Select an active program pathway below to discover how the pack moves, builds structural capabilities, and trains together.</p>
@@ -489,6 +488,7 @@
             if(buttonElement) buttonElement.classList.add('active');
 
             const track = trackData[trackKey];
+            if (!track) return;
             const displayZone = document.getElementById('track-viewport-display');
 
             let benefitsHTML = '';
@@ -525,7 +525,8 @@
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            switchTrackViewport('lite', document.querySelector('.tab-btn.active'));
+            const activeBtn = document.querySelector('.tab-btn.active');
+switchTrackViewport('lite', activeBtn || null);
             generateCalendarMatrix();
         });
 
@@ -533,7 +534,9 @@
         
         function generateCalendarMatrix() {
             const wrapper = document.getElementById('calendar-day-wrapper');
-            if(!wrapper) return;
+if (!wrapper) return;
+
+wrapper.innerHTML = '';
             
             const today = new Date();
             const currentDayOfWeek = today.getDay();
@@ -581,19 +584,29 @@
                 div.addEventListener('click', function() {
                     document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
                     this.classList.add('selected');
-                    document.getElementById('hidden-time-input').value = this.innerText;
-                    document.getElementById('summary-time').innerText = this.innerText;
+                    const timeInput = document.getElementById('hidden-time-input');
+const summaryTime = document.getElementById('summary-time');
+
+if (timeInput) timeInput.value = this.innerText;
+if (summaryTime) summaryTime.innerText = this.innerText;
                 });
                 wrapper.appendChild(div);
             });
         }
 
         function updateProgramSelection() {
-            const selector = document.getElementById('program-selector');
-            const selectedOption = selector.options[selector.selectedIndex];
-            document.getElementById('summary-program').innerText = selectedOption.text.split(' — ')[0];
-            document.getElementById('summary-price').innerText = '£' + selectedOption.getAttribute('data-price');
-        }
+    const selector = document.getElementById('program-selector');
+    const program = document.getElementById('summary-program');
+    const price = document.getElementById('summary-price');
+
+    if (!selector || !program || !price) return;
+
+    const selectedOption = selector.options[selector.selectedIndex];
+    if (!selectedOption) return;
+
+    program.innerText = selectedOption.text.split(' — ')[0];
+    price.innerText = '£' + selectedOption.getAttribute('data-price');
+}
     </script>
 </body>
 </html>
