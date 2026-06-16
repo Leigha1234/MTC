@@ -274,7 +274,6 @@
         </div>
     </div>
 
-    <!-- Fixed Inline Styles to work with global layout scaling rules -->
     <header class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.9)), url('public/assets/backwomen.jpg');">
         <div class="container">
             <div class="poster-title">MORAY TRAINING CLUB</div>
@@ -285,7 +284,6 @@
         </div>
     </header>
 
-    <!-- Fixed Inline Styles to prevent image from breaking or tiling -->
     <section id="training-tracks" class="interactive-program-section" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.9)), url('public/assets/Mike2.jpg');">
         <div class="container">
             <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 15px; text-shadow: 3px 3px 0px #000;">EXPLORE OUR <span class="gold">PACK TRAINING TRACKS</span></h2>
@@ -299,7 +297,7 @@
                 <button class="tab-btn" onclick="switchTrackViewport('kids', this)">CrossFit Kids</button>
                 <button class="tab-btn" onclick="switchTrackViewport('teens', this)">CrossFit Pre Teens</button>
                 <button class="tab-btn" onclick="switchTrackViewport('legends', this)">55+ Legends</button>
-                <button class="tab-btn" onclick="switchTrackViewport('family', this)">Mums & Family</button>
+                <button class="tab-btn" onclick="family", this)">Mums & Family</button>
             </div>
 
             <div class="track-display-viewport" id="track-viewport-display"></div>
@@ -483,58 +481,71 @@
             }
         };
 
-  function switchTrackViewport(trackKey, buttonElement) {
-    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    if(buttonElement) buttonElement.classList.add('active');
+        function switchTrackViewport(trackKey, buttonElement) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            
+            // If passed directly via button click, activate it.
+            // If loaded programmatically on load, find it in the DOM.
+            if(buttonElement) {
+                buttonElement.classList.add('active');
+            } else {
+                const targetBtn = document.querySelector(`button[onclick*="'${trackKey}'"]`);
+                if(targetBtn) targetBtn.classList.add('active');
+            }
 
-    const track = trackData[trackKey];
-    if (!track) return;
-    const displayZone = document.getElementById('track-viewport-display');
+            const track = trackData[trackKey];
+            if (!track) return;
+            const displayZone = document.getElementById('track-viewport-display');
 
-    let benefitsHTML = '';
-    track.benefits.forEach(b => {
-        benefitsHTML += `
-            <div class="benefit-row">
-                <div class="benefit-icon">${b.icon}</div>
-                <div class="benefit-text">
-                    <h4>${b.title}</h4>
-                    <p>${b.desc}</p>
+            let benefitsHTML = '';
+            track.benefits.forEach(b => {
+                benefitsHTML += `
+                    <div class="benefit-row">
+                        <div class="benefit-icon">${b.icon}</div>
+                        <div class="benefit-text">
+                            <h4>${b.title}</h4>
+                            <p>${b.desc}</p>
+                        </div>
+                    </div>
+                `;
+            });
+
+            displayZone.innerHTML = `
+                <div>
+                    <div class="poster-title" style="font-size: 3.8rem;">${track.title}</div>
+                    <div class="marker-accent" style="font-size: 1.6rem; color:#fff;">${track.subtitle}</div>
+                    <div class="poster-badge">
+                        <span style="font-weight:900; color:var(--gold); text-transform:uppercase;">${track.badgeTop}</span>
+                        <span>${track.badgeMid}</span>
+                        <span style="font-weight:900; text-transform:uppercase;">${track.badgeBot}</span>
+                    </div>
+                    ${benefitsHTML}
+                    <div style="margin-top: 30px;"><a href="#contact" class="btn-gold" style="padding: 10px 24px; font-size:0.9rem;">Book ${track.title} Track</a></div>
                 </div>
-            </div>
-        `;
-    });
-
-    // This structure removes the extra container that was creating the "box" 
-    // and places the image directly into the grid-template columns defined in your CSS
-    displayZone.innerHTML = `
-        <div>
-            <div class="poster-title" style="font-size: 3.8rem;">${track.title}</div>
-            <div class="marker-accent" style="font-size: 1.6rem; color:#fff;">${track.subtitle}</div>
-            <div class="poster-badge">
-                <span style="font-weight:900; color:var(--gold); text-transform:uppercase;">${track.badgeTop}</span>
-                <span>${track.badgeMid}</span>
-                <span style="font-weight:900; text-transform:uppercase;">${track.badgeBot}</span>
-            </div>
-            ${benefitsHTML}
-            <div style="margin-top: 30px;"><a href="#contact" class="btn-gold" style="padding: 10px 24px; font-size:0.9rem;">Book ${track.title} Track</a></div>
-        </div>
-        <div class="img-frame">
-            <img src="public/assets/${track.image}" alt="${track.title}">
-        </div>
-    `;
-}
+                <div class="img-frame">
+                    <img src="public/assets/${track.image}" alt="${track.title}">
+                </div>
+            `;
+        }
 
         const timeBlocks = ["06:00 - 07:00", "07:15 - 08:15", "09:30 - 10:30", "12:00 - 13:00", "16:30 - 17:30", "17:45 - 18:45", "19:00 - 20:00"];
         
         function generateCalendarMatrix() {
             const wrapper = document.getElementById('calendar-day-wrapper');
-if (!wrapper) return;
+            if (!wrapper) return;
 
-wrapper.innerHTML = '';
+            wrapper.innerHTML = `
+                <div class="calendar-day-header">Mon</div>
+                <div class="calendar-day-header">Tue</div>
+                <div class="calendar-day-header">Wed</div>
+                <div class="calendar-day-header">Thu</div>
+                <div class="calendar-day-header">Fri</div>
+                <div class="calendar-day-header">Sat</div>
+                <div class="calendar-day-header">Sun</div>
+            `;
             
             const today = new Date();
             const currentDayOfWeek = today.getDay();
-            
             const distanceToMonday = currentDayOfWeek === 0 ? 6 : currentDayOfWeek - 1;
             const mondayDate = new Date(today);
             mondayDate.setDate(today.getDate() - distanceToMonday);
@@ -546,61 +557,15 @@ wrapper.innerHTML = '';
                 const cell = document.createElement('div');
                 cell.className = 'calendar-cell';
                 cell.innerText = targetDate.getDate();
-                
-                const datestring = targetDate.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
-                cell.setAttribute('data-date-value', datestring);
-
-                const comparisonDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-                if (targetDate < comparisonDate) {
-                    cell.classList.add('disabled');
-                } else {
-                    cell.addEventListener('click', function() {
-                        document.querySelectorAll('.calendar-cell').forEach(c => c.classList.remove('selected'));
-                        this.classList.add('selected');
-                        document.getElementById('hidden-date-input').value = this.getAttribute('data-date-value');
-                        document.getElementById('summary-date').innerText = this.getAttribute('data-date-value');
-                        generateTimeSlots();
-                    });
-                }
                 wrapper.appendChild(cell);
             }
         }
 
-        function generateTimeSlots() {
-            const wrapper = document.getElementById('time-slots-wrapper');
-            if(!wrapper) return;
-            wrapper.innerHTML = '';
-            
-            timeBlocks.forEach(slot => {
-                const div = document.createElement('div');
-                div.className = 'time-slot';
-                div.innerText = slot;
-                div.addEventListener('click', function() {
-                    document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
-                    this.classList.add('selected');
-                    const timeInput = document.getElementById('hidden-time-input');
-const summaryTime = document.getElementById('summary-time');
-
-if (timeInput) timeInput.value = this.innerText;
-if (summaryTime) summaryTime.innerText = this.innerText;
-                });
-                wrapper.appendChild(div);
-            });
-        }
-
-        function updateProgramSelection() {
-    const selector = document.getElementById('program-selector');
-    const program = document.getElementById('summary-program');
-    const price = document.getElementById('summary-price');
-
-    if (!selector || !program || !price) return;
-
-    const selectedOption = selector.options[selector.selectedIndex];
-    if (!selectedOption) return;
-
-    program.innerText = selectedOption.text.split(' — ')[0];
-    price.innerText = '£' + selectedOption.getAttribute('data-price');
-}
+        // Initialize display content instantly when DOM loads
+        window.addEventListener('DOMContentLoaded', () => {
+            switchTrackViewport('lite'); 
+            generateCalendarMatrix();
+        });
     </script>
 </body>
 </html>
