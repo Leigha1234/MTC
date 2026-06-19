@@ -385,7 +385,7 @@
         <button class="btn-gold" style="padding: 8px 18px; font-size:0.8rem; border-width:2px; box-shadow:none;" onclick="document.getElementById('cookie-banner').style.display='none'">Accept</button>
     </div>
 
-    <script>
+<script>
         const trackData = {
             lite: {
                 title: "CROSSFIT LITE",
@@ -486,7 +486,6 @@
             if(buttonElement) {
                 buttonElement.classList.add('active');
             } else {
-                // Highlight the default button (CrossFit Lite) if no button element was passed
                 const defaultBtn = document.querySelector(`.tab-btn[onclick*="${trackKey}"]`);
                 if(defaultBtn) defaultBtn.classList.add('active');
             }
@@ -507,6 +506,7 @@
                     </div>
                 `;
             });
+
             displayZone.innerHTML = `
                 <div>
                     <div class="poster-title" style="font-size: 3.8rem;">${track.title}</div>
@@ -519,11 +519,12 @@
                     ${benefitsHTML}
                     <div style="margin-top: 30px;"><a href="#contact" class="btn-gold" style="padding: 10px 24px; font-size:0.9rem;">Book ${track.title} Track</a></div>
                 </div>
-                <div class="img-frame">
-                    <img src="public/assets/${track.image}" alt="${track.title}">
+                <div class="img-frame" style="height: auto; width: auto; display: inline-block;">
+                    <img src="public/assets/${track.image}" alt="${track.title}" style="max-width: 100%; height: auto; display: block;">
                 </div>
             `;
         }
+   </script>
 
         const timeBlocks = ["06:00 - 07:00", "07:15 - 08:15", "09:30 - 10:30", "12:00 - 13:00", "16:30 - 17:30", "17:45 - 18:45", "19:00 - 20:00"];
         
