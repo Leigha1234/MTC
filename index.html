@@ -372,6 +372,145 @@
         </div>
     </section>
 
+    <!-- New Section: Pack Gallery & Testimonials -->
+    <section id="pack-gallery" style="background: #090909; padding: 100px 0; border-top: 3px solid #1a1a1a;">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 5px; text-shadow: 3px 3px 0px #000;">THE <span class="gold">PACK</span> IN ACTION</h2>
+            <p style="text-align: center; color: #aaa; max-width: 600px; margin: 0 auto 50px auto; font-size: 0.95rem; font-weight: 700;">No egos, no filters. Just real local athletes from the Lossiemouth community putting in the work together.</p>
+            
+            <!-- CSS Grid Member Gallery -->
+            <style>
+                .gallery-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 20px;
+                    margin-bottom: 80px;
+                }
+                .gallery-item {
+                    position: relative;
+                    border: 2px solid #222;
+                    overflow: hidden;
+                    background: #000;
+                    transition: border-color 0.2s ease;
+                }
+                .gallery-item:hover {
+                    border-color: var(--gold);
+                }
+                .gallery-item img {
+                    width: 100%;
+                    height: 250px;
+                    object-fit: cover;
+                    display: block;
+                    opacity: 0.85;
+                    transition: transform 0.3s ease, opacity 0.3s ease;
+                }
+                .gallery-item:hover img {
+                    transform: scale(1.03);
+                    opacity: 1;
+                }
+                
+                /* Testimonial Layout Layout */
+                .testimonials-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                    gap: 30px;
+                }
+                .testimonial-card {
+                    background: var(--grey);
+                    border-left: 4px solid var(--gold);
+                    border-top: 1px solid #1a1a1a;
+                    border-right: 1px solid #1a1a1a;
+                    border-bottom: 1px solid #1a1a1a;
+                    padding: 35px 30px;
+                    box-sizing: border-box;
+                }
+                .quote-text {
+                    font-size: 0.95rem;
+                    font-style: italic;
+                    color: #ddd;
+                    margin: 0 0 20px 0;
+                    line-height: 1.7;
+                }
+                .member-profile {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                }
+                .member-meta h4 {
+                    font-size: 1.4rem;
+                    color: #fff;
+                    line-height: 1;
+                    margin-bottom: 4px;
+                }
+                .member-meta span {
+                    font-size: 0.75rem;
+                    text-transform: uppercase;
+                    color: var(--gold);
+                    letter-spacing: 1px;
+                    font-weight: 700;
+                }
+            </style>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="public\assets\TheGirls.jpeg" alt="Pack Training Group 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="public\assets\The pack.jpeg" alt="Pack Training Group 2">
+                </div>
+                  </div>
+                <div class="gallery-item">
+                    <img src="public\assets\fun.jpeg" alt="Pack Training Group 3">
+                </div>
+                 </div>
+                  </div>
+                <div class="gallery-item">
+                    <img src="public\assets\Crossfit.jpeg" alt="Pack Training Group 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="public\assets\Sports day fun.jpeg" alt="Pack Training Group 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="public\assets\mactuff.jpeg" alt="Pack Training Group 6">
+                </div>
+            </div>
+
+            <!-- Testimonials Grid Row -->
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="quote-text">"Before joining the pack, I was terrified of walking into a gym like this. The coaching team completely stripped away the intimidation factor. There are no egos here—just constant support."</p>
+                    <div class="member-profile">
+                        <div class="member-meta">
+                            <h4>Sarah M.</h4>
+                            <span>CrossFit Lite Track</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="quote-text">"The engine capability I've built on the HYROX track is unreal. Training side-by-side with people pushing you to maintain your pace completely rewires your limits. Best decision I've made."</p>
+                    <div class="member-profile">
+                        <div class="member-meta">
+                            <h4>David K.</h4>
+                            <span>HYROX Race Prep Track</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="quote-text">"At 58, finding a place that takes longevity seriously while letting you lift heavy compounds safely is rare. The coaching is precise, and the community keeps you accountable."</p>
+                    <div class="member-profile">
+                        <div class="member-meta">
+                            <h4>James T.</h4>
+                            <span>55+ Legends Track</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
    <footer>
         <div class="container" style="text-align: center; color: #444; font-size: 0.8rem; font-weight:700;">
             <!-- Pack Document Directory Matrix -->
