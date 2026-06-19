@@ -368,8 +368,57 @@
         </div>
     </section>
 
-    <footer>
+   <footer>
         <div class="container" style="text-align: center; color: #444; font-size: 0.8rem; font-weight:700;">
+            <!-- Pack Document Directory Matrix -->
+            <style>
+                .footer-links {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0 0 25px 0;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 15px;
+                }
+                .footer-links a {
+                    color: #aaa;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-size: 0.75rem;
+                    letter-spacing: 1px;
+                    transition: color 0.15s ease-in-out;
+                }
+                .footer-links a:hover {
+                    color: var(--gold);
+                }
+                .footer-divider {
+                    color: #222;
+                }
+                @media (max-width: 768px) {
+                    .footer-links { flex-direction: column; gap: 8px; }
+                    .footer-divider { display: none; }
+                }
+            </style>
+            
+            <ul class="footer-links">
+                <li><a href="contact.html">Contact Us</a></li>
+                <li class="footer-divider">|</li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li class="footer-divider">|</li>
+                <li><a href="policy.html">Privacy & Cookies</a></li>
+                <li class="footer-divider">|</li>
+                <li><a href="gdpr.html">GDPR Data File</a></li>
+                <li class="footer-divider">|</li>
+                <li><a href="health-safety.html">Health & Safety</a></li>
+                <li class="footer-divider">|</li>
+                <li><a href="safeguarding.html">Safeguarding Policy</a></li>
+                <li class="footer-divider">|</li>
+                <li><a href="socialmedia.html">Social Media Policy</a></li>
+                <li class="footer-divider">|</li>
+                <li><a href="complaints.html">Complaints Procedure</a></li>
+            </ul>
+
             <p>© 2026 MORAY TRAINING CLUB | EST. 2020 | ALL RIGHTS RESERVED</p>
             <p class="gold" style="font-size: 0.75rem; letter-spacing: 3px; font-weight: 900; margin-top:5px;">POWERED BY THE ORGANISED TYPES</p>
         </div>
