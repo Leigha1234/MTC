@@ -179,22 +179,19 @@
         .benefit-text p { margin: 2px 0 0 0; color: #bbb; font-size: 0.9rem; }
 
         .img-frame { 
-            width: 100%; 
             border: 3px solid var(--gold); 
             overflow: hidden; 
             background: #000; 
             box-shadow: 6px 6px 0px rgba(255,204,0,0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: inline-block;
+            width: auto;
+            height: auto;
             box-sizing: border-box;
         }
         .img-frame img { 
-            width: 100%; 
             max-width: 100%;
-            height: 450px; 
+            height: auto; 
             display: block; 
-            object-fit: cover; 
             background: #000;
         }
 
@@ -248,7 +245,6 @@
             .interactive-program-section { background-attachment: scroll !important; }
             .track-display-viewport { grid-template-columns: 1fr; padding: 30px 20px; }
             .contact-grid { grid-template-columns: 1fr; }
-            .img-frame img { height: 320px; }
             .nav-logo img { height: 85px; }
         }
     </style>
@@ -316,9 +312,8 @@
                         
                         <div class="booking-step-title">1. Select Membership Path Track</div>
                         <select id="program-selector" name="program" onchange="updateProgramSelection()">
-                            <option value="trial" data-price="20.00">7-Day Unlimited Pack Trial Access Pass — £20.00</option>
-                            <option value="hyrox" data-price="12.00">HYROX Race Prep Session Drop-In — £12.00</option>
                             <option value="lite" data-price="12.00">CrossFit Lite Drop-In — £12.00</option>
+                            <option value="hyrox" data-price="12.00">HYROX Race Prep Session Drop-In — £12.00</option>
                             <option value="circuits" data-price="10.00">Circuits Fast Class Drop-In — £10.00</option>
                             <option value="strong" data-price="15.00">STRONG Heavy Specific Run — £15.00</option>
                             <option value="kids" data-price="8.00">CrossFit Kids Training — £8.00</option>
@@ -352,10 +347,10 @@
 
                         <div class="booking-summary-panel">
                             <h4 style="font-size: 1.3rem; margin-bottom: 12px; color:var(--gold); letter-spacing:1px;">Booking Invoice Summary</h4>
-                            <div class="summary-row"><span>Focused Program:</span><strong id="summary-program">7-Day Unlimited Pack Trial Access Pass</strong></div>
+                            <div class="summary-row"><span>Focused Program:</span><strong id="summary-program">CrossFit Lite Drop-In</strong></div>
                             <div class="summary-row"><span>Assigned Date:</span><strong id="summary-date">Not Selected</strong></div>
                             <div class="summary-row"><span>Class Time Block:</span><strong id="summary-time">Not Selected</strong></div>
-                            <div class="summary-row total"><span>Total Amount Owed:</span><strong id="summary-price">£20.00</strong></div>
+                            <div class="summary-row total"><span>Total Amount Owed:</span><strong id="summary-price">£12.00</strong></div>
                         </div>
 
                         <button type="submit" class="btn-submit" style="margin-top:25px;">Complete My Booking Request</button>
@@ -381,17 +376,18 @@
     </footer>
 
     <div id="cookie-banner">
-        <p style="margin:0; font-size:0.9rem; font-weight:700;">This site uses analytical tracking parameters to optimize training matrices. <a href="#cookies" class="gold">Learn More</a></p>
+        <p style="margin:0; font-size:0.9rem; font-weight:700;">This site uses analytical tracking parameters to optimise training matrixes. <a href="#cookies" class="gold">Learn More</a></p>
         <button class="btn-gold" style="padding: 8px 18px; font-size:0.8rem; border-width:2px; box-shadow:none;" onclick="document.getElementById('cookie-banner').style.display='none'">Accept</button>
     </div>
 
-<script>
+    <script>
         const trackData = {
             lite: {
                 title: "CROSSFIT LITE",
                 subtitle: "Stronger. Fitter. Made Simple.",
                 badgeTop: "REAL PEOPLE", badgeMid: "—", badgeBot: "REAL RESULTS",
                 image: "crossfitlite.jpg",
+                bookingUrl: "https://goteamup.com/p/3936927-crossfit-moray/memberships/274345/",
                 benefits: [
                     { icon: "❤️", title: "IMPROVE FITNESS", desc: "Build base athletic capabilities alongside a pack optimized for continuous structural energy." },
                     { icon: "🔥", title: "BURN CALORIES", desc: "Fast-paced metabolic training layouts engineered to burn fat efficiently inside the team framework." },
@@ -404,6 +400,7 @@
                 subtitle: "Build Your Engine. Conquer The Race.",
                 badgeTop: "ENDURANCE", badgeMid: "—", badgeBot: "METABOLIC POWER",
                 image: "Mikehyrox.jpeg",
+                bookingUrl: "https://goteamup.com/p/3936927-crossfit-moray/memberships/275437/",
                 benefits: [
                     { icon: "🏃", title: "RACE SPECIFIC CONDITIONING", desc: "Master the optimal combination of functional movement stations and targeted running intervals." },
                     { icon: "⚡", title: "UNSTOPPABLE STAMINA", desc: "Develop high-capacity threshold endurance to systematically handle the full layout demands of competition." },
@@ -416,6 +413,7 @@
                 subtitle: "Stronger. Faster. Together. Every Day.",
                 badgeTop: "COMMUNITY EFFORT", badgeMid: "—", badgeBot: "HIGH INTENSITY",
                 image: "circuits.jpg",
+                bookingUrl: "https://goteamup.com/p/3936927-crossfit-moray/memberships/275438/",
                 benefits: [
                     { icon: "⚡", title: "EFFICIENT & EFFECTIVE", desc: "Get a high-intensity full-body workout finished side-by-side with your peers inside minimal time." },
                     { icon: "💪", title: "BOOST FITNESS", desc: "Drastically increase standard muscle stamina, heart recovery speeds, and foundational core power." },
@@ -428,6 +426,7 @@
                 subtitle: "Lift Heavy. Move Well. Build Strength.",
                 badgeTop: "TRAIN SMART", badgeMid: "—", badgeBot: "LIVE STRONG",
                 image: "strong.jpg",
+                bookingUrl: "https://goteamup.com/p/3936927-crossfit-moray/memberships/277227/",
                 benefits: [
                     { icon: "⚙️", title: "BUILD SYSTEMIC STRENGTH", desc: "Pure progressive overload mechanics targeting structural skeletal density with team support." },
                     { icon: "🛡️", title: "IMPROVE TECHNIQUE", desc: "Deep precision mechanics tracking under the bar to build confidence with heavy weight parameters." },
@@ -440,6 +439,7 @@
                 subtitle: "Ages 5-8 | Fun. Strong. Confident.",
                 badgeTop: "MOVE & PLAY", badgeMid: "—", badgeBot: "GROW HEALTHY",
                 image: "crossfitkids.jpeg",
+                bookingUrl: "https://goteamup.com/p/3936927-crossfit-moray/memberships/277819/",
                 benefits: [
                     { icon: "🧸", title: "STRONG BODIES", desc: "Develop healthy motor patterns, coordination mechanics, and base physical resilience early." },
                     { icon: "⭐", title: "BUILD CONFIDENCE", desc: "Encourage strong self-belief, emotional toughness, and spatial body confidence in our little pack." },
@@ -452,6 +452,7 @@
                 subtitle: "Ages 9-12 | Stronger. Faster. Together.",
                 badgeTop: "COACH LED", badgeMid: "—", badgeBot: "SAFE & DRIVEN",
                 image: "crossfitpreteens.jpg",
+                bookingUrl: "https://goteamup.com/p/3936927-crossfit-moray/memberships/104878/",
                 benefits: [
                     { icon: "🦾", title: "BUILD STRENGTH & FORM", desc: "Instill flawless execution, foundational barbell patterns, and basic athletic power control." },
                     { icon: "🎯", title: "BUILD CONFIDENCE", desc: "Empower growing teens to push self-limits, hit milestones, and trust personal capabilities." },
@@ -464,6 +465,7 @@
                 subtitle: "Stronger Every Day. Better at any age.",
                 badgeTop: "STRONG TODAY", badgeMid: "—", badgeBot: "LEGEND FOR LIFE",
                 image: "55+.jpeg",
+                bookingUrl: "https://goteamup.com/p/3936927-crossfit-moray/memberships/102352/",
                 benefits: [
                     { icon: "❤️", title: "STRENGTH FOR LONGEVITY", desc: "Maintain muscular system viability for long-term daily independent functionality alongside fellow pack lifters." },
                     { icon: "🛡️", title: "MOBILITY PRESERVATION", desc: "Target persistent structural joint stiffness and ease physical locomotion." }
@@ -474,6 +476,7 @@
                 subtitle: "Bring the kids. Bring the chaos. Look after you.",
                 badgeTop: "KIDS ALWAYS WELCOME", badgeMid: "—", badgeBot: "PARENTS TRACK",
                 image: "Mike5.jpg",
+                bookingUrl: "https://goteamup.com/p/3936927-crossfit-moray/memberships/274345/", // Fallback link
                 benefits: [
                     { icon: "👶", title: "KIDS WELCOME STRUCTURE", desc: "No child care barriers. Complete safe physical tracking loops inside family operational hours." },
                     { icon: "🏋️", title: "FULLY COACHED EFFORT", desc: "Safe foundational structural recovery routines managed entirely by our pro coaching pack." }
@@ -517,10 +520,12 @@
                         <span style="font-weight:900; text-transform:uppercase;">${track.badgeBot}</span>
                     </div>
                     ${benefitsHTML}
-                    <div style="margin-top: 30px;"><a href="#contact" class="btn-gold" style="padding: 10px 24px; font-size:0.9rem;">Book ${track.title} Track</a></div>
+                    <div style="margin-top: 30px;">
+                        <a href="${track.bookingUrl}" target="_blank" class="btn-gold" style="padding: 10px 24px; font-size:0.9rem;">Book ${track.title} Track</a>
+                    </div>
                 </div>
-                <div class="img-frame" style="height: auto; width: auto; display: inline-block;">
-                    <img src="public/assets/${track.image}" alt="${track.title}" style="max-width: 100%; height: auto; display: block;">
+                <div class="img-frame">
+                    <img src="public/assets/${track.image}" alt="${track.title}">
                 </div>
             `;
         }
@@ -542,33 +547,74 @@
             `;
             
             const today = new Date();
-            const currentDayOfWeek = today.getDay();
+            const currentDayOfWeek = today.getDay(); // 0 = Sun, 1 = Mon, etc.
+            const distanceToMon = currentDayOfWeek === 0 ? -6 : 1 - currentDayOfWeek;
             
-            const distanceToMonday = currentDayOfWeek === 0 ? 6 : currentDayOfWeek - 1;
-            const mondayDate = new Date(today);
-            mondayDate.setDate(today.getDate() - distanceToMonday);
+            const monday = new Date(today);
+            monday.setDate(today.getDate() + distanceToMon);
 
-            for (let i = 0; i < 14; i++) {
-                const targetDate = new Date(mondayDate);
-                targetDate.setDate(mondayDate.getDate() + i);
+            for (let i = 0; i < 7; i++) {
+                const targetDate = new Date(monday);
+                targetDate.setDate(monday.getDate() + i);
+                
+                const dayNum = targetDate.getDate();
+                const dateString = targetDate.toISOString().split('T')[0];
                 
                 const cell = document.createElement('div');
                 cell.className = 'calendar-cell';
-                cell.innerText = targetDate.getDate();
+                cell.textContent = dayNum;
+                cell.dataset.date = dateString;
                 
-                // Fixed the cutoff syntax issue here
-                const datestring = targetDate.toLocaleDateString();
-                cell.setAttribute('data-date', datestring);
+                if (targetDate < today && dayNum !== today.getDate()) {
+                    cell.classList.add('disabled');
+                } else {
+                    cell.onclick = function() { selectDateCell(this); };
+                }
                 
                 wrapper.appendChild(cell);
             }
         }
 
-        // Run functions immediately on window load to ensure CrossFit Lite displays on start
-        window.addEventListener('DOMContentLoaded', () => {
-            generateCalendarMatrix();
+        function selectDateCell(element) {
+            document.querySelectorAll('.calendar-cell').forEach(c => c.classList.remove('selected'));
+            element.classList.add('selected');
+            
+            document.getElementById('hidden-date-input').value = element.dataset.date;
+            document.getElementById('summary-date').textContent = element.dataset.date;
+            
+            const slotsWrapper = document.getElementById('time-slots-wrapper');
+            slotsWrapper.innerHTML = '';
+            
+            timeBlocks.forEach(slot => {
+                const div = document.createElement('div');
+                div.className = 'time-slot';
+                div.textContent = slot;
+                div.onclick = function() { selectTimeSlot(this); };
+                slotsWrapper.appendChild(div);
+            });
+        }
+
+        function selectTimeSlot(element) {
+            document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+            element.classList.add('selected');
+            
+            document.getElementById('hidden-time-input').value = element.textContent;
+            document.getElementById('summary-time').textContent = element.textContent;
+        }
+
+        function updateProgramSelection() {
+            const selector = document.getElementById('program-selector');
+            const selectedOption = selector.options[selector.selectedIndex];
+            
+            document.getElementById('summary-program').textContent = selectedOption.text.split(' — ')[0];
+            document.getElementById('summary-price').textContent = '£' + selectedOption.dataset.price;
+        }
+
+        window.onload = function() {
             switchTrackViewport('lite');
-        });
+            generateCalendarMatrix();
+            updateProgramSelection();
+        };
     </script>
 </body>
 </html>
