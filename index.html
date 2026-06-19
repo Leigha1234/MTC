@@ -385,7 +385,7 @@
         <button class="btn-gold" style="padding: 8px 18px; font-size:0.8rem; border-width:2px; box-shadow:none;" onclick="document.getElementById('cookie-banner').style.display='none'">Accept</button>
     </div>
 
-  <script>
+    <script>
         const trackData = {
             lite: {
                 title: "CROSSFIT LITE",
@@ -486,6 +486,7 @@
             if(buttonElement) {
                 buttonElement.classList.add('active');
             } else {
+                // Highlight the default button (CrossFit Lite) if no button element was passed
                 const defaultBtn = document.querySelector(`.tab-btn[onclick*="${trackKey}"]`);
                 if(defaultBtn) defaultBtn.classList.add('active');
             }
@@ -506,25 +507,6 @@
                     </div>
                 `;
             });
-
-            displayZone.innerHTML = `
-                <div>
-                    <div class="poster-title" style="font-size: 3.8rem;">${track.title}</div>
-                    <div class="marker-accent" style="font-size: 1.6rem; color:#fff;">${track.subtitle}</div>
-                    <div class="poster-badge">
-                        <span style="font-weight:900; color:var(--gold); text-transform:uppercase;">${track.badgeTop}</span>
-                        <span>${track.badgeMid}</span>
-                        <span style="font-weight:900; text-transform:uppercase;">${track.badgeBot}</span>
-                    </div>
-                    ${benefitsHTML}
-                    <div style="margin-top: 30px;"><a href="#contact" class="btn-gold" style="padding: 10px 24px; font-size:0.9rem;">Book ${track.title} Track</a></div>
-                </div>
-                <div class="img-frame" style="aspect-ratio: 1 / 1; overflow: hidden; display: block;">
-                    <img src="public/assets/${track.image}" alt="${track.title}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                </div>
-            `;
-        }
-
             displayZone.innerHTML = `
                 <div>
                     <div class="poster-title" style="font-size: 3.8rem;">${track.title}</div>
