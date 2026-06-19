@@ -341,28 +341,32 @@
                     </div>
                 </div>
 
-                <!-- Right Box: Clean Contact & Membership Enquiry Form -->
-                <div class="workspace-box">
-                    <h2 style="font-size:2.8rem; line-height:0.9; margin-bottom:5px;">GET IN <span class="gold">TOUCH</span></h2>
-                    <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 25px;">Have an enquiry about corporate plans, custom coaching, or joining the pack? Complete the document file below and a team coach will get back to you.</p>
-                    
-<form action="https://formspree.io/f/info@morayperformanceandwellbeing.com" method="POST">
-                        <input type="text" name="contact_name" placeholder="Your Full Name" required>
-                        <input type="email" name="contact_email" placeholder="Your Email Address" required>
-                        
-                        <select name="enquiry_type" required>
-                            <option value="" disabled selected>Select Enquiry Reason</option>
-                            <option value="membership">General Membership Questions</option>
-                            <option value="corporate">Corporate Group Frameworks</option>
-                            <option value="kids-teens">Kids or Teens Track Options</option>
-                            <option value="other">Other Pack Support Needs</option>
-                        </select>
+              <!-- Right Box: Clean Contact & Membership Enquiry Form -->
+    <div class="workspace-box">
+        <h2 style="font-size:2.8rem; line-height:0.9; margin-bottom:5px;">GET IN <span class="gold">TOUCH</span></h2>
+        <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 25px;">Have an enquiry about corporate plans, custom coaching, or joining the pack? Complete the form below and a team coach will get back to you.</p>
+        
+        <form action="https://formsubmit.co/info@morayperformanceandwellbeing.com" method="POST">
+            <!-- Optional configuration inputs for FormSubmit -->
+            <input type="hidden" name="_subject" value="New MTC Pack Enquiry!">
+            <input type="hidden" name="_honeypot" style="display:none">
+            
+            <input type="text" name="contact_name" placeholder="Your Full Name" required>
+            <input type="email" name="contact_email" placeholder="Your Email Address" required>
+            
+            <select name="enquiry_type" required>
+                <option value="" disabled selected>Select Enquiry Reason</option>
+                <option value="General Membership">General Membership Questions</option>
+                <option value="Corporate Frameworks">Corporate Group Frameworks</option>
+                <option value="Kids or Teens Tracks">Kids or Teens Track Options</option>
+                <option value="Other Pack Support">Other Pack Support Needs</option>
+            </select>
 
-                        <textarea name="contact_message" rows="5" placeholder="Write your specific questions, personal goals, or physical requirements here..." required></textarea>
+            <textarea name="contact_message" rows="5" placeholder="Write your specific questions, personal goals, or physical requirements here..." required></textarea>
 
-                        <button type="submit" class="btn-submit">Send Message File</button>
-                    </form>
-                </div>
+            <button type="submit" class="btn-submit">Send Message File</button>
+        </form>
+    </div>
 
             </div>
         </div>
