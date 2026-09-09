@@ -4,69 +4,1812 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Moray Training Club | One Pack. No Ego. Real Fitness Results.</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Teko:wght@500;600;700&display=swap" rel="stylesheet">
+
 <style>
-:root{--yellow:#ffcc00;--black:#050505;--ink:#0d0d0d;--panel:#111;--line:#262626;--muted:#aaa;--white:#fff;--max:1240px}
-*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--black);color:#fff;font-family:Montserrat,Arial,sans-serif;line-height:1.55;overflow-x:hidden} img{max-width:100%;display:block} a{color:inherit}.container{width:min(var(--max),calc(100% - 40px));margin:auto}.eyebrow{font-size:.78rem;letter-spacing:.18em;font-weight:800;text-transform:uppercase;color:var(--yellow)}h1,h2,h3{font-family:Teko,Arial,sans-serif;text-transform:uppercase;line-height:.92;margin:0}.section-title{font-size:clamp(3.4rem,7vw,6.7rem);letter-spacing:.01em}.section-copy{max-width:720px;color:#bbb}.yellow{color:var(--yellow)}
-.announcement{background:var(--yellow);color:#000;font-family:Teko;font-size:1.2rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;overflow:hidden;white-space:nowrap;padding:5px 0}.ticker{display:inline-block;animation:ticker 34s linear infinite}.ticker span{padding:0 38px}@keyframes ticker{to{transform:translateX(-50%)}}
-nav{position:sticky;top:0;z-index:50;background:rgba(5,5,5,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,204,0,.22)}.nav-inner{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:14px;text-decoration:none}.brand-mark{width:44px;height:44px;border:2px solid var(--yellow);display:grid;place-items:center;font-family:Teko;font-size:1.65rem;font-weight:700}.brand-copy strong{display:block;font-family:Teko;font-size:1.65rem;line-height:.8;letter-spacing:.04em}.brand-copy small{font-size:.58rem;letter-spacing:.18em;color:#999;text-transform:uppercase}.nav-links{display:flex;align-items:center;gap:24px}.nav-links a{text-decoration:none;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;background:var(--yellow);color:#000;text-decoration:none;font-size:.82rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--yellow);transition:.2s}.btn:hover{background:#fff;border-color:#fff;transform:translateY(-2px)}.btn.ghost{background:transparent;color:#fff;border-color:#555}.btn.ghost:hover{border-color:var(--yellow);color:var(--yellow);background:transparent}
-.hero{min-height:calc(100vh - 110px);position:relative;display:flex;align-items:flex-end;background-image:linear-gradient(90deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 48%,rgba(0,0,0,.18) 100%),linear-gradient(0deg,rgba(0,0,0,.76),rgba(0,0,0,0) 48%),url('public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30.jpeg');background-size:cover;background-position:center;padding:105px 0 72px;border-bottom:1px solid var(--line)}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:end}.hero h1{font-size:clamp(5rem,11vw,10rem);max-width:770px}.hero h1 span{color:var(--yellow)}.hero-lead{max-width:640px;font-size:1.05rem;font-weight:600;color:#ddd;margin:24px 0 30px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.hero-card{justify-self:end;max-width:390px;background:rgba(10,10,10,.77);border:1px solid rgba(255,255,255,.16);padding:26px;backdrop-filter:blur(10px)}.hero-card .number{font-family:Teko;font-size:4.2rem;line-height:.9;color:var(--yellow)}.hero-card p{margin:6px 0 0;color:#c8c8c8;font-size:.9rem}.hero-meta{margin-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.hero-meta div{border-top:1px solid #454545;padding-top:10px;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:#aaa}.hero-meta strong{display:block;color:#fff;font-size:.85rem;margin-bottom:2px}
-.intro{padding:105px 0 95px}.intro-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:70px;align-items:center}.intro-media{position:relative}.intro-media img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(.88) contrast(1.04)}.intro-media:after{content:"";position:absolute;inset:18px -18px -18px 18px;border:2px solid var(--yellow);z-index:-1}.intro-copy h2{font-size:clamp(4rem,7vw,7rem)}.intro-copy p{color:#b7b7b7}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#252525;margin-top:30px}.stat{background:#0a0a0a;padding:22px 18px}.stat strong{font-family:Teko;font-size:2rem;color:var(--yellow);display:block;line-height:1}.stat span{font-size:.69rem;color:#aaa;text-transform:uppercase;letter-spacing:.08em}
-.tracks{padding:100px 0;background:#0b0b0b;border-block:1px solid #1d1d1d}.tracks-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:40px}.track-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 34px}.track-tab{border:1px solid #333;background:#111;color:#ddd;padding:10px 14px;font:700 .72rem Montserrat;text-transform:uppercase;letter-spacing:.06em;cursor:pointer}.track-tab.active,.track-tab:hover{background:var(--yellow);border-color:var(--yellow);color:#000}.track-panel{display:grid;grid-template-columns:1fr 1.08fr;gap:50px;align-items:center}.track-copy h3{font-size:clamp(3.5rem,6vw,5.8rem)}.track-sub{font-size:1.05rem;color:#ddd;margin:6px 0 22px;font-weight:700}.benefits{display:grid;grid-template-columns:1fr 1fr;gap:12px}.benefit{padding:15px 0;border-top:1px solid #292929}.benefit strong{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}.benefit span{font-size:.78rem;color:#999}.track-image img{width:100%;height:600px;object-fit:cover}.track-image{position:relative}.track-image:before{content:"";position:absolute;inset:auto -12px -12px auto;width:48%;height:48%;border-right:3px solid var(--yellow);border-bottom:3px solid var(--yellow);pointer-events:none}
-.story-strip{padding:26px 0;background:var(--yellow);color:#000}.story-strip .container{display:flex;gap:20px;align-items:center;justify-content:space-between}.story-strip h3{font-size:2.4rem}.story-strip p{margin:0;font-size:.82rem;font-weight:700;max-width:680px}.story-strip .btn{background:#000;border-color:#000;color:#fff}
-.community{padding:100px 0}.community-head{display:grid;grid-template-columns:1fr .8fr;gap:40px;align-items:end;margin-bottom:42px}.community-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:145px;gap:10px}.community-grid figure{margin:0;overflow:hidden;background:#111;position:relative}.community-grid img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}.community-grid figure:hover img{transform:scale(1.03)}.g1{grid-column:span 7;grid-row:span 3}.g2{grid-column:span 5;grid-row:span 2}.g3{grid-column:span 3;grid-row:span 2}.g4{grid-column:span 2;grid-row:span 2}.g5{grid-column:span 5;grid-row:span 3}.g6{grid-column:span 4;grid-row:span 2}.g7{grid-column:span 3;grid-row:span 2}.g8{grid-column:span 5;grid-row:span 2}.g9{grid-column:span 4;grid-row:span 2}.g10{grid-column:span 3;grid-row:span 2}.g11{grid-column:span 6;grid-row:span 2}.g12{grid-column:span 6;grid-row:span 2}.g13{grid-column:span 4;grid-row:span 2}.g14{grid-column:span 4;grid-row:span 2}.g15{grid-column:span 4;grid-row:span 2}.g16{grid-column:span 6;grid-row:span 2}.g17{grid-column:span 6;grid-row:span 2}
-.visit{padding:100px 0;background:#0b0b0b;border-top:1px solid #1f1f1f}.visit-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:stretch}.visit-copy{padding:44px;background:#101010;border:1px solid #232323}.visit-copy h2{font-size:clamp(4rem,7vw,6.4rem)}.visit-copy p{color:#aaa}.address{padding:18px 0;border-top:1px solid #2b2b2b;border-bottom:1px solid #2b2b2b;margin:24px 0;font-weight:700}.visit-photo img{width:100%;height:100%;min-height:560px;object-fit:cover}
-.booking{padding:100px 0}.booking-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:46px}.booking-copy h2{font-size:clamp(4rem,7vw,6.2rem)}.booking-copy p{color:#aaa}.booking-card{border:1px solid #2d2d2d;background:#0d0d0d;padding:28px}.booking-card label{display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:#aaa;margin-bottom:7px}.booking-card input,.booking-card select,.booking-card textarea{width:100%;background:#070707;color:#fff;border:1px solid #292929;padding:14px;margin:0 0 14px;font:500 .9rem Montserrat}.booking-card input:focus,.booking-card select:focus,.booking-card textarea:focus{outline:none;border-color:var(--yellow)}.booking-card button{width:100%;border:0;cursor:pointer}.booking-note{font-size:.72rem;color:#666;margin-top:10px}
-footer{border-top:1px solid #222;padding:50px 0}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-inner small{color:#777}.powered{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow);font-weight:800}
-.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;place-items:center;z-index:100;padding:28px}.lightbox.open{display:grid}.lightbox img{max-width:min(1100px,92vw);max-height:88vh}.lightbox button{position:absolute;right:24px;top:20px;background:none;border:0;color:#fff;font-size:2rem;cursor:pointer}
-@media(max-width:900px){.nav-links a:not(.btn){display:none}.hero-grid,.intro-grid,.track-panel,.community-head,.visit-grid,.booking-grid{grid-template-columns:1fr}.hero{min-height:820px;background-position:center}.hero-card{justify-self:start}.intro-media{max-width:620px}.track-image img{height:460px}.benefits{grid-template-columns:1fr}.community-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:230px}.community-grid figure{grid-column:span 1!important;grid-row:span 1!important}.community-grid .g1,.community-grid .g5{grid-column:span 2!important}.visit-photo img{min-height:420px}.story-strip .container,.footer-inner{align-items:flex-start;flex-direction:column}}
-@media(max-width:600px){.container{width:min(100% - 26px,var(--max))}.nav-inner{height:68px}.brand-copy small{display:none}.hero{padding:70px 0 48px;min-height:760px}.hero h1{font-size:4.6rem}.hero-meta{grid-template-columns:1fr}.section-title{font-size:4rem}.intro,.tracks,.community,.visit,.booking{padding:72px 0}.community-grid{grid-template-columns:1fr;grid-auto-rows:250px}.community-grid figure,.community-grid .g1,.community-grid .g5{grid-column:span 1!important}.track-image img{height:390px}.visit-copy,.booking-card{padding:22px}.hero-actions{flex-direction:column}.hero-actions .btn{width:100%}}
+:root{
+    --yellow:#ffcc00;
+    --black:#050505;
+    --ink:#0d0d0d;
+    --panel:#111;
+    --line:#262626;
+    --muted:#aaa;
+    --white:#fff;
+    --max:1240px;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:var(--black);
+    color:#fff;
+    font-family:Montserrat,Arial,sans-serif;
+    line-height:1.55;
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    color:inherit;
+}
+
+.container{
+    width:min(var(--max),calc(100% - 40px));
+    margin:auto;
+}
+
+.eyebrow{
+    font-size:.78rem;
+    letter-spacing:.18em;
+    font-weight:800;
+    text-transform:uppercase;
+    color:var(--yellow);
+}
+
+h1,h2,h3{
+    font-family:Teko,Arial,sans-serif;
+    text-transform:uppercase;
+    line-height:.92;
+    margin:0;
+}
+
+.section-title{
+    font-size:clamp(3.4rem,7vw,6.7rem);
+    letter-spacing:.01em;
+}
+
+.section-copy{
+    max-width:720px;
+    color:#bbb;
+}
+
+.yellow{
+    color:var(--yellow);
+}
+
+/* ANNOUNCEMENT */
+
+.announcement{
+    background:var(--yellow);
+    color:#000;
+    font-family:Teko;
+    font-size:1.2rem;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    overflow:hidden;
+    white-space:nowrap;
+    padding:5px 0;
+}
+
+.ticker{
+    display:inline-block;
+    animation:ticker 34s linear infinite;
+}
+
+.ticker span{
+    padding:0 38px;
+}
+
+@keyframes ticker{
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+/* NAVIGATION */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(5,5,5,.92);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,204,0,.22);
+}
+
+.nav-inner{
+    min-height:84px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    flex-shrink:0;
+}
+
+.brand-logo{
+    width:auto;
+    height:66px;
+    object-fit:contain;
+    display:block;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:24px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    font-size:.78rem;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 20px;
+    background:var(--yellow);
+    color:#000;
+    text-decoration:none;
+    font-size:.82rem;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    border:1px solid var(--yellow);
+    transition:.2s;
+}
+
+.btn:hover{
+    background:#fff;
+    border-color:#fff;
+    transform:translateY(-2px);
+}
+
+.btn.ghost{
+    background:transparent;
+    color:#fff;
+    border-color:#555;
+}
+
+.btn.ghost:hover{
+    border-color:var(--yellow);
+    color:var(--yellow);
+    background:transparent;
+}
+
+/* HERO */
+
+.hero{
+    min-height:calc(100vh - 118px);
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.88) 0%,
+            rgba(0,0,0,.55) 48%,
+            rgba(0,0,0,.18) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,.76),
+            rgba(0,0,0,0) 48%
+        ),
+        url('public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30.jpeg');
+
+    background-size:cover;
+    background-position:center;
+    padding:105px 0 72px;
+    border-bottom:1px solid var(--line);
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:60px;
+    align-items:end;
+}
+
+.hero h1{
+    font-size:clamp(5rem,11vw,10rem);
+    max-width:770px;
+}
+
+.hero h1 span{
+    color:var(--yellow);
+}
+
+.hero-lead{
+    max-width:640px;
+    font-size:1.05rem;
+    font-weight:600;
+    color:#ddd;
+    margin:24px 0 30px;
+}
+
+.hero-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.hero-card{
+    justify-self:end;
+    max-width:390px;
+    background:rgba(10,10,10,.77);
+    border:1px solid rgba(255,255,255,.16);
+    padding:26px;
+    backdrop-filter:blur(10px);
+}
+
+.hero-card .number{
+    font-family:Teko;
+    font-size:4.2rem;
+    line-height:.9;
+    color:var(--yellow);
+}
+
+.hero-card p{
+    margin:6px 0 0;
+    color:#c8c8c8;
+    font-size:.9rem;
+}
+
+.hero-meta{
+    margin-top:26px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+}
+
+.hero-meta div{
+    border-top:1px solid #454545;
+    padding-top:10px;
+    font-size:.7rem;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:#aaa;
+}
+
+.hero-meta strong{
+    display:block;
+    color:#fff;
+    font-size:.85rem;
+    margin-bottom:2px;
+}
+
+/* INTRO */
+
+.intro{
+    padding:105px 0 95px;
+}
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:.95fr 1.05fr;
+    gap:70px;
+    align-items:center;
+}
+
+.intro-media{
+    position:relative;
+}
+
+.intro-media img{
+    width:100%;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    filter:saturate(.88) contrast(1.04);
+}
+
+.intro-media:after{
+    content:"";
+    position:absolute;
+    inset:18px -18px -18px 18px;
+    border:2px solid var(--yellow);
+    z-index:-1;
+}
+
+.intro-copy h2{
+    font-size:clamp(4rem,7vw,7rem);
+}
+
+.intro-copy p{
+    color:#b7b7b7;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:#252525;
+    margin-top:30px;
+}
+
+.stat{
+    background:#0a0a0a;
+    padding:22px 18px;
+}
+
+.stat strong{
+    font-family:Teko;
+    font-size:2rem;
+    color:var(--yellow);
+    display:block;
+    line-height:1;
+}
+
+.stat span{
+    font-size:.69rem;
+    color:#aaa;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+}
+
+/* TRAINING */
+
+.tracks{
+    padding:100px 0;
+    background:#0b0b0b;
+    border-block:1px solid #1d1d1d;
+}
+
+.tracks-head{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    gap:30px;
+    margin-bottom:40px;
+}
+
+.track-tabs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:26px 0 34px;
+}
+
+.track-tab{
+    border:1px solid #333;
+    background:#111;
+    color:#ddd;
+    padding:10px 14px;
+    font:700 .72rem Montserrat;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    cursor:pointer;
+}
+
+.track-tab.active,
+.track-tab:hover{
+    background:var(--yellow);
+    border-color:var(--yellow);
+    color:#000;
+}
+
+.track-panel{
+    display:grid;
+    grid-template-columns:1fr 1.08fr;
+    gap:50px;
+    align-items:center;
+}
+
+.track-copy h3{
+    font-size:clamp(3.5rem,6vw,5.8rem);
+}
+
+.track-sub{
+    font-size:1.05rem;
+    color:#ddd;
+    margin:6px 0 22px;
+    font-weight:700;
+}
+
+.benefits{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.benefit{
+    padding:15px 0;
+    border-top:1px solid #292929;
+}
+
+.benefit strong{
+    display:block;
+    font-size:.78rem;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+}
+
+.benefit span{
+    font-size:.78rem;
+    color:#999;
+}
+
+.track-image{
+    position:relative;
+}
+
+.track-image img{
+    width:100%;
+    height:600px;
+    object-fit:cover;
+}
+
+.track-image:before{
+    content:"";
+    position:absolute;
+    inset:auto -12px -12px auto;
+    width:48%;
+    height:48%;
+    border-right:3px solid var(--yellow);
+    border-bottom:3px solid var(--yellow);
+    pointer-events:none;
+}
+
+/* OPEN DAY */
+
+.story-strip{
+    padding:26px 0;
+    background:var(--yellow);
+    color:#000;
+}
+
+.story-strip .container{
+    display:flex;
+    gap:20px;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.story-strip h3{
+    font-size:2.4rem;
+}
+
+.story-strip p{
+    margin:0;
+    font-size:.82rem;
+    font-weight:700;
+    max-width:680px;
+}
+
+.story-strip .btn{
+    background:#000;
+    border-color:#000;
+    color:#fff;
+}
+
+/* COMMUNITY */
+
+.community{
+    padding:100px 0;
+}
+
+.community-head{
+    display:grid;
+    grid-template-columns:1fr .8fr;
+    gap:40px;
+    align-items:end;
+    margin-bottom:42px;
+}
+
+.community-grid{
+    display:grid;
+    grid-template-columns:repeat(12,1fr);
+    grid-auto-rows:145px;
+    gap:10px;
+}
+
+.community-grid figure{
+    margin:0;
+    overflow:hidden;
+    background:#111;
+    position:relative;
+    cursor:pointer;
+}
+
+.community-grid img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .35s ease;
+}
+
+.community-grid figure:hover img{
+    transform:scale(1.03);
+}
+
+.g1{grid-column:span 7;grid-row:span 3}
+.g2{grid-column:span 5;grid-row:span 2}
+.g3{grid-column:span 3;grid-row:span 2}
+.g4{grid-column:span 2;grid-row:span 2}
+.g5{grid-column:span 5;grid-row:span 3}
+.g6{grid-column:span 4;grid-row:span 2}
+.g7{grid-column:span 3;grid-row:span 2}
+.g8{grid-column:span 5;grid-row:span 2}
+.g9{grid-column:span 4;grid-row:span 2}
+.g10{grid-column:span 3;grid-row:span 2}
+.g11{grid-column:span 6;grid-row:span 2}
+.g12{grid-column:span 6;grid-row:span 2}
+.g13{grid-column:span 4;grid-row:span 2}
+.g14{grid-column:span 4;grid-row:span 2}
+.g15{grid-column:span 4;grid-row:span 2}
+.g16{grid-column:span 6;grid-row:span 2}
+.g17{grid-column:span 6;grid-row:span 2}
+
+/* VISIT */
+
+.visit{
+    padding:100px 0;
+    background:#0b0b0b;
+    border-top:1px solid #1f1f1f;
+}
+
+.visit-grid{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:40px;
+    align-items:stretch;
+}
+
+.visit-copy{
+    padding:44px;
+    background:#101010;
+    border:1px solid #232323;
+}
+
+.visit-copy h2{
+    font-size:clamp(4rem,7vw,6.4rem);
+}
+
+.visit-copy p{
+    color:#aaa;
+}
+
+.address{
+    padding:18px 0;
+    border-top:1px solid #2b2b2b;
+    border-bottom:1px solid #2b2b2b;
+    margin:24px 0;
+    font-weight:700;
+}
+
+.visit-photo img{
+    width:100%;
+    height:100%;
+    min-height:560px;
+    object-fit:cover;
+}
+
+/* BOOKING */
+
+.booking{
+    padding:100px 0;
+}
+
+.booking-grid{
+    display:grid;
+    grid-template-columns:.82fr 1.18fr;
+    gap:46px;
+}
+
+.booking-copy h2{
+    font-size:clamp(4rem,7vw,6.2rem);
+}
+
+.booking-copy p{
+    color:#aaa;
+}
+
+.booking-card{
+    border:1px solid #2d2d2d;
+    background:#0d0d0d;
+    padding:28px;
+}
+
+.booking-card label{
+    display:block;
+    font-size:.7rem;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-weight:800;
+    color:#aaa;
+    margin-bottom:7px;
+}
+
+.booking-card input,
+.booking-card select,
+.booking-card textarea{
+    width:100%;
+    background:#070707;
+    color:#fff;
+    border:1px solid #292929;
+    padding:14px;
+    margin:0 0 14px;
+    font:500 .9rem Montserrat;
+}
+
+.booking-card input:focus,
+.booking-card select:focus,
+.booking-card textarea:focus{
+    outline:none;
+    border-color:var(--yellow);
+}
+
+.booking-card button{
+    width:100%;
+    border:0;
+    cursor:pointer;
+}
+
+.booking-note{
+    font-size:.72rem;
+    color:#666;
+    margin-top:10px;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid #222;
+    padding:50px 0;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    align-items:center;
+}
+
+.footer-brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.footer-logo{
+    height:60px;
+    width:auto;
+}
+
+.footer-inner small{
+    color:#777;
+}
+
+.powered{
+    font-size:.68rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--yellow);
+    font-weight:800;
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.92);
+    display:none;
+    place-items:center;
+    z-index:100;
+    padding:28px;
+}
+
+.lightbox.open{
+    display:grid;
+}
+
+.lightbox img{
+    max-width:min(1100px,92vw);
+    max-height:88vh;
+}
+
+.lightbox button{
+    position:absolute;
+    right:24px;
+    top:20px;
+    background:none;
+    border:0;
+    color:#fff;
+    font-size:2rem;
+    cursor:pointer;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .nav-links a:not(.btn){
+        display:none;
+    }
+
+    .brand-logo{
+        height:58px;
+    }
+
+    .hero-grid,
+    .intro-grid,
+    .track-panel,
+    .community-head,
+    .visit-grid,
+    .booking-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        min-height:820px;
+        background-position:center;
+    }
+
+    .hero-card{
+        justify-self:start;
+    }
+
+    .intro-media{
+        max-width:620px;
+    }
+
+    .track-image img{
+        height:460px;
+    }
+
+    .benefits{
+        grid-template-columns:1fr;
+    }
+
+    .community-grid{
+        grid-template-columns:repeat(2,1fr);
+        grid-auto-rows:230px;
+    }
+
+    .community-grid figure{
+        grid-column:span 1!important;
+        grid-row:span 1!important;
+    }
+
+    .community-grid .g1,
+    .community-grid .g5{
+        grid-column:span 2!important;
+    }
+
+    .visit-photo img{
+        min-height:420px;
+    }
+
+    .story-strip .container,
+    .footer-inner{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+}
+
+@media(max-width:600px){
+
+    .container{
+        width:min(100% - 26px,var(--max));
+    }
+
+    .nav-inner{
+        min-height:72px;
+    }
+
+    .brand-logo{
+        height:52px;
+    }
+
+    .hero{
+        padding:70px 0 48px;
+        min-height:760px;
+    }
+
+    .hero h1{
+        font-size:4.6rem;
+    }
+
+    .hero-meta{
+        grid-template-columns:1fr;
+    }
+
+    .section-title{
+        font-size:4rem;
+    }
+
+    .intro,
+    .tracks,
+    .community,
+    .visit,
+    .booking{
+        padding:72px 0;
+    }
+
+    .community-grid{
+        grid-template-columns:1fr;
+        grid-auto-rows:250px;
+    }
+
+    .community-grid figure,
+    .community-grid .g1,
+    .community-grid .g5{
+        grid-column:span 1!important;
+    }
+
+    .track-image img{
+        height:390px;
+    }
+
+    .visit-copy,
+    .booking-card{
+        padding:22px;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+    }
+
+    .hero-actions .btn{
+        width:100%;
+    }
+
+    .footer-logo{
+        height:52px;
+    }
+}
 </style>
 </head>
+
 <body>
-<div class="announcement"><div class="ticker"><span>★ NEW GYM. SAME PACK.</span><span>★ HYROX • FUNCTIONAL FITNESS • STRENGTH • KIDS • COMMUNITY</span><span>★ OPEN DAY — 3 OCTOBER</span><span>★ LOSSIEMOUTH</span><span>★ NEW GYM. SAME PACK.</span><span>★ HYROX • FUNCTIONAL FITNESS • STRENGTH • KIDS • COMMUNITY</span><span>★ OPEN DAY — 3 OCTOBER</span><span>★ LOSSIEMOUTH</span></div></div>
-<nav><div class="container nav-inner"><a class="brand" href="#top"><span class="brand-mark">MTC</span><span class="brand-copy"><strong>MORAY TRAINING CLUB</strong><small>One pack. No ego.</small></span></a><div class="nav-links"><a href="#training">Training</a><a href="#community">The Pack</a><a href="#visit">Visit</a><a class="btn" href="#join">Join the Pack</a></div></div></nav>
-<header class="hero" id="top"><div class="container hero-grid"><div><div class="eyebrow">Moray Training Club · Lossiemouth</div><h1>ONE PACK.<br><span>NO EGO.</span></h1><p class="hero-lead">Real coaching, real community and training that meets you where you are. From HYROX and strength to beginners, families and kids — there is a place for you here.</p><div class="hero-actions"><a class="btn" href="#join">Start Training</a><a class="btn ghost" href="#training">Explore Classes</a></div></div><aside class="hero-card"><div class="eyebrow">Now in our new home</div><div class="number">BUILT FOR MORE</div><p>More space. More equipment. More room for the pack to train, grow and bring people together.</p><div class="hero-meta"><div><strong>Lossiemouth</strong>Moray</div><div><strong>All levels</strong>Welcome</div><div><strong>Est. 2020</strong>Still growing</div></div></aside></div></header>
-<section class="intro"><div class="container intro-grid"><div class="intro-media"><img src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (4).jpeg" alt="Moray Training Club members together"></div><div class="intro-copy"><div class="eyebrow">More than a gym</div><h2>THIS IS <span class="yellow">THE PACK.</span></h2><p>Moray Training Club is a community-first functional fitness gym. You do not need to be fit before you walk through the door. You just need to start. Our coaches scale the work, teach the movement and make sure you never feel like you are doing it alone.</p><p>We train hard, but the atmosphere stays welcoming. Parents, beginners, competitors, kids, friends and people returning to fitness all share the same floor.</p><div class="stats"><div class="stat"><strong>ALL</strong><span>abilities welcome</span></div><div class="stat"><strong>1 PACK</strong><span>community first</span></div><div class="stat"><strong>REAL</strong><span>coaching & progress</span></div></div></div></div></section>
-<section class="tracks" id="training"><div class="container"><div class="tracks-head"><div><div class="eyebrow">Choose your way in</div><h2 class="section-title">TRAIN YOUR <span class="yellow">WAY.</span></h2></div><p class="section-copy">You do not have to fit into one mould. Pick a class that suits your goals, confidence and stage of life — and we will coach the rest.</p></div><div class="track-tabs" id="track-tabs"></div><div class="track-panel"><div class="track-copy"><div class="eyebrow" id="track-eyebrow">Accessible. Coached. Effective.</div><h3 id="track-title">CROSSFIT LITE</h3><div class="track-sub" id="track-sub">Stronger. Fitter. Made simple.</div><div class="benefits" id="track-benefits"></div><div style="margin-top:28px"><a class="btn" href="#join">Ask About This Class</a></div></div><div class="track-image"><img id="track-image" src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (3).jpeg" alt="Moray Training Club training"></div></div></div></section>
-<section class="story-strip"><div class="container"><div><div class="eyebrow" style="color:#000">Open day · 3 October</div><h3>COME AND SEE THE NEW MTC.</h3></div><p>Walk through the doors, meet the team, see the new space and get a feel for the community before you commit to anything.</p><a class="btn" href="#visit">Plan Your Visit</a></div></section>
-<section class="community" id="community"><div class="container"><div class="community-head"><div><div class="eyebrow">Not staged. Not stock. Just us.</div><h2 class="section-title">LIFE INSIDE <span class="yellow">MTC.</span></h2></div><p class="section-copy">The equipment matters. The coaching matters. But the people are why it feels different. These are the spaces, faces and moments that make up the club.</p></div><div class="community-grid" id="gallery">
-<figure class="g1"><img src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29 (5).jpeg" alt="MTC training floor"></figure>
-<figure class="g2"><img src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (4).jpeg" alt="MTC members"></figure>
-<figure class="g3"><img src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29 (2).jpeg" alt="Wall balls"></figure>
-<figure class="g4"><img src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29 (1).jpeg" alt="Weight plates"></figure>
-<figure class="g5"><img src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (2).jpeg" alt="Kids at MTC"></figure>
-<figure class="g6"><img src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (6).jpeg" alt="MTC equipment"></figure>
-<figure class="g7"><img src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29.jpeg" alt="MTC values poster"></figure>
-<figure class="g8"><img src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (7).jpeg" alt="MTC community event"></figure>
-<figure class="g9"><img src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (5).jpeg" alt="Training plates"></figure>
-<figure class="g10"><img src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (1).jpeg" alt="Gym equipment"></figure>
-<figure class="g11"><img src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (3).jpeg" alt="MTC members after training"></figure>
-<figure class="g12"><img src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30.jpeg" alt="MTC gym floor"></figure>
-<figure class="g13"><img src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29 (3).jpeg" alt="Moray Training Club floor"></figure>
-<figure class="g14"><img src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29 (4).jpeg" alt="MTC sled lane"></figure>
-<figure class="g15"><img src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29 (5).jpeg" alt="MTC floor view"></figure>
-<figure class="g16"><img src="public/assets/new/PHOTO-2026-09-09-16-01-30.jpg" alt="MTC office and merch"></figure>
-<figure class="g17"><img src="public/assets/new/PHOTO-2026-09-09-16-01-30.jpg" alt="MTC office"></figure>
-</div></div></section>
-<section class="visit" id="visit"><div class="container visit-grid"><div class="visit-copy"><div class="eyebrow">Come in and see us</div><h2>FIND YOUR <span class="yellow">PACK.</span></h2><p>The new club gives us room for functional fitness, strength, HYROX-style conditioning, kids sessions, community events and more.</p><div class="address">Unit 7, Coulardbank Industrial Estate<br>Lossiemouth · IV31 6NG</div><p>Not sure which class is right for you? Message us first. We will point you in the right direction without making it complicated.</p><a class="btn" href="#join">Message / Enquire</a></div><div class="visit-photo"><img src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (1).jpeg" alt="Inside Moray Training Club"></div></div></section>
-<section class="booking" id="join"><div class="container booking-grid"><div class="booking-copy"><div class="eyebrow">Ready when you are</div><h2>JOIN THE <span class="yellow">PACK.</span></h2><p>You do not need to know exactly what you want before you get in touch. Tell us a little about you and what you are looking for, and we will help you choose the best starting point.</p><p><strong>Brand new to training?</strong> Say that. <strong>Training for HYROX?</strong> Tell us. <strong>Coming back after time away?</strong> We have you.</p></div><form class="booking-card" action="https://formspree.io/f/your_form_id_here" method="POST"><label for="name">Name</label><input id="name" name="name" type="text" required placeholder="Your full name"><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="you@example.com"><label for="interest">What are you interested in?</label><select id="interest" name="interest"><option>Not sure yet</option><option>CrossFit Lite / beginner-friendly training</option><option>HYROX</option><option>Circuits</option><option>Strength</option><option>Kids / Pre-Teens</option><option>55+ / Legends</option><option>Family / Mums</option></select><label for="message">Anything we should know?</label><textarea id="message" name="message" rows="5" placeholder="Goals, experience, questions, injuries or anything else..."></textarea><button class="btn" type="submit">Send My Enquiry</button><div class="booking-note">Replace the Formspree URL in the code with your live form endpoint before publishing.</div></form></div></section>
-<footer><div class="container footer-inner"><div><strong>MORAY TRAINING CLUB</strong><br><small>© 2026 · Unit 7 Coulardbank Industrial Estate, Lossiemouth</small></div><div class="powered">Powered by The Organised Types</div></div></footer>
-<div class="lightbox" id="lightbox"><button aria-label="Close">×</button><img src="" alt="Expanded gallery image"></div>
+
+<div class="announcement">
+    <div class="ticker">
+        <span>★ NEW GYM. SAME PACK.</span>
+        <span>★ HYROX • FUNCTIONAL FITNESS • STRENGTH • KIDS • COMMUNITY</span>
+        <span>★ OPEN DAY — 3 OCTOBER</span>
+        <span>★ LOSSIEMOUTH</span>
+
+        <span>★ NEW GYM. SAME PACK.</span>
+        <span>★ HYROX • FUNCTIONAL FITNESS • STRENGTH • KIDS • COMMUNITY</span>
+        <span>★ OPEN DAY — 3 OCTOBER</span>
+        <span>★ LOSSIEMOUTH</span>
+    </div>
+</div>
+
+<nav>
+    <div class="container nav-inner">
+
+        <a class="brand" href="#top">
+            <img
+                src="public/assets/Logo_with_HyroxCrossfit.png"
+                alt="Moray Training Club"
+                class="brand-logo"
+            >
+        </a>
+
+        <div class="nav-links">
+            <a href="#training">Training</a>
+            <a href="#community">The Pack</a>
+            <a href="#visit">Visit</a>
+            <a class="btn" href="#join">Join the Pack</a>
+        </div>
+
+    </div>
+</nav>
+
+<header class="hero" id="top">
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <div class="eyebrow">
+                Moray Training Club · Lossiemouth
+            </div>
+
+            <h1>
+                ONE PACK.<br>
+                <span>NO EGO.</span>
+            </h1>
+
+            <p class="hero-lead">
+                Real coaching, real community and training that meets you where you are.
+                From HYROX and strength to beginners, families and kids — there is a place
+                for you here.
+            </p>
+
+            <div class="hero-actions">
+                <a class="btn" href="#join">
+                    Start Training
+                </a>
+
+                <a class="btn ghost" href="#training">
+                    Explore Classes
+                </a>
+            </div>
+
+        </div>
+
+        <aside class="hero-card">
+
+            <div class="eyebrow">
+                Now in our new home
+            </div>
+
+            <div class="number">
+                BUILT FOR MORE
+            </div>
+
+            <p>
+                More space. More equipment. More room for the pack to train,
+                grow and bring people together.
+            </p>
+
+            <div class="hero-meta">
+
+                <div>
+                    <strong>Lossiemouth</strong>
+                    Moray
+                </div>
+
+                <div>
+                    <strong>All levels</strong>
+                    Welcome
+                </div>
+
+                <div>
+                    <strong>Est. 2020</strong>
+                    Still growing
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</header>
+
+<section class="intro">
+
+    <div class="container intro-grid">
+
+        <div class="intro-media">
+
+            <img
+                src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (4).jpeg"
+                alt="Moray Training Club members together"
+            >
+
+        </div>
+
+        <div class="intro-copy">
+
+            <div class="eyebrow">
+                More than a gym
+            </div>
+
+            <h2>
+                THIS IS <span class="yellow">THE PACK.</span>
+            </h2>
+
+            <p>
+                Moray Training Club is a community-first functional fitness gym.
+                You do not need to be fit before you walk through the door.
+                You just need to start.
+            </p>
+
+            <p>
+                Our coaches scale the work, teach the movement and make sure you never
+                feel like you are doing it alone. Parents, beginners, competitors,
+                kids, friends and people returning to fitness all share the same floor.
+            </p>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <strong>ALL</strong>
+                    <span>abilities welcome</span>
+                </div>
+
+                <div class="stat">
+                    <strong>1 PACK</strong>
+                    <span>community first</span>
+                </div>
+
+                <div class="stat">
+                    <strong>REAL</strong>
+                    <span>coaching & progress</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="tracks" id="training">
+
+    <div class="container">
+
+        <div class="tracks-head">
+
+            <div>
+
+                <div class="eyebrow">
+                    Choose your way in
+                </div>
+
+                <h2 class="section-title">
+                    TRAIN YOUR <span class="yellow">WAY.</span>
+                </h2>
+
+            </div>
+
+            <p class="section-copy">
+                You do not have to fit into one mould.
+                Pick a class that suits your goals, confidence and stage of life —
+                and we will coach the rest.
+            </p>
+
+        </div>
+
+        <div
+            class="track-tabs"
+            id="track-tabs">
+        </div>
+
+        <div class="track-panel">
+
+            <div class="track-copy">
+
+                <div
+                    class="eyebrow"
+                    id="track-eyebrow">
+                    Accessible. Coached. Effective.
+                </div>
+
+                <h3 id="track-title">
+                    CROSSFIT LITE
+                </h3>
+
+                <div
+                    class="track-sub"
+                    id="track-sub">
+                    Stronger. Fitter. Made simple.
+                </div>
+
+                <div
+                    class="benefits"
+                    id="track-benefits">
+                </div>
+
+                <div style="margin-top:28px">
+
+                    <a
+                        class="btn"
+                        href="#join">
+                        Ask About This Class
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="track-image">
+
+                <img
+                    id="track-image"
+                    src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (3).jpeg"
+                    alt="Moray Training Club training"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="story-strip">
+
+    <div class="container">
+
+        <div>
+
+            <div
+                class="eyebrow"
+                style="color:#000">
+
+                Open day · 3 October
+
+            </div>
+
+            <h3>
+                COME AND SEE THE NEW MTC.
+            </h3>
+
+        </div>
+
+        <p>
+            Walk through the doors, meet the team, see the new space and get a feel
+            for the community before you commit to anything.
+        </p>
+
+        <a
+            class="btn"
+            href="#visit">
+            Plan Your Visit
+        </a>
+
+    </div>
+
+</section>
+
+<section
+    class="community"
+    id="community">
+
+    <div class="container">
+
+        <div class="community-head">
+
+            <div>
+
+                <div class="eyebrow">
+                    Not staged. Not stock. Just us.
+                </div>
+
+                <h2 class="section-title">
+                    LIFE INSIDE <span class="yellow">MTC.</span>
+                </h2>
+
+            </div>
+
+            <p class="section-copy">
+                The equipment matters. The coaching matters.
+                But the people are why it feels different.
+                These are the spaces, faces and moments that make up the club.
+            </p>
+
+        </div>
+
+        <div
+            class="community-grid"
+            id="gallery">
+
+            <figure class="g1">
+                <img
+                    src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29 (5).jpeg"
+                    alt="MTC training floor">
+            </figure>
+
+            <figure class="g2">
+                <img
+                    src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (4).jpeg"
+                    alt="MTC members">
+            </figure>
+
+            <figure class="g3">
+                <img
+                    src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29 (2).jpeg"
+                    alt="Wall balls">
+            </figure>
+
+            <figure class="g4">
+                <img
+                    src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29 (1).jpeg"
+                    alt="Weight plates">
+            </figure>
+
+            <figure class="g5">
+                <img
+                    src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (2).jpeg"
+                    alt="Kids at MTC">
+            </figure>
+
+            <figure class="g6">
+                <img
+                    src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (6).jpeg"
+                    alt="MTC equipment">
+            </figure>
+
+            <figure class="g7">
+                <img
+                    src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29.jpeg"
+                    alt="MTC values poster">
+            </figure>
+
+            <figure class="g8">
+                <img
+                    src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (7).jpeg"
+                    alt="MTC community event">
+            </figure>
+
+            <figure class="g9">
+                <img
+                    src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (5).jpeg"
+                    alt="Training plates">
+            </figure>
+
+            <figure class="g10">
+                <img
+                    src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (1).jpeg"
+                    alt="Gym equipment">
+            </figure>
+
+            <figure class="g11">
+                <img
+                    src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (3).jpeg"
+                    alt="MTC members after training">
+            </figure>
+
+            <figure class="g12">
+                <img
+                    src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30.jpeg"
+                    alt="MTC gym floor">
+            </figure>
+
+            <figure class="g13">
+                <img
+                    src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29 (3).jpeg"
+                    alt="Moray Training Club floor">
+            </figure>
+
+            <figure class="g14">
+                <img
+                    src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29 (4).jpeg"
+                    alt="MTC sled lane">
+            </figure>
+
+            <figure class="g15">
+                <img
+                    src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29 (5).jpeg"
+                    alt="MTC floor view">
+            </figure>
+
+            <figure class="g16">
+                <img
+                    src="public/assets/new/PHOTO-2026-09-09-16-01-30.jpg"
+                    alt="MTC office and merch">
+            </figure>
+
+            <figure class="g17">
+                <img
+                    src="public/assets/new/PHOTO-2026-09-09-16-01-30.jpg"
+                    alt="MTC office">
+            </figure>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section
+    class="visit"
+    id="visit">
+
+    <div class="container visit-grid">
+
+        <div class="visit-copy">
+
+            <div class="eyebrow">
+                Come in and see us
+            </div>
+
+            <h2>
+                FIND YOUR <span class="yellow">PACK.</span>
+            </h2>
+
+            <p>
+                The new club gives us room for functional fitness, strength,
+                HYROX-style conditioning, kids sessions, community events and more.
+            </p>
+
+            <div class="address">
+                Unit 7, Coulardbank Industrial Estate<br>
+                Lossiemouth · IV31 6NG
+            </div>
+
+            <p>
+                Not sure which class is right for you?
+                Message us first. We will point you in the right direction without
+                making it complicated.
+            </p>
+
+            <a
+                class="btn"
+                href="#join">
+                Message / Enquire
+            </a>
+
+        </div>
+
+        <div class="visit-photo">
+
+            <img
+                src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (1).jpeg"
+                alt="Inside Moray Training Club">
+
+        </div>
+
+    </div>
+
+</section>
+
+<section
+    class="booking"
+    id="join">
+
+    <div class="container booking-grid">
+
+        <div class="booking-copy">
+
+            <div class="eyebrow">
+                Ready when you are
+            </div>
+
+            <h2>
+                JOIN THE <span class="yellow">PACK.</span>
+            </h2>
+
+            <p>
+                You do not need to know exactly what you want before you get in touch.
+                Tell us a little about you and what you are looking for,
+                and we will help you choose the best starting point.
+            </p>
+
+            <p>
+                <strong>Brand new to training?</strong> Say that.
+                <strong>Training for HYROX?</strong> Tell us.
+                <strong>Coming back after time away?</strong> We have you.
+            </p>
+
+        </div>
+
+        <form
+            class="booking-card"
+            action="https://formspree.io/f/your_form_id_here"
+            method="POST">
+
+            <label for="name">
+                Name
+            </label>
+
+            <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                placeholder="Your full name">
+
+            <label for="email">
+                Email
+            </label>
+
+            <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="you@example.com">
+
+            <label for="interest">
+                What are you interested in?
+            </label>
+
+            <select
+                id="interest"
+                name="interest">
+
+                <option>
+                    Not sure yet
+                </option>
+
+                <option>
+                    CrossFit Lite / beginner-friendly training
+                </option>
+
+                <option>
+                    HYROX
+                </option>
+
+                <option>
+                    Circuits
+                </option>
+
+                <option>
+                    Strength
+                </option>
+
+                <option>
+                    Kids / Pre-Teens
+                </option>
+
+                <option>
+                    55+ / Legends
+                </option>
+
+                <option>
+                    Family / Mums
+                </option>
+
+            </select>
+
+            <label for="message">
+                Anything we should know?
+            </label>
+
+            <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Goals, experience, questions, injuries or anything else..."></textarea>
+
+            <button
+                class="btn"
+                type="submit">
+                Send My Enquiry
+            </button>
+
+            <div class="booking-note">
+                Replace the Formspree URL in the code with your live form endpoint before publishing.
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <div class="footer-brand">
+
+            <img
+                src="public/assets/Logo_with_HyroxCrossfit.png"
+                alt="Moray Training Club"
+                class="footer-logo">
+
+            <div>
+                <strong>MORAY TRAINING CLUB</strong><br>
+                <small>
+                    © 2026 · Unit 7 Coulardbank Industrial Estate, Lossiemouth
+                </small>
+            </div>
+
+        </div>
+
+        <div class="powered">
+            Powered by The Organised Types
+        </div>
+
+    </div>
+
+</footer>
+
+<div
+    class="lightbox"
+    id="lightbox">
+
+    <button aria-label="Close">
+        ×
+    </button>
+
+    <img
+        src=""
+        alt="Expanded gallery image">
+
+</div>
+
 <script>
-const tracks={
-"CrossFit Lite":{sub:"Stronger. Fitter. Made simple.",eyebrow:"Accessible. Coached. Effective.",img:"public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (3).jpeg",benefits:[["Beginner friendly","A clear way into coached functional fitness."],["Build confidence","Learn movement without feeling thrown in at the deep end."],["Improve fitness","Strength, conditioning and consistency in one place."],["Train with people","Supportive sessions without the ego."]]},
-"HYROX":{sub:"Build your engine. Get race ready.",eyebrow:"Running. Stations. Strategy.",img:"public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30.jpeg",benefits:[["Race-specific work","Run-to-station training built around HYROX demands."],["Sleds & ergs","Work on the tools you need to feel confident with."],["Pacing","Learn how to hold effort across the full session."],["All stages","From first race to chasing a faster time."]]},
-"Circuits":{sub:"Fast. Varied. Full-body.",eyebrow:"Work hard. Leave better.",img:"public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30.jpeg",benefits:[["Efficient sessions","Get a lot done without spending hours in the gym."],["Full-body training","Strength and conditioning mixed together."],["Scalable","Work at the right level for you."],["Community energy","Train beside people who keep you moving."]]},
-"Strength":{sub:"Lift well. Build properly.",eyebrow:"Technique before ego.",img:"public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29 (1).jpeg",benefits:[["Get stronger","Progress with purpose, not guesswork."],["Better technique","Build confidence with the main lifts."],["Coach-led","Know what you are doing and why."],["For every level","Strength training is not just for advanced lifters."]]},
-"Kids":{sub:"Move. Play. Build confidence.",eyebrow:"Strong bodies. Happy humans.",img:"public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (2).jpeg",benefits:[["Fun first","Sessions are built to keep kids moving and engaged."],["Confidence","Small wins that build self-belief."],["Coordination","Develop movement skills through coached play."],["Healthy habits","Make activity feel normal from an early age."]]},
-"Family":{sub:"Training that works around real life.",eyebrow:"Parents belong here too.",img:"public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (7).jpeg",benefits:[["Less pressure","You do not need a perfect routine to get started."],["Welcoming space","A club built around people, not intimidation."],["Flexible goals","Train for energy, strength, confidence or performance."],["Community","Find people who get the juggle."]]}}
-const tabs=document.getElementById('track-tabs'); const title=document.getElementById('track-title'); const sub=document.getElementById('track-sub'); const eyebrow=document.getElementById('track-eyebrow'); const image=document.getElementById('track-image'); const benefits=document.getElementById('track-benefits');
-function renderTrack(name){const t=tracks[name];title.textContent=name;sub.textContent=t.sub;eyebrow.textContent=t.eyebrow;image.src=t.img;benefits.innerHTML=t.benefits.map(([a,b])=>`<div class="benefit"><strong>${a}</strong><span>${b}</span></div>`).join('');document.querySelectorAll('.track-tab').forEach(x=>x.classList.toggle('active',x.dataset.name===name));}
-Object.keys(tracks).forEach((name,i)=>{const b=document.createElement('button');b.className='track-tab'+(i===0?' active':'');b.dataset.name=name;b.textContent=name;b.onclick=()=>renderTrack(name);tabs.appendChild(b)}); renderTrack('CrossFit Lite');
-const lightbox=document.getElementById('lightbox'),lightboxImg=lightbox.querySelector('img');document.querySelectorAll('#gallery img').forEach(img=>img.addEventListener('click',()=>{lightboxImg.src=img.src;lightboxImg.alt=img.alt;lightbox.classList.add('open')}));lightbox.addEventListener('click',e=>{if(e.target===lightbox||e.target.tagName==='BUTTON')lightbox.classList.remove('open')});document.addEventListener('keydown',e=>{if(e.key==='Escape')lightbox.classList.remove('open')});
+const tracks = {
+
+    "CrossFit Lite": {
+        sub: "Stronger. Fitter. Made simple.",
+        eyebrow: "Accessible. Coached. Effective.",
+        img: "public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (3).jpeg",
+        benefits: [
+            [
+                "Beginner friendly",
+                "A clear way into coached functional fitness."
+            ],
+            [
+                "Build confidence",
+                "Learn movement without feeling thrown in at the deep end."
+            ],
+            [
+                "Improve fitness",
+                "Strength, conditioning and consistency in one place."
+            ],
+            [
+                "Train with people",
+                "Supportive sessions without the ego."
+            ]
+        ]
+    },
+
+    "HYROX": {
+        sub: "Build your engine. Get race ready.",
+        eyebrow: "Running. Stations. Strategy.",
+        img: "public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30.jpeg",
+        benefits: [
+            [
+                "Race-specific work",
+                "Run-to-station training built around HYROX demands."
+            ],
+            [
+                "Sleds & ergs",
+                "Work on the tools you need to feel confident with."
+            ],
+            [
+                "Pacing",
+                "Learn how to hold effort across the full session."
+            ],
+            [
+                "All stages",
+                "From first race to chasing a faster time."
+            ]
+        ]
+    },
+
+    "Circuits": {
+        sub: "Fast. Varied. Full-body.",
+        eyebrow: "Work hard. Leave better.",
+        img: "public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30.jpeg",
+        benefits: [
+            [
+                "Efficient sessions",
+                "Get a lot done without spending hours in the gym."
+            ],
+            [
+                "Full-body training",
+                "Strength and conditioning mixed together."
+            ],
+            [
+                "Scalable",
+                "Work at the right level for you."
+            ],
+            [
+                "Community energy",
+                "Train beside people who keep you moving."
+            ]
+        ]
+    },
+
+    "Strength": {
+        sub: "Lift well. Build properly.",
+        eyebrow: "Technique before ego.",
+        img: "public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29 (1).jpeg",
+        benefits: [
+            [
+                "Get stronger",
+                "Progress with purpose, not guesswork."
+            ],
+            [
+                "Better technique",
+                "Build confidence with the main lifts."
+            ],
+            [
+                "Coach-led",
+                "Know what you are doing and why."
+            ],
+            [
+                "For every level",
+                "Strength training is not just for advanced lifters."
+            ]
+        ]
+    },
+
+    "Kids": {
+        sub: "Move. Play. Build confidence.",
+        eyebrow: "Strong bodies. Happy humans.",
+        img: "public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (2).jpeg",
+        benefits: [
+            [
+                "Fun first",
+                "Sessions are built to keep kids moving and engaged."
+            ],
+            [
+                "Confidence",
+                "Small wins that build self-belief."
+            ],
+            [
+                "Coordination",
+                "Develop movement skills through coached play."
+            ],
+            [
+                "Healthy habits",
+                "Make activity feel normal from an early age."
+            ]
+        ]
+    },
+
+    "Family": {
+        sub: "Training that works around real life.",
+        eyebrow: "Parents belong here too.",
+        img: "public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (7).jpeg",
+        benefits: [
+            [
+                "Less pressure",
+                "You do not need a perfect routine to get started."
+            ],
+            [
+                "Welcoming space",
+                "A club built around people, not intimidation."
+            ],
+            [
+                "Flexible goals",
+                "Train for energy, strength, confidence or performance."
+            ],
+            [
+                "Community",
+                "Find people who get the juggle."
+            ]
+        ]
+    }
+
+};
+
+const tabs =
+    document.getElementById("track-tabs");
+
+const title =
+    document.getElementById("track-title");
+
+const sub =
+    document.getElementById("track-sub");
+
+const eyebrow =
+    document.getElementById("track-eyebrow");
+
+const image =
+    document.getElementById("track-image");
+
+const benefits =
+    document.getElementById("track-benefits");
+
+function renderTrack(name){
+
+    const t =
+        tracks[name];
+
+    title.textContent =
+        name;
+
+    sub.textContent =
+        t.sub;
+
+    eyebrow.textContent =
+        t.eyebrow;
+
+    image.src =
+        t.img;
+
+    benefits.innerHTML =
+        t.benefits
+            .map(
+                ([a,b]) =>
+                    `
+                    <div class="benefit">
+                        <strong>${a}</strong>
+                        <span>${b}</span>
+                    </div>
+                    `
+            )
+            .join("");
+
+    document
+        .querySelectorAll(".track-tab")
+        .forEach(
+            x =>
+                x.classList.toggle(
+                    "active",
+                    x.dataset.name === name
+                )
+        );
+}
+
+Object
+    .keys(tracks)
+    .forEach(
+        (name,i) => {
+
+            const b =
+                document.createElement("button");
+
+            b.className =
+                "track-tab" +
+                (i === 0 ? " active" : "");
+
+            b.dataset.name =
+                name;
+
+            b.textContent =
+                name;
+
+            b.onclick =
+                () => renderTrack(name);
+
+            tabs.appendChild(b);
+        }
+    );
+
+renderTrack("CrossFit Lite");
+
+/* Gallery lightbox */
+
+const lightbox =
+    document.getElementById("lightbox");
+
+const lightboxImg =
+    lightbox.querySelector("img");
+
+document
+    .querySelectorAll("#gallery img")
+    .forEach(
+        img =>
+            img.addEventListener(
+                "click",
+                () => {
+
+                    lightboxImg.src =
+                        img.src;
+
+                    lightboxImg.alt =
+                        img.alt;
+
+                    lightbox.classList.add("open");
+                }
+            )
+    );
+
+lightbox.addEventListener(
+    "click",
+    e => {
+
+        if(
+            e.target === lightbox ||
+            e.target.tagName === "BUTTON"
+        ){
+            lightbox.classList.remove("open");
+        }
+    }
+);
+
+document.addEventListener(
+    "keydown",
+    e => {
+
+        if(e.key === "Escape"){
+            lightbox.classList.remove("open");
+        }
+    }
+);
 </script>
+
 </body>
 </html>
