@@ -619,6 +619,13 @@ nav{
     color:#aaa;
 }
 
+.membership-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:28px;
+}
+
 .booking-card{
     border:1px solid #2d2d2d;
     background:#0d0d0d;
@@ -862,11 +869,13 @@ footer{
         padding:22px;
     }
 
-    .hero-actions{
+    .hero-actions,
+    .membership-actions{
         flex-direction:column;
     }
 
-    .hero-actions .btn{
+    .hero-actions .btn,
+    .membership-actions .btn{
         width:100%;
     }
 
@@ -883,11 +892,13 @@ footer{
     <div class="ticker">
         <span>★ NEW GYM. SAME PACK.</span>
         <span>★ HYROX • FUNCTIONAL FITNESS • STRENGTH • KIDS • COMMUNITY</span>
+        <span>★ START YOUR FREE TRIAL TODAY</span>
         <span>★ OPEN DAY — 3 OCTOBER</span>
         <span>★ LOSSIEMOUTH</span>
 
         <span>★ NEW GYM. SAME PACK.</span>
         <span>★ HYROX • FUNCTIONAL FITNESS • STRENGTH • KIDS • COMMUNITY</span>
+        <span>★ START YOUR FREE TRIAL TODAY</span>
         <span>★ OPEN DAY — 3 OCTOBER</span>
         <span>★ LOSSIEMOUTH</span>
     </div>
@@ -908,7 +919,13 @@ footer{
             <a href="#training">Training</a>
             <a href="#community">The Pack</a>
             <a href="#visit">Visit</a>
-            <a class="btn" href="#join">Join the Pack</a>
+            <a
+                class="btn"
+                href="https://goteamup.com/p/3936927-moray-training-club/memberships/275436/"
+                target="_blank"
+                rel="noopener noreferrer">
+                Start Free Trial
+            </a>
         </div>
 
     </div>
@@ -936,13 +953,27 @@ footer{
             </p>
 
             <div class="hero-actions">
-                <a class="btn" href="#join">
-                    Start Training
+
+                <a
+                    class="btn"
+                    href="https://goteamup.com/p/3936927-moray-training-club/memberships/275436/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Start Your Free Trial
+                </a>
+
+                <a
+                    class="btn ghost"
+                    href="https://goteamup.com/p/3936927-moray-training-club/memberships/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    View Memberships
                 </a>
 
                 <a class="btn ghost" href="#training">
                     Explore Classes
                 </a>
+
             </div>
 
         </div>
@@ -1103,12 +1134,23 @@ footer{
                     id="track-benefits">
                 </div>
 
-                <div style="margin-top:28px">
+                <div
+                    style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
 
                     <a
                         class="btn"
-                        href="#join">
-                        Ask About This Class
+                        href="https://goteamup.com/p/3936927-moray-training-club/memberships/275436/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Start Free Trial
+                    </a>
+
+                    <a
+                        class="btn ghost"
+                        href="https://goteamup.com/p/3936927-moray-training-club/memberships/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        View Memberships
                     </a>
 
                 </div>
@@ -1334,15 +1376,29 @@ footer{
 
             <p>
                 Not sure which class is right for you?
-                Message us first. We will point you in the right direction without
-                making it complicated.
+                Come and try the club with our free trial, or browse the full
+                membership options to find what suits you.
             </p>
 
-            <a
-                class="btn"
-                href="#join">
-                Message / Enquire
-            </a>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+
+                <a
+                    class="btn"
+                    href="https://goteamup.com/p/3936927-moray-training-club/memberships/275436/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Start Free Trial
+                </a>
+
+                <a
+                    class="btn ghost"
+                    href="https://goteamup.com/p/3936927-moray-training-club/memberships/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    View Memberships
+                </a>
+
+            </div>
 
         </div>
 
@@ -1375,16 +1431,36 @@ footer{
             </h2>
 
             <p>
-                You do not need to know exactly what you want before you get in touch.
-                Tell us a little about you and what you are looking for,
-                and we will help you choose the best starting point.
+                The easiest way to see whether MTC is right for you is to come and
+                experience it for yourself. Start your free trial or explore our
+                membership options online.
             </p>
 
             <p>
-                <strong>Brand new to training?</strong> Say that.
-                <strong>Training for HYROX?</strong> Tell us.
-                <strong>Coming back after time away?</strong> We have you.
+                <strong>Brand new to training?</strong> You are welcome.
+                <strong>Training for HYROX?</strong> We have you.
+                <strong>Coming back after time away?</strong> Start at your own level.
             </p>
+
+            <div class="membership-actions">
+
+                <a
+                    class="btn"
+                    href="https://goteamup.com/p/3936927-moray-training-club/memberships/275436/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Start Your Free Trial
+                </a>
+
+                <a
+                    class="btn ghost"
+                    href="https://goteamup.com/p/3936927-moray-training-club/memberships/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    View All Memberships
+                </a>
+
+            </div>
 
         </div>
 
@@ -1474,7 +1550,7 @@ footer{
             </button>
 
             <div class="booking-note">
-                Replace the Formspree URL in the code with your live form endpoint before publishing.
+                Not sure what membership or class is right for you? Send us an enquiry and we will help.
             </div>
 
         </form>
