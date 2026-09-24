@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Moray Training Club | One Pack. No Ego. Real Fitness Results.</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,6 +48,13 @@ a{
     color:inherit;
 }
 
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
 .container{
     width:min(var(--max),calc(100% - 40px));
     margin:auto;
@@ -79,6 +87,33 @@ h1,h2,h3{
 
 .yellow{
     color:var(--yellow);
+}
+
+/* ACCESSIBILITY */
+
+.skip-link{
+    position:absolute;
+    top:-100px;
+    left:20px;
+    z-index:9999;
+    background:#fff;
+    color:#000;
+    padding:12px 18px;
+    font-weight:800;
+    text-decoration:none;
+}
+
+.skip-link:focus{
+    top:20px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+    outline:3px solid var(--yellow);
+    outline-offset:4px;
 }
 
 /* ANNOUNCEMENT */
@@ -183,7 +218,7 @@ nav{
 .btn.ghost{
     background:transparent;
     color:#fff;
-    border-color:#555;
+    border-color:#777;
 }
 
 .btn.ghost:hover{
@@ -199,6 +234,7 @@ nav{
     position:relative;
     display:flex;
     align-items:flex-end;
+
     background-image:
         linear-gradient(
             90deg,
@@ -252,8 +288,8 @@ nav{
 .hero-card{
     justify-self:end;
     max-width:390px;
-    background:rgba(10,10,10,.77);
-    border:1px solid rgba(255,255,255,.16);
+    background:rgba(10,10,10,.88);
+    border:1px solid rgba(255,255,255,.22);
     padding:26px;
     backdrop-filter:blur(10px);
 }
@@ -267,7 +303,7 @@ nav{
 
 .hero-card p{
     margin:6px 0 0;
-    color:#c8c8c8;
+    color:#ddd;
     font-size:.9rem;
 }
 
@@ -279,12 +315,12 @@ nav{
 }
 
 .hero-meta div{
-    border-top:1px solid #454545;
+    border-top:1px solid #666;
     padding-top:10px;
     font-size:.7rem;
     text-transform:uppercase;
     letter-spacing:.08em;
-    color:#aaa;
+    color:#bbb;
 }
 
 .hero-meta strong{
@@ -331,7 +367,7 @@ nav{
 }
 
 .intro-copy p{
-    color:#b7b7b7;
+    color:#c8c8c8;
 }
 
 .stats{
@@ -357,7 +393,7 @@ nav{
 
 .stat span{
     font-size:.69rem;
-    color:#aaa;
+    color:#bbb;
     text-transform:uppercase;
     letter-spacing:.08em;
 }
@@ -386,9 +422,9 @@ nav{
 }
 
 .track-tab{
-    border:1px solid #333;
+    border:1px solid #555;
     background:#111;
-    color:#ddd;
+    color:#fff;
     padding:10px 14px;
     font:700 .72rem Montserrat;
     text-transform:uppercase;
@@ -416,7 +452,7 @@ nav{
 
 .track-sub{
     font-size:1.05rem;
-    color:#ddd;
+    color:#eee;
     margin:6px 0 22px;
     font-weight:700;
 }
@@ -429,7 +465,7 @@ nav{
 
 .benefit{
     padding:15px 0;
-    border-top:1px solid #292929;
+    border-top:1px solid #444;
 }
 
 .benefit strong{
@@ -441,7 +477,7 @@ nav{
 
 .benefit span{
     font-size:.78rem;
-    color:#999;
+    color:#bbb;
 }
 
 .track-image{
@@ -573,7 +609,7 @@ nav{
 .visit-copy{
     padding:44px;
     background:#101010;
-    border:1px solid #232323;
+    border:1px solid #333;
 }
 
 .visit-copy h2{
@@ -581,13 +617,13 @@ nav{
 }
 
 .visit-copy p{
-    color:#aaa;
+    color:#bbb;
 }
 
 .address{
     padding:18px 0;
-    border-top:1px solid #2b2b2b;
-    border-bottom:1px solid #2b2b2b;
+    border-top:1px solid #444;
+    border-bottom:1px solid #444;
     margin:24px 0;
     font-weight:700;
 }
@@ -616,7 +652,7 @@ nav{
 }
 
 .booking-copy p{
-    color:#aaa;
+    color:#bbb;
 }
 
 .membership-actions{
@@ -627,7 +663,7 @@ nav{
 }
 
 .booking-card{
-    border:1px solid #2d2d2d;
+    border:1px solid #444;
     background:#0d0d0d;
     padding:28px;
 }
@@ -638,7 +674,7 @@ nav{
     text-transform:uppercase;
     letter-spacing:.08em;
     font-weight:800;
-    color:#aaa;
+    color:#ddd;
     margin-bottom:7px;
 }
 
@@ -648,35 +684,40 @@ nav{
     width:100%;
     background:#070707;
     color:#fff;
-    border:1px solid #292929;
+    border:1px solid #666;
     padding:14px;
     margin:0 0 14px;
     font:500 .9rem Montserrat;
 }
 
+.booking-card input::placeholder,
+.booking-card textarea::placeholder{
+    color:#aaa;
+}
+
 .booking-card input:focus,
 .booking-card select:focus,
 .booking-card textarea:focus{
-    outline:none;
+    outline:3px solid var(--yellow);
+    outline-offset:2px;
     border-color:var(--yellow);
 }
 
 .booking-card button{
     width:100%;
-    border:0;
     cursor:pointer;
 }
 
 .booking-note{
     font-size:.72rem;
-    color:#666;
+    color:#aaa;
     margin-top:10px;
 }
 
 /* FOOTER */
 
 footer{
-    border-top:1px solid #222;
+    border-top:1px solid #333;
     padding:50px 0;
 }
 
@@ -699,7 +740,7 @@ footer{
 }
 
 .footer-inner small{
-    color:#777;
+    color:#aaa;
 }
 
 .powered{
@@ -715,7 +756,7 @@ footer{
 .lightbox{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.92);
+    background:rgba(0,0,0,.94);
     display:none;
     place-items:center;
     z-index:100;
@@ -735,11 +776,13 @@ footer{
     position:absolute;
     right:24px;
     top:20px;
-    background:none;
-    border:0;
+    background:#000;
+    border:2px solid #fff;
     color:#fff;
     font-size:2rem;
     cursor:pointer;
+    width:52px;
+    height:52px;
 }
 
 /* RESPONSIVE */
@@ -883,12 +926,37 @@ footer{
         height:52px;
     }
 }
+
+/* REDUCED MOTION */
+
+@media(prefers-reduced-motion:reduce){
+
+    html{
+        scroll-behavior:auto;
+    }
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        transition-duration:.01ms!important;
+    }
+
+    .ticker{
+        animation:none;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<div class="announcement">
+<a class="skip-link" href="#main-content">
+    Skip to main content
+</a>
+
+<div class="announcement" aria-label="Club announcements">
     <div class="ticker">
         <span>★ NEW GYM. SAME PACK.</span>
         <span>★ HYROX • FUNCTIONAL FITNESS • STRENGTH • KIDS • COMMUNITY</span>
@@ -896,18 +964,18 @@ footer{
         <span>★ OPEN DAY — 3 OCTOBER</span>
         <span>★ LOSSIEMOUTH</span>
 
-        <span>★ NEW GYM. SAME PACK.</span>
-        <span>★ HYROX • FUNCTIONAL FITNESS • STRENGTH • KIDS • COMMUNITY</span>
-        <span>★ START YOUR FREE TRIAL TODAY</span>
-        <span>★ OPEN DAY — 3 OCTOBER</span>
-        <span>★ LOSSIEMOUTH</span>
+        <span aria-hidden="true">★ NEW GYM. SAME PACK.</span>
+        <span aria-hidden="true">★ HYROX • FUNCTIONAL FITNESS • STRENGTH • KIDS • COMMUNITY</span>
+        <span aria-hidden="true">★ START YOUR FREE TRIAL TODAY</span>
+        <span aria-hidden="true">★ OPEN DAY — 3 OCTOBER</span>
+        <span aria-hidden="true">★ LOSSIEMOUTH</span>
     </div>
 </div>
 
-<nav>
+<nav aria-label="Main navigation">
     <div class="container nav-inner">
 
-        <a class="brand" href="#top">
+        <a class="brand" href="#top" aria-label="Moray Training Club home">
             <img
                 src="public/assets/Logo_with_HyroxCrossfit.png"
                 alt="Moray Training Club"
@@ -916,20 +984,38 @@ footer{
         </a>
 
         <div class="nav-links">
-            <a href="#training">Training</a>
-            <a href="#community">The Pack</a>
-            <a href="#visit">Visit</a>
+
+            <a href="#training">
+                Training
+            </a>
+
+            <a href="#community">
+                The Pack
+            </a>
+
+            <a href="#visit">
+                Visit
+            </a>
+
+            <a
+                href="https://app.morayperformanceandwellbeing.com/login"
+                data-app-login>
+                Member Login
+            </a>
+
             <a
                 class="btn"
-                href="https://goteamup.com/p/3936927-moray-training-club/memberships/275436/"
-                target="_blank"
-                rel="noopener noreferrer">
+                href="https://app.morayperformanceandwellbeing.com/memberships"
+                data-app-memberships>
                 Start Free Trial
             </a>
+
         </div>
 
     </div>
 </nav>
+
+<main id="main-content">
 
 <header class="hero" id="top">
 
@@ -956,21 +1042,21 @@ footer{
 
                 <a
                     class="btn"
-                    href="https://goteamup.com/p/3936927-moray-training-club/memberships/275436/"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    href="https://app.morayperformanceandwellbeing.com/memberships"
+                    data-app-memberships>
                     Start Your Free Trial
                 </a>
 
                 <a
                     class="btn ghost"
-                    href="https://goteamup.com/p/3936927-moray-training-club/memberships/"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    href="https://app.morayperformanceandwellbeing.com/memberships"
+                    data-app-memberships>
                     View Memberships
                 </a>
 
-                <a class="btn ghost" href="#training">
+                <a
+                    class="btn ghost"
+                    href="#training">
                     Explore Classes
                 </a>
 
@@ -1067,7 +1153,7 @@ footer{
 
                 <div class="stat">
                     <strong>REAL</strong>
-                    <span>coaching & progress</span>
+                    <span>coaching &amp; progress</span>
                 </div>
 
             </div>
@@ -1106,7 +1192,9 @@ footer{
 
         <div
             class="track-tabs"
-            id="track-tabs">
+            id="track-tabs"
+            role="tablist"
+            aria-label="Training options">
         </div>
 
         <div class="track-panel">
@@ -1134,22 +1222,19 @@ footer{
                     id="track-benefits">
                 </div>
 
-                <div
-                    style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
+                <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
 
                     <a
                         class="btn"
-                        href="https://goteamup.com/p/3936927-moray-training-club/memberships/275436/"
-                        target="_blank"
-                        rel="noopener noreferrer">
+                        href="https://app.morayperformanceandwellbeing.com/memberships"
+                        data-app-memberships>
                         Start Free Trial
                     </a>
 
                     <a
                         class="btn ghost"
-                        href="https://goteamup.com/p/3936927-moray-training-club/memberships/"
-                        target="_blank"
-                        rel="noopener noreferrer">
+                        href="https://app.morayperformanceandwellbeing.com/memberships"
+                        data-app-memberships>
                         View Memberships
                     </a>
 
@@ -1243,103 +1328,120 @@ footer{
             <figure class="g1">
                 <img
                     src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29 (5).jpeg"
-                    alt="MTC training floor">
+                    alt="MTC training floor"
+                    tabindex="0">
             </figure>
 
             <figure class="g2">
                 <img
                     src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (4).jpeg"
-                    alt="MTC members">
+                    alt="MTC members"
+                    tabindex="0">
             </figure>
 
             <figure class="g3">
                 <img
                     src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29 (2).jpeg"
-                    alt="Wall balls">
+                    alt="Wall balls at Moray Training Club"
+                    tabindex="0">
             </figure>
 
             <figure class="g4">
                 <img
                     src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29 (1).jpeg"
-                    alt="Weight plates">
+                    alt="Weight plates at Moray Training Club"
+                    tabindex="0">
             </figure>
 
             <figure class="g5">
                 <img
                     src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (2).jpeg"
-                    alt="Kids at MTC">
+                    alt="Kids training at Moray Training Club"
+                    tabindex="0">
             </figure>
 
             <figure class="g6">
                 <img
                     src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (6).jpeg"
-                    alt="MTC equipment">
+                    alt="Training equipment at Moray Training Club"
+                    tabindex="0">
             </figure>
 
             <figure class="g7">
                 <img
                     src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29.jpeg"
-                    alt="MTC values poster">
+                    alt="Moray Training Club values poster"
+                    tabindex="0">
             </figure>
 
             <figure class="g8">
                 <img
                     src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (7).jpeg"
-                    alt="MTC community event">
+                    alt="Moray Training Club community event"
+                    tabindex="0">
             </figure>
 
             <figure class="g9">
                 <img
                     src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (5).jpeg"
-                    alt="Training plates">
+                    alt="Training plates at Moray Training Club"
+                    tabindex="0">
             </figure>
 
             <figure class="g10">
                 <img
                     src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (1).jpeg"
-                    alt="Gym equipment">
+                    alt="Gym equipment inside Moray Training Club"
+                    tabindex="0">
             </figure>
 
             <figure class="g11">
                 <img
                     src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30 (3).jpeg"
-                    alt="MTC members after training">
+                    alt="Moray Training Club members after training"
+                    tabindex="0">
             </figure>
 
             <figure class="g12">
                 <img
                     src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.30.jpeg"
-                    alt="MTC gym floor">
+                    alt="Moray Training Club gym floor"
+                    tabindex="0">
             </figure>
 
             <figure class="g13">
                 <img
                     src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29 (3).jpeg"
-                    alt="Moray Training Club floor">
+                    alt="Moray Training Club training floor"
+                    tabindex="0">
             </figure>
 
             <figure class="g14">
                 <img
                     src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29 (4).jpeg"
-                    alt="MTC sled lane">
+                    alt="Sled lane at Moray Training Club"
+                    tabindex="0">
             </figure>
 
             <figure class="g15">
                 <img
                     src="public/assets/new/WhatsApp Image 2026-09-09 at 16.01.29 (5).jpeg"
-                    alt="MTC floor view">
+                    alt="View across Moray Training Club"
+                    tabindex="0">
             </figure>
 
             <figure class="g16">
                 <img
                     src="public/assets/new/PHOTO-2026-09-09-16-01-30.jpg"
-                    alt="MTC office and merch">
+                    alt="Moray Training Club office and merchandise area"
+                    tabindex="0">
             </figure>
 
             <figure class="g17">
                 <img
                     src="public/assets/new/PHOTO-2026-09-09-16-01-30.jpg"
-                    alt="MTC office">
+                    alt="Moray Training Club office"
+                    tabindex="0">
             </figure>
 
         </div>
@@ -1384,17 +1486,15 @@ footer{
 
                 <a
                     class="btn"
-                    href="https://goteamup.com/p/3936927-moray-training-club/memberships/275436/"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    href="https://app.morayperformanceandwellbeing.com/memberships"
+                    data-app-memberships>
                     Start Free Trial
                 </a>
 
                 <a
                     class="btn ghost"
-                    href="https://goteamup.com/p/3936927-moray-training-club/memberships/"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    href="https://app.morayperformanceandwellbeing.com/memberships"
+                    data-app-memberships>
                     View Memberships
                 </a>
 
@@ -1446,18 +1546,23 @@ footer{
 
                 <a
                     class="btn"
-                    href="https://goteamup.com/p/3936927-moray-training-club/memberships/275436/"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    href="https://app.morayperformanceandwellbeing.com/memberships"
+                    data-app-memberships>
                     Start Your Free Trial
                 </a>
 
                 <a
                     class="btn ghost"
-                    href="https://goteamup.com/p/3936927-moray-training-club/memberships/"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    href="https://app.morayperformanceandwellbeing.com/memberships"
+                    data-app-memberships>
                     View All Memberships
+                </a>
+
+                <a
+                    class="btn ghost"
+                    href="https://app.morayperformanceandwellbeing.com/login"
+                    data-app-login>
+                    Existing Member Login
                 </a>
 
             </div>
@@ -1477,6 +1582,7 @@ footer{
                 id="name"
                 name="name"
                 type="text"
+                autocomplete="name"
                 required
                 placeholder="Your full name">
 
@@ -1488,6 +1594,7 @@ footer{
                 id="email"
                 name="email"
                 type="email"
+                autocomplete="email"
                 required
                 placeholder="you@example.com">
 
@@ -1550,7 +1657,8 @@ footer{
             </button>
 
             <div class="booking-note">
-                Not sure what membership or class is right for you? Send us an enquiry and we will help.
+                Not sure what membership or class is right for you?
+                Send us an enquiry and we will help.
             </div>
 
         </form>
@@ -1558,6 +1666,8 @@ footer{
     </div>
 
 </section>
+
+</main>
 
 <footer>
 
@@ -1589,19 +1699,57 @@ footer{
 
 <div
     class="lightbox"
-    id="lightbox">
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Expanded gallery image"
+    aria-hidden="true">
 
-    <button aria-label="Close">
+    <button
+        type="button"
+        aria-label="Close expanded image">
         ×
     </button>
 
     <img
         src=""
-        alt="Expanded gallery image">
+        alt="">
 
 </div>
 
 <script>
+
+/* =========================================================
+   MTC APP LINKS
+   Change these two values only if the app routes change.
+   ========================================================= */
+
+const MTC_APP =
+    "https://app.morayperformanceandwellbeing.com";
+
+const MTC_MEMBERSHIPS_URL =
+    `${MTC_APP}/memberships`;
+
+const MTC_LOGIN_URL =
+    `${MTC_APP}/login`;
+
+document
+    .querySelectorAll("[data-app-memberships]")
+    .forEach(link => {
+        link.href = MTC_MEMBERSHIPS_URL;
+    });
+
+document
+    .querySelectorAll("[data-app-login]")
+    .forEach(link => {
+        link.href = MTC_LOGIN_URL;
+    });
+
+
+/* =========================================================
+   TRAINING OPTIONS
+   ========================================================= */
+
 const tracks = {
 
     "CrossFit Lite": {
@@ -1762,11 +1910,12 @@ const sub =
 const eyebrow =
     document.getElementById("track-eyebrow");
 
-const image =
+const trackImage =
     document.getElementById("track-image");
 
 const benefits =
     document.getElementById("track-benefits");
+
 
 function renderTrack(name){
 
@@ -1782,8 +1931,11 @@ function renderTrack(name){
     eyebrow.textContent =
         t.eyebrow;
 
-    image.src =
+    trackImage.src =
         t.img;
+
+    trackImage.alt =
+        `${name} training at Moray Training Club`;
 
     benefits.innerHTML =
         t.benefits
@@ -1800,43 +1952,73 @@ function renderTrack(name){
 
     document
         .querySelectorAll(".track-tab")
-        .forEach(
-            x =>
-                x.classList.toggle(
-                    "active",
-                    x.dataset.name === name
-                )
-        );
+        .forEach(button => {
+
+            const active =
+                button.dataset.name === name;
+
+            button.classList.toggle(
+                "active",
+                active
+            );
+
+            button.setAttribute(
+                "aria-selected",
+                active ? "true" : "false"
+            );
+
+        });
 }
+
 
 Object
     .keys(tracks)
     .forEach(
         (name,i) => {
 
-            const b =
+            const button =
                 document.createElement("button");
 
-            b.className =
+            button.type =
+                "button";
+
+            button.className =
                 "track-tab" +
                 (i === 0 ? " active" : "");
 
-            b.dataset.name =
+            button.dataset.name =
                 name;
 
-            b.textContent =
+            button.textContent =
                 name;
 
-            b.onclick =
-                () => renderTrack(name);
+            button.setAttribute(
+                "role",
+                "tab"
+            );
 
-            tabs.appendChild(b);
+            button.setAttribute(
+                "aria-selected",
+                i === 0 ? "true" : "false"
+            );
+
+            button.addEventListener(
+                "click",
+                () => renderTrack(name)
+            );
+
+            tabs.appendChild(button);
+
         }
     );
 
+
 renderTrack("CrossFit Lite");
 
-/* Gallery lightbox */
+
+/* =========================================================
+   GALLERY LIGHTBOX
+   ========================================================= */
 
 const lightbox =
     document.getElementById("lightbox");
@@ -1844,47 +2026,121 @@ const lightbox =
 const lightboxImg =
     lightbox.querySelector("img");
 
+const lightboxClose =
+    lightbox.querySelector("button");
+
+let previousFocus = null;
+
+
+function openLightbox(img){
+
+    previousFocus =
+        document.activeElement;
+
+    lightboxImg.src =
+        img.src;
+
+    lightboxImg.alt =
+        img.alt;
+
+    lightbox.classList.add("open");
+
+    lightbox.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+    document.body.style.overflow =
+        "hidden";
+
+    lightboxClose.focus();
+
+}
+
+
+function closeLightbox(){
+
+    lightbox.classList.remove("open");
+
+    lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    document.body.style.overflow =
+        "";
+
+    lightboxImg.src =
+        "";
+
+    if(previousFocus){
+        previousFocus.focus();
+    }
+
+}
+
+
 document
     .querySelectorAll("#gallery img")
     .forEach(
-        img =>
+        img => {
+
             img.addEventListener(
                 "click",
-                () => {
+                () => openLightbox(img)
+            );
 
-                    lightboxImg.src =
-                        img.src;
+            img.addEventListener(
+                "keydown",
+                event => {
 
-                    lightboxImg.alt =
-                        img.alt;
+                    if(
+                        event.key === "Enter" ||
+                        event.key === " "
+                    ){
+                        event.preventDefault();
+                        openLightbox(img);
+                    }
 
-                    lightbox.classList.add("open");
                 }
-            )
+            );
+
+        }
     );
+
+
+lightboxClose.addEventListener(
+    "click",
+    closeLightbox
+);
+
 
 lightbox.addEventListener(
     "click",
-    e => {
+    event => {
 
-        if(
-            e.target === lightbox ||
-            e.target.tagName === "BUTTON"
-        ){
-            lightbox.classList.remove("open");
+        if(event.target === lightbox){
+            closeLightbox();
         }
+
     }
 );
+
 
 document.addEventListener(
     "keydown",
-    e => {
+    event => {
 
-        if(e.key === "Escape"){
-            lightbox.classList.remove("open");
+        if(
+            event.key === "Escape" &&
+            lightbox.classList.contains("open")
+        ){
+            closeLightbox();
         }
+
     }
 );
+
 </script>
 
 </body>

@@ -3,23 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timetable | Moray Training Club</title>
+
+    <title>Timetable & Bookings | Moray Training Club</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .timetable-page {
+            min-height: calc(100vh - 80px);
+            padding: 80px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: #050505;
+        }
+
+        .timetable-container {
+            width: 100%;
+            max-width: 850px;
+        }
+
+        .timetable-eyebrow {
+            color: #ffcc00;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.18em;
+            margin-bottom: 12px;
+        }
+
+        .timetable-container h1 {
+            margin: 0;
+            color: #fff;
+            font-size: clamp(3.5rem, 8vw, 6.5rem);
+            line-height: 0.95;
+        }
+
+        .timetable-intro {
+            max-width: 650px;
+            margin: 24px auto 35px;
+            color: #c7c7c7;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .booking-panel {
+            margin-top: 35px;
+            padding: 40px;
+            background: #101010;
+            border: 1px solid #2b2b2b;
+        }
+
+        .booking-panel h2 {
+            color: #fff;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .booking-panel p {
+            color: #aaa;
+            max-width: 600px;
+            margin: 0 auto 28px;
+            line-height: 1.65;
+        }
+
+        .app-actions {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .app-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 24px;
+            background: #ffcc00;
+            color: #000;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 900;
+            font-size: 0.82rem;
+            letter-spacing: 0.06em;
+            border: 1px solid #ffcc00;
+            transition: 0.2s ease;
+        }
+
+        .app-button:hover {
+            background: #fff;
+            border-color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .app-button.secondary {
+            background: transparent;
+            color: #fff;
+            border-color: #666;
+        }
+
+        .app-button.secondary:hover {
+            color: #ffcc00;
+            border-color: #ffcc00;
+            background: transparent;
+        }
+
+        .app-button:focus-visible {
+            outline: 3px solid #ffcc00;
+            outline-offset: 4px;
+        }
+
+        .app-note {
+            margin-top: 25px;
+            font-size: 0.78rem;
+            color: #888;
+        }
+
+        @media (max-width: 600px) {
+            .timetable-page {
+                padding: 60px 20px;
+            }
+
+            .booking-panel {
+                padding: 28px 20px;
+            }
+
+            .app-actions {
+                flex-direction: column;
+            }
+
+            .app-button {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
+
 <body>
+
     <nav>
-        <div class="logo"><a href="index.html" style="color:white; text-decoration:none;">MORAY TRAINING CLUB</a></div>
-        <a href="index.html" class="btn-gold">Back Home</a>
+        <div class="logo">
+            <a
+                href="index.html"
+                style="color:white; text-decoration:none;">
+                MORAY TRAINING CLUB
+            </a>
+        </div>
+
+        <a href="index.html" class="btn-gold">
+            Back Home
+        </a>
     </nav>
 
-    <section style="padding: 50px 5%; text-align: center;">
-        <h1>CLASS TIMETABLE</h1>
-        <p>Select a session below to book via TeamUp.</p>
-        
-        <div id="teamup-widget-container" style="background: white; padding: 10px; border-radius: 8px;">
-            <p style="color: black;">[TeamUp Widget Will Load Here]</p>
-            
+    <main class="timetable-page">
+
+        <div class="timetable-container">
+
+            <div class="timetable-eyebrow">
+                Moray Training Club
             </div>
-    </section>
+
+            <h1>
+                CLASS TIMETABLE
+            </h1>
+
+            <p class="timetable-intro">
+                Our timetable and class bookings are now managed through
+                the MTC app. Log in to view upcoming sessions, check
+                availability and book your place.
+            </p>
+
+            <div class="booking-panel">
+
+                <h2>
+                    READY TO TRAIN?
+                </h2>
+
+                <p>
+                    Open the MTC app to see the live class timetable and
+                    manage your bookings.
+                </p>
+
+                <div class="app-actions">
+
+                    <a
+                        href="https://app.morayperformanceandwellbeing.com/"
+                        class="app-button">
+                        Open MTC App
+                    </a>
+
+                    <a
+                        href="https://app.morayperformanceandwellbeing.com/"
+                        class="app-button secondary">
+                        Member Login
+                    </a>
+
+                </div>
+
+                <div class="app-note">
+                    Bookings, memberships and your member account are all
+                    managed through the MTC app.
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
 </body>
 </html>
