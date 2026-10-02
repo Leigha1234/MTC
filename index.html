@@ -591,6 +591,115 @@ nav{
 .g16{grid-column:span 6;grid-row:span 2}
 .g17{grid-column:span 6;grid-row:span 2}
 
+
+/* UPCOMING SCHEDULE */
+
+.schedule-preview{
+    padding:100px 0;
+    background:#050505;
+    border-top:1px solid #1f1f1f;
+}
+
+.schedule-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:30px;
+    margin-bottom:36px;
+}
+
+.schedule-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.schedule-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.schedule-card{
+    position:relative;
+    overflow:hidden;
+    min-height:220px;
+    padding:24px;
+    background:#101010;
+    border:1px solid #333;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    transition:.2s ease;
+}
+
+.schedule-card:hover{
+    transform:translateY(-3px);
+    border-color:var(--yellow);
+}
+
+.schedule-card::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:4px;
+    background:var(--yellow);
+}
+
+.schedule-time{
+    font-family:Teko,Arial,sans-serif;
+    font-size:2.6rem;
+    line-height:1;
+    color:var(--yellow);
+}
+
+.schedule-card h3{
+    font-size:2rem;
+    margin:12px 0 6px;
+}
+
+.schedule-meta{
+    color:#aaa;
+    font-size:.75rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+}
+
+.schedule-note{
+    margin-top:28px;
+    color:#aaa;
+    font-size:.78rem;
+}
+
+@media(max-width:900px){
+    .schedule-head{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .schedule-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+    .schedule-preview{
+        padding:72px 0;
+    }
+
+    .schedule-grid{
+        grid-template-columns:1fr;
+    }
+
+    .schedule-actions,
+    .schedule-actions .btn{
+        width:100%;
+    }
+}
+
 /* VISIT */
 
 .visit{
@@ -998,15 +1107,15 @@ footer{
             </a>
 
             <a
-                href="https://app.morayperformanceandwellbeing.com/login"
+                href="https://moray-training-app.vercel.app/login"
                 data-app-login>
                 Member Login
             </a>
 
             <a
                 class="btn"
-                href="https://app.morayperformanceandwellbeing.com/memberships"
-                data-app-memberships>
+                href="https://moray-training-app.vercel.app/login"
+                data-free-trial>
                 Start Free Trial
             </a>
 
@@ -1042,14 +1151,14 @@ footer{
 
                 <a
                     class="btn"
-                    href="https://app.morayperformanceandwellbeing.com/memberships"
-                    data-app-memberships>
+                    href="https://moray-training-app.vercel.app/login"
+                    data-free-trial>
                     Start Your Free Trial
                 </a>
 
                 <a
                     class="btn ghost"
-                    href="https://app.morayperformanceandwellbeing.com/memberships"
+                    href="https://www.tots-os.co.uk/shop/moray-training-club?view=memberships"
                     data-app-memberships>
                     View Memberships
                 </a>
@@ -1226,14 +1335,14 @@ footer{
 
                     <a
                         class="btn"
-                        href="https://app.morayperformanceandwellbeing.com/memberships"
-                        data-app-memberships>
+                        href="https://moray-training-app.vercel.app/login"
+                        data-free-trial>
                         Start Free Trial
                     </a>
 
                     <a
                         class="btn ghost"
-                        href="https://app.morayperformanceandwellbeing.com/memberships"
+                        href="https://www.tots-os.co.uk/shop/moray-training-club?view=memberships"
                         data-app-memberships>
                         View Memberships
                     </a>
@@ -1450,6 +1559,71 @@ footer{
 
 </section>
 
+
+<section class="schedule-preview" id="schedule">
+    <div class="container">
+
+        <div class="schedule-head">
+            <div>
+                <div class="eyebrow">Coming up at MTC</div>
+                <h2 class="section-title">
+                    UPCOMING <span class="yellow">SESSIONS.</span>
+                </h2>
+                <p class="section-copy">
+                    A quick look at what is coming up. Log in to the MTC app to see the
+                    full live timetable, spaces and book your session.
+                </p>
+            </div>
+
+            <div class="schedule-actions">
+                <a class="btn" href="https://moray-training-app.vercel.app/login" data-app-login>
+                    View Full Schedule
+                </a>
+            </div>
+        </div>
+
+        <div class="schedule-grid" aria-label="Upcoming Moray Training Club sessions">
+
+            <article class="schedule-card">
+                <div><div class="schedule-meta">Saturday 3 October</div><div class="schedule-time">09:00</div><h3>Strength Club</h3></div>
+                <div class="schedule-meta">Mike · Main Gym</div>
+            </article>
+
+            <article class="schedule-card">
+                <div><div class="schedule-meta">Saturday 3 October</div><div class="schedule-time">10:00</div><h3>CrossFit WOD</h3></div>
+                <div class="schedule-meta">Mike · Main Gym</div>
+            </article>
+
+            <article class="schedule-card">
+                <div><div class="schedule-meta">Saturday 3 October</div><div class="schedule-time">11:20</div><h3>Hang Tough Challenge</h3></div>
+                <div class="schedule-meta">Zack · Main Gym</div>
+            </article>
+
+            <article class="schedule-card">
+                <div><div class="schedule-meta">Saturday 3 October</div><div class="schedule-time">12:00</div><h3>30 Calorie Challenge</h3></div>
+                <div class="schedule-meta">Sarah · Main Gym</div>
+            </article>
+
+            <article class="schedule-card">
+                <div><div class="schedule-meta">Saturday 3 October</div><div class="schedule-time">13:00</div><h3>Teen Gym Class</h3></div>
+                <div class="schedule-meta">Mike · Main Gym</div>
+            </article>
+
+            <article class="schedule-card">
+                <div><div class="schedule-meta">Saturday 3 October</div><div class="schedule-time">13:40</div><h3>Mini HYROX</h3></div>
+                <div class="schedule-meta">Mike · Main Gym</div>
+            </article>
+
+        </div>
+
+        <p class="schedule-note">
+            This website shows a preview only. The MTC app is the live source for
+            availability, changes and bookings.
+        </p>
+
+    </div>
+</section>
+
 <section
     class="visit"
     id="visit">
@@ -1486,14 +1660,14 @@ footer{
 
                 <a
                     class="btn"
-                    href="https://app.morayperformanceandwellbeing.com/memberships"
-                    data-app-memberships>
+                    href="https://moray-training-app.vercel.app/login"
+                    data-free-trial>
                     Start Free Trial
                 </a>
 
                 <a
                     class="btn ghost"
-                    href="https://app.morayperformanceandwellbeing.com/memberships"
+                    href="https://www.tots-os.co.uk/shop/moray-training-club?view=memberships"
                     data-app-memberships>
                     View Memberships
                 </a>
@@ -1546,21 +1720,21 @@ footer{
 
                 <a
                     class="btn"
-                    href="https://app.morayperformanceandwellbeing.com/memberships"
-                    data-app-memberships>
+                    href="https://moray-training-app.vercel.app/login"
+                    data-free-trial>
                     Start Your Free Trial
                 </a>
 
                 <a
                     class="btn ghost"
-                    href="https://app.morayperformanceandwellbeing.com/memberships"
+                    href="https://www.tots-os.co.uk/shop/moray-training-club?view=memberships"
                     data-app-memberships>
                     View All Memberships
                 </a>
 
                 <a
                     class="btn ghost"
-                    href="https://app.morayperformanceandwellbeing.com/login"
+                    href="https://moray-training-app.vercel.app/login"
                     data-app-login>
                     Existing Member Login
                 </a>
@@ -1720,29 +1894,25 @@ footer{
 <script>
 
 /* =========================================================
-   MTC APP LINKS
-   Change these two values only if the app routes change.
+   MTC LINKS
    ========================================================= */
 
-const MTC_APP =
-    "https://app.morayperformanceandwellbeing.com";
+const MTC_LOGIN_URL =
+    "https://moray-training-app.vercel.app/login";
 
 const MTC_MEMBERSHIPS_URL =
-    `${MTC_APP}/memberships`;
+    "https://www.tots-os.co.uk/shop/moray-training-club?view=memberships";
 
-const MTC_LOGIN_URL =
-    `${MTC_APP}/login`;
+document
+    .querySelectorAll("[data-app-login], [data-free-trial]")
+    .forEach(link => {
+        link.href = MTC_LOGIN_URL;
+    });
 
 document
     .querySelectorAll("[data-app-memberships]")
     .forEach(link => {
         link.href = MTC_MEMBERSHIPS_URL;
-    });
-
-document
-    .querySelectorAll("[data-app-login]")
-    .forEach(link => {
-        link.href = MTC_LOGIN_URL;
     });
 
 
