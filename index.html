@@ -674,6 +674,42 @@ nav{
     font-size:.78rem;
 }
 
+.schedule-day-heading{
+    grid-column:1 / -1;
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:16px;
+    margin-top:24px;
+    padding:0 0 10px;
+    border-bottom:1px solid #333;
+}
+
+.schedule-day-heading:first-child{
+    margin-top:0;
+}
+
+.schedule-day-heading h3{
+    font-size:2.2rem;
+    color:#fff;
+}
+
+.schedule-day-heading span{
+    color:#aaa;
+    font-size:.72rem;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+
+.schedule-empty{
+    grid-column:1 / -1;
+    padding:22px 24px;
+    border:1px solid #2c2c2c;
+    color:#888;
+    font-size:.8rem;
+}
+
 @media(max-width:900px){
     .schedule-head{
         align-items:flex-start;
@@ -1565,13 +1601,13 @@ footer{
 
         <div class="schedule-head">
             <div>
-                <div class="eyebrow">Coming up at MTC</div>
+                <div class="eyebrow">Your week at MTC</div>
                 <h2 class="section-title">
-                    UPCOMING <span class="yellow">SESSIONS.</span>
+                    NEXT 7 DAYS <span class="yellow">AT MTC.</span>
                 </h2>
                 <p class="section-copy">
-                    A quick look at what is coming up. Log in to the MTC app to see the
-                    full live timetable, spaces and book your session.
+                    See the next week of classes at a glance. Log in to the MTC app for
+                    live spaces, any timetable changes and to book your session.
                 </p>
             </div>
 
@@ -1582,43 +1618,11 @@ footer{
             </div>
         </div>
 
-        <div class="schedule-grid" aria-label="Upcoming Moray Training Club sessions">
-
-            <article class="schedule-card">
-                <div><div class="schedule-meta">Saturday 3 October</div><div class="schedule-time">09:00</div><h3>Strength Club</h3></div>
-                <div class="schedule-meta">Mike · Main Gym</div>
-            </article>
-
-            <article class="schedule-card">
-                <div><div class="schedule-meta">Saturday 3 October</div><div class="schedule-time">10:00</div><h3>CrossFit WOD</h3></div>
-                <div class="schedule-meta">Mike · Main Gym</div>
-            </article>
-
-            <article class="schedule-card">
-                <div><div class="schedule-meta">Saturday 3 October</div><div class="schedule-time">11:20</div><h3>Hang Tough Challenge</h3></div>
-                <div class="schedule-meta">Zack · Main Gym</div>
-            </article>
-
-            <article class="schedule-card">
-                <div><div class="schedule-meta">Saturday 3 October</div><div class="schedule-time">12:00</div><h3>30 Calorie Challenge</h3></div>
-                <div class="schedule-meta">Sarah · Main Gym</div>
-            </article>
-
-            <article class="schedule-card">
-                <div><div class="schedule-meta">Saturday 3 October</div><div class="schedule-time">13:00</div><h3>Teen Gym Class</h3></div>
-                <div class="schedule-meta">Mike · Main Gym</div>
-            </article>
-
-            <article class="schedule-card">
-                <div><div class="schedule-meta">Saturday 3 October</div><div class="schedule-time">13:40</div><h3>Mini HYROX</h3></div>
-                <div class="schedule-meta">Mike · Main Gym</div>
-            </article>
-
-        </div>
+        <div class="schedule-grid" id="weekly-schedule" aria-label="Moray Training Club classes for the next seven days"></div>
 
         <p class="schedule-note">
-            This website shows a preview only. The MTC app is the live source for
-            availability, changes and bookings.
+            Showing the next seven days. The MTC app is the live source for availability,
+            timetable changes and bookings.
         </p>
 
     </div>
@@ -2184,6 +2188,76 @@ Object
 
 
 renderTrack("CrossFit Lite");
+
+
+/* =========================================================
+   NEXT 7 DAYS TIMETABLE
+   ========================================================= */
+
+const weeklyClasses = {
+    0: [
+        ["10:00", "HYROX Beginners", "Main Gym"]
+    ],
+    1: [],
+    2: [],
+    3: [],
+    4: [],
+    5: [],
+    6: [
+        ["10:00", "HYROX Beginners", "Main Gym"],
+        ["13:00", "Teen Gym", "Main Gym"]
+    ]
+};
+
+const weeklySchedule = document.getElementById("weekly-schedule");
+
+function renderNextSevenDays(){
+    if (!weeklySchedule) return;
+
+    const today = new Date();
+    today.setHours(0,0,0,0);
+
+    const dayFormatter = new Intl.DateTimeFormat("en-GB", { weekday: "long" });
+    const dateFormatter = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long" });
+
+    let html = "";
+
+    for (let offset = 0; offset < 7; offset++) {
+        const date = new Date(today);
+        date.setDate(today.getDate() + offset);
+
+        const dayName = dayFormatter.format(date);
+        const dateLabel = dateFormatter.format(date);
+        const classes = weeklyClasses[date.getDay()] || [];
+
+        html += `
+            <div class="schedule-day-heading">
+                <h3>${offset === 0 ? "Today · " : ""}${dayName}</h3>
+                <span>${dateLabel}</span>
+            </div>
+        `;
+
+        if (!classes.length) {
+            html += `<div class="schedule-empty">No classes currently listed for this day. Check the MTC app for the live timetable.</div>`;
+            continue;
+        }
+
+        html += classes.map(([time, name, location]) => `
+            <article class="schedule-card">
+                <div>
+                    <div class="schedule-meta">${dayName} ${dateLabel}</div>
+                    <div class="schedule-time">${time}</div>
+                    <h3>${name}</h3>
+                </div>
+                <div class="schedule-meta">${location}</div>
+            </article>
+        `).join("");
+    }
+
+    weeklySchedule.innerHTML = html;
+}
+
+renderNextSevenDays();
 
 
 /* =========================================================
