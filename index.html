@@ -592,7 +592,7 @@ nav{
 .g17{grid-column:span 6;grid-row:span 2}
 
 
-/* UPCOMING SCHEDULE */
+/* WEEKLY TIMETABLE */
 
 .schedule-preview{
     padding:100px 0;
@@ -1601,28 +1601,28 @@ footer{
 
         <div class="schedule-head">
             <div>
-                <div class="eyebrow">Your week at MTC</div>
+                <div class="eyebrow">Train with the pack</div>
                 <h2 class="section-title">
-                    NEXT 7 DAYS <span class="yellow">AT MTC.</span>
+                    OUR WEEKLY <span class="yellow">TIMETABLE.</span>
                 </h2>
                 <p class="section-copy">
-                    See the next week of classes at a glance. Log in to the MTC app for
-                    live spaces, any timetable changes and to book your session.
+                    Plan your week at MTC. Explore our regular weekly classes below, from CrossFit and HYROX
+                    to BURN, STRONG, Legends, Kids and more.
                 </p>
             </div>
 
             <div class="schedule-actions">
                 <a class="btn" href="https://moray-training-app.vercel.app/login" data-app-login>
-                    View Full Schedule
+                    View Live Schedule
                 </a>
             </div>
         </div>
 
-        <div class="schedule-grid" id="weekly-schedule" aria-label="Moray Training Club classes for the next seven days"></div>
+        <div class="schedule-grid" id="weekly-schedule" aria-label="Moray Training Club weekly timetable"></div>
 
         <p class="schedule-note">
-            Showing the next seven days. The MTC app is the live source for availability,
-            timetable changes and bookings.
+            Timetable is subject to change. Please check the MTC app for live class times,
+            availability and bookings.
         </p>
 
     </div>
@@ -2191,73 +2191,74 @@ renderTrack("CrossFit Lite");
 
 
 /* =========================================================
-   NEXT 7 DAYS TIMETABLE
+   WEEKLY TIMETABLE
    ========================================================= */
 
-const weeklyClasses = {
-    0: [
-        ["10:00", "HYROX Beginners", "Main Gym"]
-    ],
-    1: [],
-    2: [],
-    3: [],
-    4: [],
-    5: [],
-    6: [
-        ["10:00", "HYROX Beginners", "Main Gym"],
-        ["13:00", "Teen Gym", "Main Gym"]
-    ]
-};
+const weeklyClasses = [
+    { day: "Monday", classes: [
+        ["05:00", "HYROX WOD"], ["06:00", "CrossFit WOD"], ["06:00", "HYROX WOD"],
+        ["08:15", "BURN"], ["09:15", "55+ Legends"], ["11:00", "CrossFit WOD"],
+        ["14:30", "CrossFit Kids 8–12"], ["15:30", "HYROX WOD"], ["16:30", "CrossFit WOD"],
+        ["17:45", "Gymnastics & Core"], ["18:45", "CrossFit WOD"]
+    ]},
+    { day: "Tuesday", classes: [
+        ["08:15", "CrossFit Lite"], ["08:15", "Mum-FIT"], ["09:00", "55+ Legends"],
+        ["10:00", "Pilates"], ["11:00", "HYROX WOD"], ["11:00", "Beginner HYROX"],
+        ["12:00", "Teen Gym Class"], ["14:30", "CrossFit Pre Teens"], ["14:45", "CrossFit Kids 8–12"],
+        ["15:30", "HYROX WOD"], ["16:30", "CrossFit WOD"], ["17:45", "STRONG"],
+        ["18:45", "Beginner HYROX"]
+    ]},
+    { day: "Wednesday", classes: [
+        ["05:00", "HYROX WOD"], ["06:00", "CrossFit WOD"], ["06:00", "HYROX WOD"],
+        ["07:30", "CrossFit WOD"], ["08:15", "BURN"], ["11:00", "Beginner CrossFit"],
+        ["15:30", "HYROX WOD"], ["16:30", "CrossFit WOD"], ["17:45", "Gymnastics & Core"],
+        ["18:45", "CrossFit WOD"]
+    ]},
+    { day: "Thursday", classes: [
+        ["08:15", "Mum-FIT"], ["08:15", "CrossFit Lite"], ["09:00", "55+ Legends"],
+        ["11:00", "HYROX WOD"], ["11:00", "Beginner HYROX"], ["14:30", "CrossFit Kids 8–12"],
+        ["14:45", "CrossFit Pre Teens"], ["15:30", "HYROX WOD"], ["16:30", "CrossFit WOD"],
+        ["17:45", "STRONG"], ["18:30", "Moray Men & Women's Group"], ["18:45", "Beginner HYROX"]
+    ]},
+    { day: "Friday", classes: [
+        ["05:00", "HYROX WOD"], ["06:00", "CrossFit WOD"], ["06:00", "HYROX WOD"],
+        ["08:15", "BURN"], ["08:15", "CrossFit Lite"], ["09:15", "55+ Legends"],
+        ["11:00", "CrossFit WOD"], ["14:30", "CrossFit Kids 4–7"], ["14:30", "CrossFit Pre Teens"],
+        ["14:45", "CrossFit Kids 8–12"], ["15:30", "HYROX WOD"], ["16:30", "CrossFit WOD"],
+        ["17:45", "STRONG"]
+    ]},
+    { day: "Saturday", classes: [
+        ["08:00", "Strength Club"], ["09:00", "Beginner CrossFit WOD"], ["09:00", "CrossFit WOD"],
+        ["10:00", "HYROX WOD"], ["12:00", "Teen Gym Class"]
+    ]},
+    { day: "Sunday", classes: [
+        ["09:00", "Beginner CrossFit"], ["10:00", "HYROX WOD"]
+    ]}
+];
 
 const weeklySchedule = document.getElementById("weekly-schedule");
 
-function renderNextSevenDays(){
+function renderWeeklyTimetable(){
     if (!weeklySchedule) return;
 
-    const today = new Date();
-    today.setHours(0,0,0,0);
-
-    const dayFormatter = new Intl.DateTimeFormat("en-GB", { weekday: "long" });
-    const dateFormatter = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long" });
-
-    let html = "";
-
-    for (let offset = 0; offset < 7; offset++) {
-        const date = new Date(today);
-        date.setDate(today.getDate() + offset);
-
-        const dayName = dayFormatter.format(date);
-        const dateLabel = dateFormatter.format(date);
-        const classes = weeklyClasses[date.getDay()] || [];
-
-        html += `
-            <div class="schedule-day-heading">
-                <h3>${offset === 0 ? "Today · " : ""}${dayName}</h3>
-                <span>${dateLabel}</span>
-            </div>
-        `;
-
-        if (!classes.length) {
-            html += `<div class="schedule-empty">No classes currently listed for this day. Check the MTC app for the live timetable.</div>`;
-            continue;
-        }
-
-        html += classes.map(([time, name, location]) => `
+    weeklySchedule.innerHTML = weeklyClasses.map(({ day, classes }) => `
+        <div class="schedule-day-heading">
+            <h3>${day}</h3>
+        </div>
+        ${classes.map(([time, name]) => `
             <article class="schedule-card">
                 <div>
-                    <div class="schedule-meta">${dayName} ${dateLabel}</div>
+                    <div class="schedule-meta">${day}</div>
                     <div class="schedule-time">${time}</div>
                     <h3>${name}</h3>
                 </div>
-                <div class="schedule-meta">${location}</div>
+                <div class="schedule-meta">Main Gym</div>
             </article>
-        `).join("");
-    }
-
-    weeklySchedule.innerHTML = html;
+        `).join("")}
+    `).join("");
 }
 
-renderNextSevenDays();
+renderWeeklyTimetable();
 
 
 /* =========================================================
