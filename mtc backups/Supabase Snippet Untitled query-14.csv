@@ -1,0 +1,71 @@
+id,customer_name,customer_email,legacy_membership_name,payment_provider,billing_provider,status,next_payment_at,collection_enabled,teamup_billing_active
+8941b3de-47ca-44bf-9fda-4ec32bfd05d3,Aaron Cory,aaroncory@btinternet.com,10 pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+a38ad966-4050-4c3d-a1b1-cda37e525d12,Adam Gordon,adamjgordon@outlook.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+ff12d3ab-5032-4b5b-88c6-e3f9270c14d1,Aksah Cherian,aksah_cherian@yahoo.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+b59406e9-6159-4583-904e-46e024f6f7e5,Alastair Miley,alastair_miley@hotmail.co.uk,Free Intro,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+69e93146-2419-4085-9f19-73a340e49026,Alex Spencer - Jones,csj@gmx.co.uk,CrossFit Teens 6 Pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+78581786-90bc-4b23-953e-ee275fefa20d,Ally Simpson,allysimpson10@googlemail.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+a744de6c-90d2-442c-be11-410234c4cd2a,Amelia Vogelzang,surinev@gmail.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+e133919d-c534-43ad-8d40-6f573755ff0d,Andrea Mennie,andreaelliot@live.co.uk,Free Intro,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+bfd12438-83c7-4f84-bfa4-82a406ec44cd,Andrew Grant,agrant2002@icloud.com,1 Class,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+eb32cd06-6abb-4e87-93d8-d6828fc7c04e,Andy Watt,alpha13fitness@outlook.com,Free Intro,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+aa51eb4b-265a-432e-b22c-47c3237d11a6,Anna Peters,annajpeters321@gmail.com,10 pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+5e90c20c-7a26-4c1c-809b-5f812f8672f4,Archie McDonald,herbie-glow13@outlook.com,Free Intro,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+c5f94cb0-47a0-459e-86f6-dd167131c8ba,Austin Miller,austin.miller@hotmail.co.uk,Free Intro,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+318f4404-96d8-4c74-bda5-349a6b25ada6,Ava Luce,avaluce09@icloud.com,CrossFit Teens 6 Pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+48d1cf5b-bcec-4661-a5da-01490530a5c3,Bernadette Mackay,bernadettemountcastle@yahoo.com,Prepaid 6 month limited,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+ffe9cf9f-3776-4b41-a93e-93703508e1ea,Carley Bartram,carleylb20@hotmail.co.uk,Outdoor CrossFit 10 pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+92fe8711-6f49-4f6a-b031-dd43fc777c2a,Charley Mclean,charleymclean17@gmail.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+693c9051-28ef-4db6-a8c5-0cbfa14b04d9,Cheryl MORRISON,morrisonvanessa141@gmail.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+669e6580-042e-49a9-83c4-c6357f1bcc2d,Christopher Mackay,chris@cgmscotland.co.uk,10 pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+30c6ee3e-7de5-4dbf-baab-49f39e264128,Claire Van Raalte,clairevanraalte@gmail.com,Outdoor CrossFit 10 pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+316c46c3-d65d-4fe6-8f6d-427edf28e592,Claire West,clairewest78@gmail.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+47571d42-fa26-4100-80b7-95853fb95edd,Colleen MacDonald,colleenmacdonald1906@outlook.com,1 Class,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+fc77beef-680f-4aa4-8dab-1b2f0ea3a58e,Connor Cameron,connorcameron246@gmail.com,10 pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+87001821-0fb2-42c3-9766-74c3284215ad,Craig Macbeth,craigmacbeth1982@gmail.com,10 pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+07348f8b-cf05-4201-96d7-95c11243fb31,Craig Thomson,craig12thomson@gmail.com,10 pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+b949ef31-b042-4585-8aee-5d4723970e48,David Wassell,davewass.dw@googlemail.com,Free Intro,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+556ec45c-fdb5-4c8d-a2f8-1dbbe9295135,Dean Young,alexisure@hotmail.co.uk,1 Class,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+09fe9b40-a6b1-4750-a267-6995f7e8030d,Delyth Moylan,delythgmoylan@gmail.com,Trial session,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+b1bffe97-23c4-44b2-bf62-b923cfe8ec9b,Dianne Martel,diannemartel92@gmail.com,Outdoor CrossFit 10 pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+5827dcea-9d20-4c9b-a80c-8219d229d6bf,Eileen Stennett,eileen@luxfarm.co.uk,10 pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+b00401d8-9dcc-47d5-bc4c-6957f95614c5,Elaine Elder,elderado84@gmail.com,10 pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+9ef983db-cf20-4c1f-934c-7c0d1ef47636,Elspeth Spencer-Jones,csj@gmx.co.uk,CrossFit Teens 6 Pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+797fe174-3cbe-47f0-968c-25c9a42f7315,Emily MacLeod,emacleod455@gmail.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+e11dd48d-2b7d-43cf-b324-bdba7753c7d4,Emily Moore,emileemoore19@icloud.com,Free Intro,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+bda2bc60-abc4-4d83-9c81-bab101df854a,Emma Wilson,emmaw131200@gmail.com,10 pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+2153db8e-b169-4864-b587-5caef05a1a09,Esme Saville,esmesaville@gmail.com,10 pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+fe4614b0-39b4-4922-800f-3d3f01b6ede2,Faye Nixon,fayenix@hotmail.com,10 pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+98bdef1c-5237-4f97-94d5-23db0fcd31c0,Gail Booth,johnstoneg3@btinternet.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+815a035f-680e-477d-b72e-d60823911d18,Galina Petkova,galinaqpetkova@gmail.com,Free Intro,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+e1f8f8c2-81f5-428a-a369-755b7ac92104,Gemma Latter,gemmalatter44@gmail.com,Outdoor CrossFit 10 pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+5fac31d6-31ea-4923-8d81-0cd01382e009,Gemma Waterston,gemma2592@hotmail.co.uk,1 Class,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+adeccafc-b2c9-4dda-9f90-e737d9520f86,Grace Souter,gracesouter@btinternet.com,Free Intro,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+cc4c06c4-f7e6-4217-8437-7c28e88274ae,Grethe Fremo,grethefremo@hotmail.com,10 pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+a84ea2ed-fc41-4aa6-86df-e975ec296dc3,Hailey Dubber,haidub@hotmail.co.uk,Additional session,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+954f406d-11a2-4245-87b2-3d51e8dfa9fc,Hannah Falconer,han.falconer94@gmail.com,Free Intro,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+6579401a-703c-4865-8cd6-8f49d346194c,Harris McDonald,herbie-glow13@outlook.com,Free Intro,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+8c7face9-c89a-4d0d-96e6-e69e85d046a1,Heather Moir,hmoir2911@gmail.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+13737c8e-d49a-4808-a382-65ebae21b1f4,Helen Morgan,helenmorgan305@gmail.com,10 pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+e7fbef5d-2055-4bb8-91b8-3d43e938a48c,Jo-Anne Henderson,jo.henderson95@gmail.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+46e7b2cb-dfb4-4027-869e-7ced48b3be3d,Joy McDonald,thejoymcdonald@yahoo.co.uk,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+1bf1e789-9170-4efa-9c0b-8b710ac6aff5,Kathryn Mitchell,kathrynadam_40@hotmail.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+51be2938-4ee4-48fe-bc5a-e8e9a7002783,Kerry Palmer,kerryp1995@gmail.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+30bbf292-f2d6-475c-ac59-5c5c8691daaa,Laura Bruce,laura_mcleod28@hotmail.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+234a99a7-bc21-44b2-b035-e6e0f28fef4f,Leigha Day-Clark,leigha0305@gmail.com,Unlimited membership,stripe,stripe,active,2026-10-28 12:00:00+00,false,false
+330ca7ed-0ac5-46b6-938f-559527c16a45,Logan Poundall,loganpoundall@hotmail.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+0960d710-9377-452a-9a9e-80c63e5c923d,Lucas McDonald,herbie-glow13@outlook.com,Free Intro,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+4dd2be13-e8df-441e-95dc-9383c6556bc8,Lynne Cheeseman,lynnehgray@btinternet.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+375367bf-735f-44be-8b58-f7fa9555dcfd,Natasha Cox,coxswa@hotmail.com,Free Intro,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+622869da-314e-420b-8e4a-35d0e9143bdf,Nicola MacLean,nicola.maclean@mail.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+96cc8aa5-bce8-4e87-af04-063c3df9d8e2,Rebecca Fulton,bex.fulton@gmail.com,10 pack,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+f9e4a828-11f8-4952-8444-0260cb3deee5,Sahar Humayoon,catch_sahar@hotmail.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+5e537f22-e850-4168-9a33-8c19d73bfb74,Sam Hill,hill.samantha@hotmail.co.uk,Unlimited membership,stripe,stripe,active,2026-10-28 12:00:00+00,false,false
+f8d1eee7-3475-42d3-b4b7-3362265f7b14,Samantha Hancox,samantha.hancox@hotmail.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+a6aa1517-00b3-4698-be76-0f60aa87dd6d,Sarah Anderson,sarahjanderson31@yahoo.co.uk,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+762a6fd4-74ca-40e6-9279-c9cd3cf300cc,Shona Forbes,shonabowie@hotmail.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+cad1a6ca-2a8a-43b0-b4e5-6804e381db7d,Sophie Smith,sbsmith91@hotmail.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+a2cd46fa-f789-49a5-9c55-bc4afa2cedb6,Stuart Bulloch,stuartbulloch@hotmail.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+4c8a8ea2-1a48-4d33-8e14-3420ebe5661d,Tara Wall,tara.coppin.wall@gmail.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+f0f7f95e-c3e3-49b3-90e7-5eea47303129,Thomas Watson,thomaswatson.91@gmail.com,1 Week Trial,no recurring payment required,stripe,active,2026-10-28 12:00:00+00,false,false
+d24b2f7a-550e-4a71-9895-59d5f74d6222,Zack Hargreaves,zackyjh@hotmail.com,Unlimited membership,stripe,stripe,active,2026-10-28 12:00:00+00,false,false

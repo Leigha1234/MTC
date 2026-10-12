@@ -1092,6 +1092,15 @@ footer{
         animation:none;
     }
 }
+
+/* LEGAL FOOTER & COOKIE PREFERENCES */
+.footer-legal{display:flex;flex-wrap:wrap;gap:10px 19px;margin-top:15px;max-width:800px}
+.footer-legal a,.footer-legal button{color:#ccc;font-size:.72rem;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;font-family:inherit}
+.footer-legal a:hover,.footer-legal button:hover{color:var(--yellow);text-decoration:underline}
+.cookie-banner{position:fixed;bottom:18px;left:18px;right:18px;max-width:1050px;margin:auto;background:#151515;border:1px solid #ffcc00;box-shadow:0 12px 50px #000b;z-index:9999;padding:24px;display:none;gap:24px;align-items:center;justify-content:space-between}
+.cookie-banner.show{display:flex}.cookie-copy{max-width:600px}.cookie-copy strong{font-family:Teko,Arial,sans-serif;font-size:2rem;line-height:1;color:var(--yellow)}.cookie-copy p{font-size:.79rem;color:#ddd;margin:7px 0}.cookie-copy a{color:var(--yellow)}
+.cookie-actions{display:flex;gap:10px;flex-wrap:wrap}.cookie-actions button{cursor:pointer;padding:12px 17px;font-weight:800;font-size:.73rem;text-transform:uppercase;border:1px solid var(--yellow);background:var(--yellow);color:#000}.cookie-actions button.reject{background:transparent;color:#fff;border-color:#aaa}
+@media(max-width:750px){.cookie-banner{flex-direction:column;align-items:stretch;bottom:8px;left:8px;right:8px;padding:18px}.cookie-actions button{flex:1}}
 </style>
 </head>
 
@@ -1871,6 +1880,20 @@ footer{
             Powered by The Organised Types
         </div>
 
+        
+            <div class="footer-legal" aria-label="Legal and policies">
+                <a href="terms.html">Terms &amp; Conditions</a>
+                <a href="policy.html">Privacy Policy</a>
+                <a href="cookies.html">Cookie Policy</a>
+                <a href="gdpr.html">GDPR</a>
+                <a href="safeguarding.html">Safeguarding</a>
+                <a href="health-safety.html">Health &amp; Safety</a>
+                <a href="complaints.html">Complaints</a>
+                <a href="socialmedia.html">Social Media Policy</a>
+                <a href="contact.html">Contact</a>
+                <button type="button" id="cookie-settings">Cookie Settings</button>
+            </div>
+
     </div>
 
 </footer>
@@ -2386,6 +2409,32 @@ document.addEventListener(
     }
 );
 
+</script>
+
+
+<div class="cookie-banner" id="cookie-banner" role="region" aria-label="Cookie preferences">
+  <div class="cookie-copy"><strong>YOUR PRIVACY MATTERS.</strong>
+    <p>We use essential storage to remember your choice. Optional cookies may help us understand how our website is used. You can accept or reject optional cookies, and change your choice at any time.</p>
+    <a href="cookies.html">Read our Cookie Policy</a>
+  </div>
+  <div class="cookie-actions">
+    <button type="button" class="reject" id="cookie-reject">Reject optional</button>
+    <button type="button" id="cookie-accept">Accept optional</button>
+  </div>
+</div>
+<script>
+(function(){
+  const banner=document.getElementById('cookie-banner');
+  const key='mtc-cookie-consent-v1';
+  function read(){try{return localStorage.getItem(key)}catch(e){return null}}
+  function save(value){try{localStorage.setItem(key,value)}catch(e){} banner.classList.remove('show'); window.dispatchEvent(new CustomEvent('mtc:cookie-consent',{detail:{optional:value==='accepted'}}));}
+  if(!read()) banner.classList.add('show');
+  document.getElementById('cookie-accept').addEventListener('click',()=>save('accepted'));
+  document.getElementById('cookie-reject').addEventListener('click',()=>save('rejected'));
+  document.getElementById('cookie-settings').addEventListener('click',()=>banner.classList.add('show'));
+  // Any future optional analytics/marketing scripts must check this preference BEFORE loading.
+  window.mtcOptionalCookiesAllowed=()=>read()==='accepted';
+})();
 </script>
 
 </body>

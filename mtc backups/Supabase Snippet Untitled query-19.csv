@@ -1,0 +1,336 @@
+table_name,column_name,data_type,is_nullable,column_default
+bookings,id,uuid,NO,gen_random_uuid()
+bookings,session_id,uuid,NO,null
+bookings,user_id,uuid,NO,null
+bookings,status,text,NO,'booked'::text
+bookings,used_pack_credit,boolean,NO,false
+bookings,booked_at,timestamp with time zone,NO,now()
+bookings,managed_child_id,uuid,YES,null
+class_schedules,id,uuid,NO,gen_random_uuid()
+class_schedules,title,text,NO,null
+class_schedules,category,text,YES,null
+class_schedules,weekday,integer,NO,null
+class_schedules,start_time,time without time zone,NO,null
+class_schedules,duration_min,integer,NO,60
+class_schedules,capacity,integer,NO,12
+class_schedules,coach_id,uuid,YES,null
+class_schedules,location,text,YES,null
+class_schedules,active,boolean,NO,true
+class_schedules,created_at,timestamp with time zone,NO,now()
+class_schedules,updated_at,timestamp with time zone,NO,now()
+class_sessions,id,uuid,NO,gen_random_uuid()
+class_sessions,schedule_id,uuid,YES,null
+class_sessions,title,text,NO,null
+class_sessions,category,text,YES,null
+class_sessions,location,text,YES,null
+class_sessions,coach_id,uuid,YES,null
+class_sessions,starts_at,timestamp with time zone,NO,null
+class_sessions,ends_at,timestamp with time zone,NO,null
+class_sessions,capacity,integer,NO,null
+class_sessions,cancelled,boolean,NO,false
+class_sessions,notes,text,YES,null
+class_sessions,created_at,timestamp with time zone,NO,now()
+class_sessions,updated_at,timestamp with time zone,NO,now()
+class_workouts,id,uuid,NO,gen_random_uuid()
+class_workouts,class_session_id,uuid,NO,null
+class_workouts,class_date,date,NO,null
+class_workouts,title,text,YES,null
+class_workouts,warmup,text,YES,null
+class_workouts,strength,text,YES,null
+class_workouts,workout,text,NO,null
+class_workouts,cooldown,text,YES,null
+class_workouts,coach_notes,text,YES,null
+class_workouts,status,text,NO,'draft'::text
+class_workouts,created_by,uuid,YES,null
+class_workouts,created_at,timestamp with time zone,YES,now()
+class_workouts,updated_at,timestamp with time zone,YES,now()
+class_workouts,score_type,text,NO,'text'::text
+focus_sessions,id,uuid,NO,gen_random_uuid()
+focus_sessions,user_id,uuid,NO,null
+focus_sessions,enrollment_id,uuid,YES,null
+focus_sessions,minutes,integer,NO,null
+focus_sessions,completed,boolean,NO,true
+focus_sessions,started_at,timestamp with time zone,YES,null
+focus_sessions,ended_at,timestamp with time zone,NO,now()
+focus_sessions,created_at,timestamp with time zone,NO,now()
+hr_sessions,id,uuid,NO,gen_random_uuid()
+hr_sessions,user_id,uuid,NO,null
+hr_sessions,sensor_id,text,YES,null
+hr_sessions,session_date,date,NO,CURRENT_DATE
+hr_sessions,started_at,timestamp with time zone,NO,now()
+hr_sessions,ended_at,timestamp with time zone,YES,null
+hr_sessions,avg_bpm,integer,YES,null
+hr_sessions,max_bpm,integer,YES,null
+hr_sessions,sec_z1,integer,NO,0
+hr_sessions,sec_z2,integer,NO,0
+hr_sessions,sec_z3,integer,NO,0
+hr_sessions,sec_z4,integer,NO,0
+hr_sessions,sec_z5,integer,NO,0
+hr_sessions,effort_score,integer,YES,null
+hr_sessions,trimp,numeric,YES,null
+hr_sessions,sample_count,integer,NO,0
+hr_sessions,class_session_id,uuid,YES,null
+hr_sessions,created_at,timestamp with time zone,NO,now()
+hr_sessions,myzone_meps,integer,YES,null
+hr_sessions,myzone_effort,integer,YES,null
+intro_bookings,id,uuid,NO,gen_random_uuid()
+intro_bookings,session_id,uuid,NO,null
+intro_bookings,lead_id,uuid,YES,null
+intro_bookings,name,text,NO,null
+intro_bookings,email,text,NO,null
+intro_bookings,phone,text,YES,null
+intro_bookings,quiz_result,text,YES,null
+intro_bookings,status,text,NO,'requested'::text
+intro_bookings,created_at,timestamp with time zone,NO,now()
+intro_bookings,followup_sent_at,timestamp with time zone,YES,null
+intro_bookings,no_show_reason,text,YES,null
+lead_class_bookings,id,uuid,NO,gen_random_uuid()
+lead_class_bookings,lead_id,uuid,YES,null
+lead_class_bookings,session_id,uuid,NO,null
+lead_class_bookings,name,text,NO,null
+lead_class_bookings,email,text,NO,null
+lead_class_bookings,phone,text,YES,null
+lead_class_bookings,status,text,NO,'booked'::text
+lead_class_bookings,source,text,YES,'quiz_funnel'::text
+lead_class_bookings,created_at,timestamp with time zone,NO,now()
+lead_class_bookings,followup_sent_at,timestamp with time zone,YES,null
+lead_class_bookings,no_show_reason,text,YES,null
+member_achievements,user_id,uuid,NO,null
+member_achievements,code,text,NO,null
+member_achievements,earned_at,timestamp with time zone,NO,now()
+member_compliance,user_id,uuid,YES,null
+member_compliance,display_name,text,YES,null
+member_compliance,waiver_signed,boolean,YES,null
+member_compliance,parq_completed,boolean,YES,null
+member_compliance,parq_flagged,boolean,YES,null
+member_compliance,has_emergency_contact,boolean,YES,null
+member_entitlements,user_id,uuid,NO,null
+member_entitlements,plan_label,text,YES,null
+member_entitlements,unlimited,boolean,NO,false
+member_entitlements,weekly_limit,integer,YES,null
+member_entitlements,pack_credits,integer,NO,0
+member_entitlements,updated_by,uuid,YES,null
+member_entitlements,updated_at,timestamp with time zone,NO,now()
+member_entitlements,needs_payment_setup,boolean,NO,false
+member_entitlements,frozen_until,date,YES,null
+member_entitlements,app_tier,text,NO,'full'::text
+member_entitlements,stripe_subscription_id,text,YES,null
+member_entitlements,stripe_status,text,YES,null
+member_entitlements,current_period_end,timestamp with time zone,YES,null
+member_entitlements,payment_issue,boolean,NO,false
+member_entitlements,monthly_limit,integer,YES,null
+member_entitlements,trial_ends_at,timestamp with time zone,YES,null
+member_entitlements,tots_subscription_id,uuid,YES,null
+member_entitlements,billing_provider,text,YES,null
+member_entitlements,external_subscription_id,text,YES,null
+member_health_profiles,user_id,uuid,NO,null
+member_health_profiles,date_of_birth,date,YES,null
+member_health_profiles,phone,text,YES,null
+member_health_profiles,address_line_1,text,YES,null
+member_health_profiles,address_line_2,text,YES,null
+member_health_profiles,town_city,text,YES,null
+member_health_profiles,postcode,text,YES,null
+member_health_profiles,emergency_contact_name,text,YES,null
+member_health_profiles,emergency_contact_phone,text,YES,null
+member_health_profiles,emergency_contact_relationship,text,YES,null
+member_health_profiles,has_medical_conditions,boolean,YES,null
+member_health_profiles,medical_conditions,text,YES,null
+member_health_profiles,has_injuries,boolean,YES,null
+member_health_profiles,injuries,text,YES,null
+member_health_profiles,has_allergies,boolean,YES,null
+member_health_profiles,allergies,text,YES,null
+member_health_profiles,takes_medication,boolean,YES,null
+member_health_profiles,medication,text,YES,null
+member_health_profiles,has_operations_or_movement_issues,boolean,YES,null
+member_health_profiles,operations_or_movement_issues,text,YES,null
+member_health_profiles,previous_sports,text,YES,null
+member_health_profiles,smoking_status,text,YES,null
+member_health_profiles,alcohol_per_week,text,YES,null
+member_health_profiles,additional_notes,text,YES,null
+member_health_profiles,confirmed_accurate,boolean,NO,false
+member_health_profiles,completed_at,timestamp with time zone,YES,null
+member_health_profiles,created_at,timestamp with time zone,NO,now()
+member_health_profiles,updated_at,timestamp with time zone,NO,now()
+member_notes,id,uuid,NO,gen_random_uuid()
+member_notes,user_id,uuid,NO,null
+member_notes,author_id,uuid,NO,null
+member_notes,category,text,NO,'general'::text
+member_notes,note,text,NO,null
+member_notes,pinned,boolean,NO,false
+member_notes,created_at,timestamp with time zone,NO,now()
+member_relationships,id,uuid,NO,gen_random_uuid()
+member_relationships,user_id,uuid,NO,null
+member_relationships,related_user_id,uuid,NO,null
+member_relationships,relationship_type,text,NO,'partner'::text
+member_relationships,active,boolean,NO,true
+member_relationships,created_at,timestamp with time zone,NO,now()
+member_sensors,user_id,uuid,NO,null
+member_sensors,sensor_id,text,NO,null
+member_sensors,label,text,YES,null
+member_sensors,created_at,timestamp with time zone,YES,now()
+members,email,text,NO,null
+members,subscription_status,text,YES,null
+members,stripe_customer_id,text,YES,null
+members,stripe_subscription_id,text,YES,null
+members,created_at,timestamp with time zone,NO,now()
+members,updated_at,timestamp with time zone,NO,now()
+membership_pause_requests,id,uuid,NO,gen_random_uuid()
+membership_pause_requests,user_id,uuid,NO,null
+membership_pause_requests,requested_start_date,date,NO,null
+membership_pause_requests,requested_end_date,date,NO,null
+membership_pause_requests,reason,text,YES,null
+membership_pause_requests,status,text,NO,'pending'::text
+membership_pause_requests,reviewed_by,uuid,YES,null
+membership_pause_requests,reviewed_at,timestamp with time zone,YES,null
+membership_pause_requests,admin_notes,text,YES,null
+membership_pause_requests,created_at,timestamp with time zone,NO,now()
+membership_pause_requests,updated_at,timestamp with time zone,NO,now()
+membership_pause_requests,membership_subscription_id,uuid,YES,null
+membership_pause_settings,id,boolean,NO,true
+membership_pause_settings,minimum_pause_days,integer,NO,14
+membership_pause_settings,maximum_pause_days,integer,NO,60
+membership_pause_settings,notice_days,integer,NO,7
+membership_pause_settings,minimum_membership_days,integer,NO,30
+membership_pause_settings,maximum_pauses_per_12_months,integer,NO,2
+membership_pause_settings,updated_at,timestamp with time zone,NO,now()
+membership_subscription_children,subscription_id,uuid,NO,null
+membership_subscription_children,child_id,uuid,NO,null
+membership_subscription_children,weekly_limit,integer,YES,null
+membership_subscription_children,monthly_limit,integer,YES,null
+membership_subscription_children,discount_pence,integer,NO,0
+membership_subscription_children,active,boolean,NO,true
+membership_subscription_children,created_at,timestamp with time zone,NO,now()
+membership_subscription_users,subscription_id,uuid,NO,null
+membership_subscription_users,user_id,uuid,NO,null
+membership_subscription_users,member_role,text,NO,null
+membership_subscription_users,access_scope,text,NO,'all_classes'::text
+membership_subscription_users,weekly_limit,integer,YES,null
+membership_subscription_users,monthly_limit,integer,YES,null
+membership_subscription_users,active,boolean,NO,true
+membership_subscription_users,created_at,timestamp with time zone,NO,now()
+membership_subscriptions,id,uuid,NO,gen_random_uuid()
+membership_subscriptions,payer_user_id,uuid,NO,null
+membership_subscriptions,plan_code,text,NO,null
+membership_subscriptions,source,text,NO,'admin'::text
+membership_subscriptions,stripe_customer_id,text,YES,null
+membership_subscriptions,stripe_subscription_id,text,YES,null
+membership_subscriptions,stripe_status,text,YES,null
+membership_subscriptions,current_period_end,timestamp with time zone,YES,null
+membership_subscriptions,cancel_at_period_end,boolean,NO,false
+membership_subscriptions,active,boolean,NO,true
+membership_subscriptions,created_by,uuid,YES,null
+membership_subscriptions,created_at,timestamp with time zone,NO,now()
+membership_subscriptions,updated_at,timestamp with time zone,NO,now()
+membership_subscriptions,tots_subscription_id,uuid,YES,null
+membership_subscriptions,billing_provider,text,YES,null
+membership_subscriptions,external_customer_id,text,YES,null
+membership_subscriptions,external_subscription_id,text,YES,null
+membership_subscriptions,legacy_billing,boolean,NO,false
+membership_subscriptions,legacy_membership_name,text,YES,null
+membership_subscriptions,unit_amount_pence,integer,YES,null
+membership_subscriptions,external_mandate_id,text,YES,null
+membership_subscriptions,next_payment_at,timestamp with time zone,YES,null
+membership_subscriptions,last_payment_at,timestamp with time zone,YES,null
+membership_subscriptions,last_payment_amount_pence,integer,YES,null
+membership_subscriptions,payment_status,text,NO,'unverified'::text
+membership_subscriptions,cutover_status,text,NO,'not_started'::text
+membership_subscriptions,processor_verified_at,timestamp with time zone,YES,null
+membership_subscriptions,processor_verified_by,uuid,YES,null
+membership_subscriptions,collection_enabled,boolean,NO,false
+membership_subscriptions,collection_enabled_at,timestamp with time zone,YES,null
+membership_subscriptions,collection_enabled_by,uuid,YES,null
+membership_subscriptions,teamup_billing_active,boolean,NO,true
+membership_subscriptions,teamup_billing_disabled_at,timestamp with time zone,YES,null
+membership_subscriptions,billing_notes,text,YES,null
+membership_subscriptions,last_webhook_at,timestamp with time zone,YES,null
+membership_subscriptions,last_webhook_event_id,text,YES,null
+mtc_member_migration,id,uuid,NO,gen_random_uuid()
+mtc_member_migration,member_name,text,NO,null
+mtc_member_migration,email,text,YES,null
+mtc_member_migration,teamup_membership,text,NO,null
+mtc_member_migration,membership_type,text,NO,null
+mtc_member_migration,payment_provider,text,YES,null
+mtc_member_migration,legacy_amount_pence,integer,YES,null
+mtc_member_migration,amount_evidence,text,YES,null
+mtc_member_migration,external_customer_id,text,YES,null
+mtc_member_migration,gocardless_mandate_id,text,YES,null
+mtc_member_migration,access_mapping,text,YES,null
+mtc_member_migration,tots_product_id,uuid,YES,null
+mtc_member_migration,migration_decision,text,YES,null
+mtc_member_migration,migration_status,text,NO,null
+mtc_member_migration,remaining_issue,text,YES,null
+mtc_member_migration,matched_user_id,uuid,YES,null
+mtc_member_migration,imported_at,timestamp with time zone,NO,now()
+mtc_member_migration,updated_at,timestamp with time zone,NO,now()
+mtc_member_migration_backup_20260929,id,uuid,YES,null
+mtc_member_migration_backup_20260929,member_name,text,YES,null
+mtc_member_migration_backup_20260929,email,text,YES,null
+mtc_member_migration_backup_20260929,teamup_membership,text,YES,null
+mtc_member_migration_backup_20260929,membership_type,text,YES,null
+mtc_member_migration_backup_20260929,payment_provider,text,YES,null
+mtc_member_migration_backup_20260929,legacy_amount_pence,integer,YES,null
+mtc_member_migration_backup_20260929,amount_evidence,text,YES,null
+mtc_member_migration_backup_20260929,external_customer_id,text,YES,null
+mtc_member_migration_backup_20260929,gocardless_mandate_id,text,YES,null
+mtc_member_migration_backup_20260929,access_mapping,text,YES,null
+mtc_member_migration_backup_20260929,tots_product_id,uuid,YES,null
+mtc_member_migration_backup_20260929,migration_decision,text,YES,null
+mtc_member_migration_backup_20260929,migration_status,text,YES,null
+mtc_member_migration_backup_20260929,remaining_issue,text,YES,null
+mtc_member_migration_backup_20260929,matched_user_id,uuid,YES,null
+mtc_member_migration_backup_20260929,imported_at,timestamp with time zone,YES,null
+mtc_member_migration_backup_20260929,updated_at,timestamp with time zone,YES,null
+mtc_membership_billing,id,uuid,YES,null
+mtc_membership_billing,tots_subscription_id,uuid,YES,null
+mtc_membership_billing,payer_user_id,uuid,YES,null
+mtc_membership_billing,plan_code,text,YES,null
+mtc_membership_billing,source,text,YES,null
+mtc_membership_billing,billing_provider,text,YES,null
+mtc_membership_billing,external_customer_id,text,YES,null
+mtc_membership_billing,external_subscription_id,text,YES,null
+mtc_membership_billing,legacy_billing,boolean,YES,null
+mtc_membership_billing,legacy_membership_name,text,YES,null
+mtc_membership_billing,unit_amount_pence,integer,YES,null
+mtc_membership_billing,stripe_customer_id,text,YES,null
+mtc_membership_billing,stripe_subscription_id,text,YES,null
+mtc_membership_billing,billing_status,text,YES,null
+mtc_membership_billing,current_period_end,timestamp with time zone,YES,null
+mtc_membership_billing,cancel_at_period_end,boolean,YES,null
+mtc_membership_billing,active,boolean,YES,null
+mtc_membership_billing,created_at,timestamp with time zone,YES,null
+mtc_membership_billing,updated_at,timestamp with time zone,YES,null
+mtc_migration_ready_memberships,id,uuid,YES,null
+mtc_migration_ready_memberships,member_name,text,YES,null
+mtc_migration_ready_memberships,email,text,YES,null
+mtc_migration_ready_memberships,teamup_membership,text,YES,null
+mtc_migration_ready_memberships,membership_type,text,YES,null
+mtc_migration_ready_memberships,payment_provider,text,YES,null
+mtc_migration_ready_memberships,legacy_amount_pence,integer,YES,null
+mtc_migration_ready_memberships,amount_evidence,text,YES,null
+mtc_migration_ready_memberships,external_customer_id,text,YES,null
+mtc_migration_ready_memberships,gocardless_mandate_id,text,YES,null
+mtc_migration_ready_memberships,access_mapping,text,YES,null
+mtc_migration_ready_memberships,tots_product_id,uuid,YES,null
+mtc_migration_ready_memberships,migration_decision,text,YES,null
+mtc_migration_ready_memberships,migration_status,text,YES,null
+mtc_migration_ready_memberships,remaining_issue,text,YES,null
+mtc_migration_ready_memberships,matched_user_id,uuid,YES,null
+mtc_migration_ready_memberships,imported_at,timestamp with time zone,YES,null
+mtc_migration_ready_memberships,updated_at,timestamp with time zone,YES,null
+public_sessions,on_date,date,YES,null
+public_sessions,start,text,YES,null
+public_sessions,title,text,YES,null
+solo_sessions,id,uuid,NO,gen_random_uuid()
+solo_sessions,user_id,uuid,NO,null
+solo_sessions,started_at,timestamp with time zone,YES,null
+solo_sessions,ended_at,timestamp with time zone,NO,now()
+solo_sessions,duration_sec,integer,NO,0
+solo_sessions,avg_bpm,integer,YES,null
+solo_sessions,max_bpm,integer,YES,null
+solo_sessions,sec_z1,integer,NO,0
+solo_sessions,sec_z2,integer,NO,0
+solo_sessions,sec_z3,integer,NO,0
+solo_sessions,sec_z4,integer,NO,0
+solo_sessions,sec_z5,integer,NO,0
+solo_sessions,points,integer,NO,0
+solo_sessions,created_at,timestamp with time zone,NO,now()

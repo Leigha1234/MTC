@@ -1,0 +1,73 @@
+﻿Date,Customer,Memo,Payment Method,Amount
+2026-09-01,Paul Hill,Credit card payment via card ending in 7260,Stripe,59.00
+2026-09-01,Vicki Low,Credit card payment via card ending in 8968,Stripe,99.00
+2026-09-01,Kara Kellas,Credit card payment via card ending in 8613,Stripe,59.00
+2026-09-01,Olivia Skyers,Credit card payment via card ending in 9527,Stripe,69.00
+2026-09-01,Natasha Douglas,Credit card payment via card ending in 0711,Stripe,86.23
+2026-09-01,Natalie Munro,Credit card payment via card ending in 3191,Stripe,15.00
+2026-09-01,Paul Hill,Refund: credited to card ending in 7260,Stripe,-59.00
+2026-09-02,rebecca Farquhar,GoCardless (Direct Debit)— REBECCA FARQUHAR  ****38 Bank of Scotland plc,GoCardless,89.00
+2026-09-02,Rhiannon Boyd,GoCardless (Direct Debit)— RHIANNON FARQUHAR  ****58 Santander UK plc,GoCardless,69.00
+2026-09-02,Anika Taylor,GoCardless (Direct Debit)— JAMIE WILDING  ****75 BARCLAYS BANK UK PLC,GoCardless,39.00
+2026-09-02,Charlotte Owens,GoCardless (Direct Debit)— CHARLOTTE OWENS  ****65 HALIFAX (A TRADING NAME OF BANK OF SCOTLAND PLC),GoCardless,69.00
+2026-09-02,Abbey Emmett,GoCardless (Direct Debit)— ABBEY EMMETT  ****47 THE ROYAL BANK OF SCOTLAND PLC,GoCardless,89.00
+2026-09-02,Karina Kaluzna,GoCardless (Direct Debit)— KARINA KALUZNA  ****86 THE ROYAL BANK OF SCOTLAND PLC,GoCardless,59.00
+2026-09-02,Molly Hilsden,GoCardless (Direct Debit)— AUDREY HILSDEN  ****62 TSB BANK PLC,GoCardless,45.00
+2026-09-02,Rachel Swinglehurst,GoCardless (Direct Debit)— RACHEL SWINGLEHURSTHEWKIN  ****67 Bank of Scotland plc,GoCardless,59.00
+2026-09-02,Stephen Mears,GoCardless (Direct Debit)— STEPHEN MEARS  ****68 Bank of Scotland plc,GoCardless,69.00
+2026-09-02,Heather Keddie,GoCardless (Direct Debit)— HEATHER KEDDIE  ****56 Santander UK plc,GoCardless,60.00
+2026-09-02,Philip Mitchell,GoCardless (Direct Debit)— PHILIP MITCHELL  ****70 NATIONWIDE BUILDING SOCIETY,GoCardless,69.00
+2026-09-02,Jen Brown,GoCardless (Direct Debit)— JENNIFER BROWN  ****77 TSB BANK PLC,GoCardless,69.00
+2026-09-02,sarah wu,GoCardless (Direct Debit)— SARAH WU  ****69 Bank of Scotland plc,GoCardless,59.00
+2026-09-02,Holly Weir,GoCardless (Direct Debit)— HOLLY WEIR  ****60 Bank of Scotland plc,GoCardless,69.00
+2026-09-02,Joanne Napier,GoCardless (Direct Debit)— JOANNE NAPIER  ****83 Santander UK plc,GoCardless,55.00
+2026-09-02,Yasmin Todd,GoCardless (Direct Debit)— YASMIN TODD  ****64 Bank of Scotland plc,GoCardless,49.00
+2026-09-03,Leonie Donaldson,Credit card payment via card ending in 8059,Stripe,24.19
+2026-09-03,Walter Deans,Credit card payment via card ending in 2274,Stripe,59.00
+2026-09-04,Thomas Fremo,Credit card payment via card ending in 5064,Stripe,89.00
+2026-09-04,Evelyn Morgan,Credit card payment via card ending in 2159,Stripe,53.42
+2026-09-06,Jessica Howard,Credit card payment via card ending in 1942,Stripe,15.00
+2026-09-06,Fayth-Emily Lyons,Credit card payment via card ending in 4445,Stripe,5.00
+2026-09-07,Joanne Wood,Credit card payment via card ending in 4069,Stripe,67.06
+2026-09-07,Rachel Edwards,Credit card payment via card ending in 5406,Stripe,15.00
+2026-09-07,Louis Ross,Credit card payment via card ending in 5477,Stripe,16.94
+2026-09-08,Jennifer Fleming,Credit card payment via card ending in 0008,Stripe,15.00
+2026-09-08,Craig Strathdee,GoCardless (Direct Debit)— CRAIG STRATHDEE  ****61 Bank of Scotland plc,GoCardless,44.26
+2026-09-08,Stefanie Stewart,GoCardless (Direct Debit)— STEFANIE STEWART  ****18 THE ROYAL BANK OF SCOTLAND PLC,GoCardless,71.35
+2026-09-10,Susie Brennan,Credit card payment via card ending in 4448,Stripe,59.00
+2026-09-10,Matt Burton,Credit card payment via card ending in 3845,Stripe,10.00
+2026-09-10,Natalie Munro,Credit card payment via card ending in 3191,Stripe,10.00
+2026-09-11,Jennifer Clarke,GoCardless (Direct Debit)— JENNIFER CLARKE  ****98 THE ROYAL BANK OF SCOTLAND PLC,GoCardless,49.00
+2026-09-11,Deborah Luce,Credit card payment via card ending in 7569,Stripe,15.00
+2026-09-12,Natalie Munro,Credit card payment via card ending in 3191,Stripe,10.00
+2026-09-12,Fayth-Emily Lyons,Credit card payment via card ending in 4445,Stripe,35.61
+2026-09-13,Annie McDougall,Credit card payment via card ending in 2163,Stripe,5.00
+2026-09-13,Danielle Duncan,Credit card payment via card ending in 3925,Stripe,15.00
+2026-09-13,Suzanne Lynch-McKay,Credit card payment via card ending in 3455,Stripe,15.00
+2026-09-14,Pam campbell,Credit card payment via card ending in 0953,Stripe,80.00
+2026-09-14,Darren Stewart,Credit card payment via card ending in 4136,Stripe,10.00
+2026-09-15,Suzanne Lynch-McKay,Credit card payment via card ending in 3455,Stripe,20.55
+2026-09-15,Lexi Paton-Cox,Credit card payment via card ending in 2713,Stripe,18.87
+2026-09-15,Annie McDougall,Credit card payment via card ending in 2163,Stripe,5.00
+2026-09-16,Danielle Duncan,Credit card payment via card ending in 3925,Stripe,15.00
+2026-09-17,Jessica Stuart,Credit card payment via card ending in 4470,Stripe,14.48
+2026-09-17,Rebecca McIntosh,Credit card payment via card ending in 3127,Stripe,15.00
+2026-09-17,Mark McIntosh,Credit card payment via card ending in 3127,Stripe,15.00
+2026-09-18,Caleb Petrie,Credit card payment via card ending in 3774,Stripe,22.26
+2026-09-18,Beth Adam,Credit card payment via card ending in 9851,Stripe,15.00
+2026-09-18,Trisha Riddell,GoCardless (Direct Debit)— TRISHA RIDDELL  ****84 THE ROYAL BANK OF SCOTLAND PLC,GoCardless,54.29
+2026-09-19,Natalie Munro,Credit card payment via card ending in 3191,Stripe,15.00
+2026-09-19,Rachel Edwards,Credit card payment via card ending in 5406,Stripe,15.00
+2026-09-20,Annie McDougall,Credit card payment via card ending in 2163,Stripe,20.39
+2026-09-21,CHRISTINE KILLEN,Credit card payment via card ending in 5509,Stripe,10.00
+2026-09-21,Deborah Luce,GoCardless (Direct Debit)— DEBORAH LUCE  ****84 Santander UK plc,GoCardless,35.61
+2026-09-21,Laura Mackay,GoCardless (Direct Debit)— LAURA DOWNIE  ****03 Santander UK plc,GoCardless,31.61
+2026-09-21,CHRISTINE KILLEN,Refund: credited to card ending in 5509,Stripe,-10.00
+2026-09-22,Rory Fleming,Credit card payment via card ending in 9700,Stripe,15.00
+2026-09-22,Jennifer Fleming,Credit card payment via card ending in 0008,Stripe,15.00
+2026-09-22,Rocket-James Snarski,Credit card payment via card ending in 3739,Stripe,4.84
+2026-09-22,tammy lansley,Credit card payment via card ending in 4462,Stripe,89.00
+2026-09-22,Danielle Duncan,Credit card payment via card ending in 3925,Stripe,15.00
+2026-09-22,Callum Cooper,Credit card payment via card ending in 1877,Stripe,4.84
+2026-09-25,CHRISTINE KILLEN,Credit card payment via card ending in 5509,Stripe,10.00
+2026-09-25,Andre Da Silva,Credit card payment via card ending in 3349,Stripe,9.58
