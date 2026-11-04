@@ -1101,6 +1101,19 @@ footer{
 .cookie-banner.show{display:flex}.cookie-copy{max-width:600px}.cookie-copy strong{font-family:Teko,Arial,sans-serif;font-size:2rem;line-height:1;color:var(--yellow)}.cookie-copy p{font-size:.79rem;color:#ddd;margin:7px 0}.cookie-copy a{color:var(--yellow)}
 .cookie-actions{display:flex;gap:10px;flex-wrap:wrap}.cookie-actions button{cursor:pointer;padding:12px 17px;font-weight:800;font-size:.73rem;text-transform:uppercase;border:1px solid var(--yellow);background:var(--yellow);color:#000}.cookie-actions button.reject{background:transparent;color:#fff;border-color:#aaa}
 @media(max-width:750px){.cookie-banner{flex-direction:column;align-items:stretch;bottom:8px;left:8px;right:8px;padding:18px}.cookie-actions button{flex:1}}
+
+/* MEMBERSHIP CHAT CTA */
+.chat-cta{padding:90px 0;background:linear-gradient(120deg,#171717,#070707);border-block:1px solid #353535}
+.chat-cta-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:45px;align-items:center}
+.chat-cta h2{font-size:clamp(4rem,8vw,7rem);margin:12px 0 20px}
+.chat-cta p{color:#d0d0d0;max-width:650px;font-size:1rem}
+.chat-cta-card{padding:36px;border:1px solid #ffcc00;background:#101010}
+.chat-cta-card h3{font-size:2.6rem;margin-bottom:12px}
+.chat-cta-card p{font-size:.88rem}
+.chat-cta-card .btn{margin-top:20px;width:100%}
+.chat-cta-note{font-size:.75rem!important;color:#aaa!important;margin-bottom:0}
+@media(max-width:900px){.chat-cta-grid{grid-template-columns:1fr}.chat-cta{padding:72px 0}}
+@media(max-width:600px){.chat-cta-card{padding:24px}}
 </style>
 </head>
 
@@ -1115,13 +1128,13 @@ footer{
         <span>★ NEW GYM. SAME PACK.</span>
         <span>★ HYROX • FUNCTIONAL FITNESS • STRENGTH • KIDS • COMMUNITY</span>
         <span>★ START YOUR FREE TRIAL TODAY</span>
-        <span>★ OPEN DAY — 3 OCTOBER</span>
+        <span>★ QUESTIONS? BOOK A FRIENDLY CHAT</span>
         <span>★ LOSSIEMOUTH</span>
 
         <span aria-hidden="true">★ NEW GYM. SAME PACK.</span>
         <span aria-hidden="true">★ HYROX • FUNCTIONAL FITNESS • STRENGTH • KIDS • COMMUNITY</span>
         <span aria-hidden="true">★ START YOUR FREE TRIAL TODAY</span>
-        <span aria-hidden="true">★ OPEN DAY — 3 OCTOBER</span>
+        <span aria-hidden="true">★ QUESTIONS? BOOK A FRIENDLY CHAT</span>
         <span aria-hidden="true">★ LOSSIEMOUTH</span>
     </div>
 </div>
@@ -1156,6 +1169,8 @@ footer{
                 data-app-login>
                 Member Login
             </a>
+
+            <a href="#membership-chat" class="btn ghost">Book a Chat</a>
 
             <a
                 class="btn"
@@ -1422,7 +1437,7 @@ footer{
                 class="eyebrow"
                 style="color:#000">
 
-                Open day · 3 October
+                Come and meet the pack
 
             </div>
 
@@ -1699,6 +1714,25 @@ footer{
 
     </div>
 
+</section>
+
+
+<section class="chat-cta" id="membership-chat" aria-labelledby="chat-heading">
+  <div class="container chat-cta-grid">
+    <div>
+      <div class="eyebrow">Not sure where to start?</div>
+      <h2 id="chat-heading">LET'S HAVE A <span class="yellow">CHAT.</span></h2>
+      <p>Thinking about joining Moray Training Club but have a few questions first? Wondering which membership suits you, what classes to try, or what to expect on your first visit?</p>
+      <p>Whether you're brand new to the gym or looking for your next challenge, we're happy to talk it through. No pressure, no commitment — just a friendly chat.</p>
+    </div>
+    <div class="chat-cta-card">
+      <div class="eyebrow">We're here to help</div>
+      <h3>YOUR QUESTIONS.<br><span class="yellow">ANSWERED.</span></h3>
+      <p>Tell us a little about your goals, ask anything about our classes or memberships, and find the best way to get started.</p>
+      <a class="btn" href="https://www.tots-os.co.uk/book/book-b67d1cb2" target="_blank" rel="noopener noreferrer">Book a Free Chat →</a>
+      <p class="chat-cta-note">Choose a time that suits you. Everyone's welcome.</p>
+    </div>
+  </div>
 </section>
 
 <section
